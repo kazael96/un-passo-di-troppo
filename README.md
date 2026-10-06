@@ -170,3 +170,7 @@ Agenzia mostra la ripartizione dei costi settimanali tra sede, assistiti, amplia
 ## Pianificazione delle finestre
 Il Calendario mostra la finestra attuale o la prossima apertura e confronta le scadenze delle proposte di trasferimento e prestito con la chiusura. Nelle ultime due settimane di mercato l’Ufficio mostra un richiamo. Il conteggio include la settimana attuale; svincolati e rinnovi restano disponibili tutto l’anno. Le proposte non vengono prorogate automaticamente.
 
+
+## Navigazione semplificata
+Le sezioni lunghe di Ufficio, Agenzia, Club e Calendario sono organizzate in pannelli apribili. Gli strumenti secondari della scuderia, dello scouting e delle trattative sono raccolti in un menu compatto. I pannelli ricordano apertura e chiusura durante la sessione. Ogni sezione ha una breve descrizione e la barra di navigazione scorre sui piccoli schermi.
+
