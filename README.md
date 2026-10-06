@@ -134,3 +134,7 @@ Puoi aprire i gruppi con fiducia sotto 45, infortunati, mandati entro otto setti
 ## Bollettino del mercato
 Club e contatti conserva gli ultimi 60 trasferimenti effettivi dei giocatori delle agenzie rivali e cambi di allenatore. Il bollettino si aggiorna dopo l’avanzamento della settimana, offre filtri per tipo di notizia ed è incluso nel salvataggio. Gli eventi precedenti all’aggiornamento non sono ricostruiti. È stata corretta la vecchia notizia di operazione rivale: ora compare solo quando il trasferimento avviene davvero.
 
+
+## Talenti seguiti
+Scouting offre un taccuino dei preferiti con qualità e valore stimato confrontati con la prima rilevazione, cambi di club e contratto residuo. Seguire un talento è gratuito e non rivela il potenziale nascosto. Smettere di seguirlo elimina la rilevazione; seguirlo di nuovo crea un nuovo riferimento. I vecchi preferiti partono dai dati disponibili al primo caricamento dell’aggiornamento. I riferimenti sono inclusi nei salvataggi.
+
