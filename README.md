@@ -120,7 +120,13 @@ Gli incontri con lo stesso club richiedono ora due settimane di attesa. Restano 
 Club e contatti raccoglie anche le corrispondenze tra ruoli richiesti e assistiti. Evidenzia ritiri annunciati, prestiti, attese tra operazioni, finestre chiuse e trattative già aperte. Non garantisce budget o consensi: la verifica resta nella proposta. Le consultazioni sono gratuite e i diari sono inclusi nei salvataggi.
 
 ## Preparazione delle scadenze
+
 Assistiti e Scouting permettono di filtrare svincolati o contratti sportivi in scadenza entro 12 o 26 settimane, insieme ai filtri esistenti. Azzera ricerca ripristina anche questo filtro.
 
 Il Calendario raccoglie mandati, contratti sportivi, rientri dai prestiti e ritiri in una vista ordinata con orizzonte di 12, 26 o 52 settimane e accesso alle schede. Il rientro dal prestito sostituisce in questa vista la scadenza del contratto della destinazione temporanea. Anche i profili nello Scouting diventano ora svincolati quando scade il contratto, al passaggio alla settimana successiva.
+
+## Panoramica della scuderia
+Assistiti offre un riepilogo gratuito dell’intera scuderia, indipendente dalla ricerca corrente: età, qualità e fiducia medie; distribuzione per ruolo e fascia d’età; valore sportivo stimato complessivo. Il valore non è cassa dell’agenzia né un incasso garantito.
+
+Puoi aprire i gruppi con fiducia sotto 45, infortunati, mandati entro otto settimane, svincolati o giovani fino a 21 anni, e accedere alle singole schede. La consultazione non cambia lo stato della carriera.
 
