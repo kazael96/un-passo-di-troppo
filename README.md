@@ -93,6 +93,10 @@ Gli assistiti dai 35 anni annunciano il ritiro con 12 settimane di preavviso. Do
 Gli ex assistiti con fiducia finale almeno 50 possono diventare mentori: 3.000 euro iniziali, una azione e 250 euro di stipendio settimanale. Massimo due mentori, ciascuno assegnabile a un giovane fino a 23 anni. Il supporto aumenta la fiducia e può contribuire alla crescita ogni otto settimane, senza superare il potenziale. La collaborazione può essere terminata pagando due settimane di stipendio.
 
 ## Taccuino, guida e recupero
+
 La scheda di ogni calciatore contiene appunti personali fino a 1.500 caratteri, modificabili senza consumare azioni e inclusi nei file esportati. Una guida nell’Ufficio e nell’Agenzia riassume mandati, trattative, crescita e incassi.
 
 Il browser conserva anche il salvataggio valido precedente all’ultima modifica. Se il principale risulta danneggiato, il gioco prova a recuperare questa copia all’avvio. Nell’Agenzia puoi ripristinarla manualmente dopo una conferma. È una sola copia locale: esporta la partita per conservarla separatamente o trasferirla su un altro dispositivo.
+
+## Agenda dell’agente
+Nell’Ufficio puoi creare promemoria gratuiti, generali o collegati a un assistito, con scadenze fino a 52 settimane. Le attività imminenti entrano nel piano settimanale; quelle scadute generano un avviso prima di avanzare, senza bloccare la carriera. Puoi completarle e consultare le ultime dieci attività concluse, oppure svuotare i completati. Limite totale: 100 promemoria. Il nome dell’assistito resta nel promemoria anche dopo la sua uscita dall’agenzia. L’agenda è inclusa nei salvataggi e nelle esportazioni.
