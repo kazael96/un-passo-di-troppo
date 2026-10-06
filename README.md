@@ -65,3 +65,8 @@ Ricerca calciatori per nome e confronto di massimo tre profili tra assistiti e c
 Il piano settimanale ordina scadenze delle trattative, mandati, fiducia bassa, richieste urgenti e riserva di cassa; ogni voce apre la relativa attività. Consultarlo non usa azioni.
 
 Il riepilogo economico separa incassi, spese e saldo dei movimenti della stagione. Usa i 250 movimenti conservati e segnala quando il dettaglio potrebbe essere incompleto.
+
+## Mandati della concorrenza
+Da Club e contatti puoi incontrare gli assistiti di altre agenzie. L’incontro costa 1.200 euro e una azione: se il calciatore è interessato, compare nello Scouting e richiede poi la firma del mandato. In caso di rifiuto puoi ricontattarlo dopo quattro settimane. La firma rimuove il calciatore dalla simulazione degli assistiti rivali, evitando trasferimenti autonomi del tuo assistito.
+
+I tornei giovanili costano 2.500 euro e una azione; dopo due settimane producono tre profili di 17–20 anni. Il piano settimanale segnala anche i contratti sportivi prossimi alla scadenza.
