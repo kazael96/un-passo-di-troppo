@@ -85,3 +85,8 @@ La revisione dei mandati raccoglie le scadenze entro 12 settimane e consente i r
 Scegli tra Equilibrata, Giovani, Relazioni e Trattative. Il cambio costa 5.000 euro e una azione, con attesa di otto settimane tra due cambi. Giovani migliora i rapporti iniziali dei nuovi profili fino a 21 anni; Relazioni sostiene la fiducia settimanale; Trattative aggiunge cinque punti percentuali alla possibilità di accordo con i club, entro il limite del 95%.
 
 Ogni otto settimane puoi ricevere un’intervista simulata: scegli se parlare di carriere, affari o risultati, con effetti espliciti sulla reputazione. Le interviste non pubblicano comunicazioni reali.
+
+## Ritiro e mentori
+Gli assistiti dai 35 anni annunciano il ritiro con 12 settimane di preavviso. Dopo l’annuncio non si aprono nuovi contratti; il ritiro chiude mandati, sponsor e attività collegate. La carriera viene conservata nell’albo degli ex assistiti.
+
+Gli ex assistiti con fiducia finale almeno 50 possono diventare mentori: 3.000 euro iniziali, una azione e 250 euro di stipendio settimanale. Massimo due mentori, ciascuno assegnabile a un giovane fino a 23 anni. Il supporto aumenta la fiducia e può contribuire alla crescita ogni otto settimane, senza superare il potenziale. La collaborazione può essere terminata pagando due settimane di stipendio.
