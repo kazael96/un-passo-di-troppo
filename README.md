@@ -103,6 +103,12 @@ Il browser conserva anche il salvataggio valido precedente all’ultima modifica
 Nell’Ufficio puoi creare promemoria gratuiti, generali o collegati a un assistito, con scadenze fino a 52 settimane. Le attività imminenti entrano nel piano settimanale; quelle scadute generano un avviso prima di avanzare, senza bloccare la carriera. Puoi completarle e consultare le ultime dieci attività concluse, oppure svuotare i completati. Limite totale: 100 promemoria. Il nome dell’assistito resta nel promemoria anche dopo la sua uscita dall’agenzia. L’agenda è inclusa nei salvataggi e nelle esportazioni.
 
 ## Laboratorio trattative
+
 La sezione Trattative confronta le offerte valide per lo stesso assistito, ordinate per gradimento e poi commissione. Mostra stipendio, minutaggio, durata, fase, scadenza, budget e ripartizione delle commissioni.
 
 Ogni proposta ha una simulazione gratuita di stipendio, minutaggio e percentuale dell’agenzia: i risultati aggiornano gradimento, probabilità di accordo con il club e incassi previsti, senza modificare l’offerta né consumare azioni. Le percentuali riguardano singole fasi, non il successo complessivo. Per inviare davvero condizioni diverse occorre usare la controfferta normale.
+
+## Traguardi dell’agenzia
+Cinque obiettivi offrono premi di gioco una sola volta per carriera: primo contratto (2.000 euro), accordi con tre club diversi nello storico (6.000 euro), tre assistiti contemporanei con fiducia almeno 80 (3.000 euro), tre assistiti contemporanei fino a 21 anni (4.000 euro), seconda stagione con carriera attiva (5.000 euro). Il progresso è visibile nell’Agenzia; l’Ufficio segnala i premi disponibili.
+
+I risultati raggiunti restano sbloccati anche dopo cambiamenti della scuderia. Riscattare non consuma azioni; i premi compaiono nel bilancio e sono registrati nel salvataggio. Una carriera terminata non può riscattare premi. Per le carriere precedenti vengono riconosciuti i risultati verificabili nello stato e nello storico disponibili, senza ricostruire eventi mancanti.
