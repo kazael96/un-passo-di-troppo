@@ -58,3 +58,10 @@ Ogni assistito può concordare un piano di carriera di 16 settimane: diventare t
 Le sponsorizzazioni individuali richiedono fiducia e disponibilità. L’agenzia riceve 400 euro alla firma e 100 euro alla settimana per 8 o 12 settimane. Gli incassi si sospendono quando il giocatore è infortunato e terminano quando lascia l’agenzia. La previsione di cassa include gli accordi attivi dei giocatori disponibili.
 
 L’Ufficio offre un archivio delle ultime 200 comunicazioni, con ricerca, categorie e stato letto/non letto.
+
+## Strumenti di decisione
+Ricerca calciatori per nome e confronto di massimo tre profili tra assistiti e candidati. La selezione per il confronto vale per la sessione corrente.
+
+Il piano settimanale ordina scadenze delle trattative, mandati, fiducia bassa, richieste urgenti e riserva di cassa; ogni voce apre la relativa attività. Consultarlo non usa azioni.
+
+Il riepilogo economico separa incassi, spese e saldo dei movimenti della stagione. Usa i 250 movimenti conservati e segnala quando il dettaglio potrebbe essere incompleto.
