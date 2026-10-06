@@ -166,3 +166,7 @@ Puoi salvare fino a cinque ricerche mirate con un nome. Le ricerche conservano i
 ## Struttura e carico dello staff
 Agenzia mostra la ripartizione dei costi settimanali tra sede, assistiti, ampliamenti, collaboratori e mentori, più la proiezione su otto settimane a struttura invariata. Il cruscotto raccoglie capacità, azioni massime, stipendi, liquidazioni e incarichi delegati con consegna. È una consultazione gratuita; assunzioni, assegnazioni e liquidazioni restano nei comandi già disponibili.
 
+
+## Pianificazione delle finestre
+Il Calendario mostra la finestra attuale o la prossima apertura e confronta le scadenze delle proposte di trasferimento e prestito con la chiusura. Nelle ultime due settimane di mercato l’Ufficio mostra un richiamo. Il conteggio include la settimana attuale; svincolati e rinnovi restano disponibili tutto l’anno. Le proposte non vengono prorogate automaticamente.
+
