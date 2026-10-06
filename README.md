@@ -126,7 +126,11 @@ Assistiti e Scouting permettono di filtrare svincolati o contratti sportivi in s
 Il Calendario raccoglie mandati, contratti sportivi, rientri dai prestiti e ritiri in una vista ordinata con orizzonte di 12, 26 o 52 settimane e accesso alle schede. Il rientro dal prestito sostituisce in questa vista la scadenza del contratto della destinazione temporanea. Anche i profili nello Scouting diventano ora svincolati quando scade il contratto, al passaggio alla settimana successiva.
 
 ## Panoramica della scuderia
+
 Assistiti offre un riepilogo gratuito dell’intera scuderia, indipendente dalla ricerca corrente: età, qualità e fiducia medie; distribuzione per ruolo e fascia d’età; valore sportivo stimato complessivo. Il valore non è cassa dell’agenzia né un incasso garantito.
 
 Puoi aprire i gruppi con fiducia sotto 45, infortunati, mandati entro otto settimane, svincolati o giovani fino a 21 anni, e accedere alle singole schede. La consultazione non cambia lo stato della carriera.
+
+## Bollettino del mercato
+Club e contatti conserva gli ultimi 60 trasferimenti effettivi dei giocatori delle agenzie rivali e cambi di allenatore. Il bollettino si aggiorna dopo l’avanzamento della settimana, offre filtri per tipo di notizia ed è incluso nel salvataggio. Gli eventi precedenti all’aggiornamento non sono ricostruiti. È stata corretta la vecchia notizia di operazione rivale: ora compare solo quando il trasferimento avviene davvero.
 
