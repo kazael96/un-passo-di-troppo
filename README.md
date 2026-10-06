@@ -146,3 +146,7 @@ Scouting permette di combinare ruolo, età limite, qualità minima e bonus massi
 ## Concorrenza per il posto
 Le schede dei calciatori permettono di analizzare la concorrenza in ogni club: giocatori delle agenzie rivali e altri tuoi assistiti nello stesso ruolo, qualità, priorità dell’allenatore e spazio orientativo. Il profilo analizzato e il suo eventuale profilo rivale d’origine sono esclusi dal conteggio. La rosa simulata è parziale e la stima non è una promessa di minutaggio. La consultazione è gratuita.
 
+
+## Riepilogo prima della firma
+Ogni trattativa ha un riepilogo gratuito di stipendio, durata, minutaggio, bonus, clausola e commissioni immediate e differite. La verifica segnala consensi mancanti, budget insufficiente, offerta o mandato scaduti, ritiro annunciato e finestra chiusa. Alla fase finale questi ostacoli bloccano la firma prima di consumare una azione. La consultazione non firma il contratto.
+
