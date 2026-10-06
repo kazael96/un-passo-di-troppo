@@ -37,3 +37,10 @@ Le prestazioni individuali sono simulate come presenze, gol e assist. I risultat
 - Tabelle trasformate in schede sui dispositivi stretti.
 
 Il campionato è una competizione internazionale fittizia unica: non include ancora piramidi nazionali o promozioni e retrocessioni. La concorrenza tra agenzie e le prestazioni individuali rimangono semplificate.
+
+## Colloqui, incarichi e dossier
+I colloqui personali offrono risposte con effetti sulla fiducia: ascolto, promessa di un nuovo club o richiesta di pazienza. Le promesse hanno scadenze e conseguenze.
+
+I club pubblicano incarichi con ruolo, qualità minima, scadenza e premio. Accettare usa un’azione; un nuovo accordo compatibile completa l’incarico. I rinnovi non danno diritto al premio. Gli incarichi scaduti riducono una sola volta l’affidabilità.
+
+I dossier delle trattative raccolgono condizioni, stato e informazioni ottenute tramite contatti. Ogni settimana l’Ufficio presenta un riepilogo dei cambiamenti e della cassa.
