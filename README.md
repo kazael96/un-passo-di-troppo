@@ -99,4 +99,10 @@ La scheda di ogni calciatore contiene appunti personali fino a 1.500 caratteri, 
 Il browser conserva anche il salvataggio valido precedente all’ultima modifica. Se il principale risulta danneggiato, il gioco prova a recuperare questa copia all’avvio. Nell’Agenzia puoi ripristinarla manualmente dopo una conferma. È una sola copia locale: esporta la partita per conservarla separatamente o trasferirla su un altro dispositivo.
 
 ## Agenda dell’agente
+
 Nell’Ufficio puoi creare promemoria gratuiti, generali o collegati a un assistito, con scadenze fino a 52 settimane. Le attività imminenti entrano nel piano settimanale; quelle scadute generano un avviso prima di avanzare, senza bloccare la carriera. Puoi completarle e consultare le ultime dieci attività concluse, oppure svuotare i completati. Limite totale: 100 promemoria. Il nome dell’assistito resta nel promemoria anche dopo la sua uscita dall’agenzia. L’agenda è inclusa nei salvataggi e nelle esportazioni.
+
+## Laboratorio trattative
+La sezione Trattative confronta le offerte valide per lo stesso assistito, ordinate per gradimento e poi commissione. Mostra stipendio, minutaggio, durata, fase, scadenza, budget e ripartizione delle commissioni.
+
+Ogni proposta ha una simulazione gratuita di stipendio, minutaggio e percentuale dell’agenzia: i risultati aggiornano gradimento, probabilità di accordo con il club e incassi previsti, senza modificare l’offerta né consumare azioni. Le percentuali riguardano singole fasi, non il successo complessivo. Per inviare davvero condizioni diverse occorre usare la controfferta normale.
