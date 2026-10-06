@@ -1,13 +1,9 @@
-# Un passo di troppo
+# King Agent
 
-Puzzle per browser in italiano. Raccogli tutte le stelle e raggiungi l'uscita: le caselle scompaiono quando le lasci.
+Gestionale di un’agenzia di calciatori per browser, in italiano.
 
-## Gioca
-Apri index.html in un browser. Non richiede installazione, dipendenze o connessione.
+Apri index.html nel browser: nessuna installazione o dipendenza.
 
-Frecce o WASD: movimento. R: ricomincia. Puoi anche toccare una casella adiacente o usare i pulsanti direzionali.
+Firma talenti, invia scout, allena i tuoi assistiti e negozia i trasferimenti. Ogni settimana hai 3 azioni: guadagni il 10% dei trasferimenti e paghi i costi dell’agenzia. Mantieni la fiducia dei giocatori per non perderli.
 
-10 livelli, suggerimenti calcolati con ricerca del percorso e progressi salvati localmente nel browser.
-
-## Pubblicazione
-Il progetto è statico: index.html può essere ospitato su GitHub Pages o qualsiasi hosting statico.
+Obiettivo: raggiungi 200.000 euro di cassa e 60 di reputazione in 24 settimane. I giocatori e i club sono inventati. Salvataggio automatico locale; Nuova partita sostituisce il salvataggio dopo conferma.
