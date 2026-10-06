@@ -158,3 +158,7 @@ Ufficio e Assistiti raccolgono gli impegni degli assistiti attuali, filtrabili p
 ## Scadenzario delle commissioni
 Agenzia offre una vista delle rate di commissioni già concluse, raggruppate per settimana, con orizzonti di 4, 8, 26 settimane o tutte le rate. Mostra il totale selezionato e il totale ancora da incassare, separati dalla cassa. Le eventuali scadenze già raggiunte vengono indicate per il prossimo avanzamento, coerentemente con il pagamento effettivo. Le anteprime usano ora lo stesso arrotondamento dell’anticipo del gioco.
 
+
+## Ricerche salvate
+Puoi salvare fino a cinque ricerche mirate con un nome. Le ricerche conservano i criteri e ricalcolano i risultati sui profili disponibili. Il bonus massimo è un importo fisso salvato, non segue automaticamente la cassa. Ricerche e nomi sono inclusi nei salvataggi e possono essere rimossi dalla lista.
+
