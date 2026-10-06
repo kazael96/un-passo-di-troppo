@@ -20,6 +20,7 @@ dialog{background:#14212d;color:var(--ink);border:1px solid #466457;border-radiu
 @media(prefers-reduced-motion:reduce){button{transition:none}button:hover:not(:disabled){transform:none}}
 
 /* Football identity: pitch geometry, role crests and stronger hierarchy. */
+.section-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px}.section-heading h2{font-size:23px;margin:0;letter-spacing:-.5px}.quick-start{border-color:#497961;margin-bottom:18px}.quick-start h2{font-size:22px;margin:0 0 12px}.quick-start p{color:#bdcdd4}.quick-start .actions{flex-wrap:wrap}.nav-tools summary{min-height:36px}.nav-section summary{min-height:36px}#content{scroll-margin-top:85px}@media(max-width:650px){.quick-start .actions>button{width:100%}.section-heading button{font-size:11px}.section-heading h2{font-size:21px}}
 header .logo:before{content:'♛';color:var(--gold);font-size:29px;margin-right:12px;vertical-align:middle}
 .hero{min-height:215px;background:linear-gradient(100deg,#173d35 0%,#10252e 62%,#174939 100%);border-color:#527a62;box-shadow:0 20px 60px #0005,inset 0 1px #b6efbc22}
 .hero:after{width:290px;height:180px;right:35px;top:18px;border:1px solid #91dcb44d;border-radius:3px;box-shadow:inset 0 0 0 22px #b0e3b309;transform:rotate(-12deg);background:linear-gradient(90deg,transparent 49.7%,#b4e5b333 50%,transparent 50.3%),radial-gradient(circle at center,transparent 35px,#b4e5b344 36px,transparent 37px);opacity:.65}
