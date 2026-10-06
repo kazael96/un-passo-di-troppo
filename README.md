@@ -75,3 +75,8 @@ I tornei giovanili costano 2.500 euro e una azione; dopo due settimane producono
 La sezione Assistiti permette di monitorare i giocatori in prestito e richiederne il rientro anticipato: 1.500 euro e una azione, con possibilità di rifiuto dei club. Dopo un rifiuto serve attendere quattro settimane. Il rientro ripristina il contratto d’origine; se già scaduto, il calciatore torna svincolato. Non si possono avviare nuove operazioni mentre il giocatore è in prestito.
 
 Ogni quattro settimane la scheda del giocatore registra qualità, minutaggio, forma e fiducia. Conserva fino a 36 rilevazioni e mostra le sei più recenti.
+
+## Gestione della scuderia
+Colloqui di gruppo con massimo tre assistiti: una azione, 500 euro per partecipante e +6 fiducia. L’interfaccia propone per primi gli assistiti con meno fiducia.
+
+La revisione dei mandati raccoglie le scadenze entro 12 settimane e consente i rinnovi singoli. Il Calendario conserva anche le condizioni dei nuovi accordi: giocatore, club, operazione, stipendio, durata e commissione totale dell’agenzia. I vecchi accordi mantengono lo storico generale senza ricostruire condizioni mancanti.
