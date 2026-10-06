@@ -154,3 +154,7 @@ Ogni trattativa ha un riepilogo gratuito di stipendio, durata, minutaggio, bonus
 ## Registro delle promesse
 Ufficio e Assistiti raccolgono gli impegni degli assistiti attuali, filtrabili per aperti, mantenuti e non mantenuti. Il registro mostra scadenze e fiducia e apre le schede individuali. Le promesse aperte entro due settimane entrano nelle priorità. La consultazione è gratuita e usa gli esiti già registrati dalla simulazione, senza ricostruire impegni di ex assistiti.
 
+
+## Scadenzario delle commissioni
+Agenzia offre una vista delle rate di commissioni già concluse, raggruppate per settimana, con orizzonti di 4, 8, 26 settimane o tutte le rate. Mostra il totale selezionato e il totale ancora da incassare, separati dalla cassa. Le eventuali scadenze già raggiunte vengono indicate per il prossimo avanzamento, coerentemente con il pagamento effettivo. Le anteprime usano ora lo stesso arrotondamento dell’anticipo del gioco.
+
