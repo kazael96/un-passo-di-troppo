@@ -142,3 +142,7 @@ Scouting offre un taccuino dei preferiti con qualità e valore stimato confronta
 ## Ricerca mirata dei talenti
 Scouting permette di combinare ruolo, età limite, qualità minima e bonus massimo sui profili già scoperti. Puoi ordinare per qualità o costo. I risultati mostrano la cassa dopo il bonus e i costi correnti dell’agenzia, con accesso alle schede e alla discussione del mandato. La ricerca è gratuita; capacità, cassa e azioni limitano l’apertura del mandato, che resta soggetto al consenso del giocatore. Sono mostrati al massimo 12 risultati.
 
+
+## Concorrenza per il posto
+Le schede dei calciatori permettono di analizzare la concorrenza in ogni club: giocatori delle agenzie rivali e altri tuoi assistiti nello stesso ruolo, qualità, priorità dell’allenatore e spazio orientativo. Il profilo analizzato e il suo eventuale profilo rivale d’origine sono esclusi dal conteggio. La rosa simulata è parziale e la stima non è una promessa di minutaggio. La consultazione è gratuita.
+
