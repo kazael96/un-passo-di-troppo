@@ -162,3 +162,7 @@ Agenzia offre una vista delle rate di commissioni già concluse, raggruppate per
 ## Ricerche salvate
 Puoi salvare fino a cinque ricerche mirate con un nome. Le ricerche conservano i criteri e ricalcolano i risultati sui profili disponibili. Il bonus massimo è un importo fisso salvato, non segue automaticamente la cassa. Ricerche e nomi sono inclusi nei salvataggi e possono essere rimossi dalla lista.
 
+
+## Struttura e carico dello staff
+Agenzia mostra la ripartizione dei costi settimanali tra sede, assistiti, ampliamenti, collaboratori e mentori, più la proiezione su otto settimane a struttura invariata. Il cruscotto raccoglie capacità, azioni massime, stipendi, liquidazioni e incarichi delegati con consegna. È una consultazione gratuita; assunzioni, assegnazioni e liquidazioni restano nei comandi già disponibili.
+
