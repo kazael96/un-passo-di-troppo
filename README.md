@@ -174,3 +174,7 @@ Il Calendario mostra la finestra attuale o la prossima apertura e confronta le s
 ## Navigazione semplificata
 Le sezioni lunghe di Ufficio, Agenzia, Club e Calendario sono organizzate in pannelli apribili. Gli strumenti secondari della scuderia, dello scouting e delle trattative sono raccolti in un menu compatto. I pannelli ricordano apertura e chiusura durante la sessione. Ogni sezione ha una breve descrizione e la barra di navigazione scorre sui piccoli schermi.
 
+
+## Stile grafico
+Tema blu notte e verde smeraldo con dettagli oro, schede e indicatori ridisegnati, pannelli compatti e layout adattivo. Le animazioni rispettano la preferenza di movimento ridotto. Lo stile è incorporato nella pagina standalone ed è disponibile anche in style.css.
+
