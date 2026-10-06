@@ -114,7 +114,13 @@ Cinque obiettivi offrono premi di gioco una sola volta per carriera: primo contr
 I risultati raggiunti restano sbloccati anche dopo cambiamenti della scuderia. Riscattare non consuma azioni; i premi compaiono nel bilancio e sono registrati nel salvataggio. Una carriera terminata non può riscattare premi. Per le carriere precedenti vengono riconosciuti i risultati verificabili nello stato e nello storico disponibili, senza ricostruire eventi mancanti.
 
 ## Diario contatti e opportunità
+
 Gli incontri con lo stesso club richiedono ora due settimane di attesa. Restano invariati il costo di 1.000 euro, una azione e il guadagno di 12 punti di relazione, fino a 100. Il diario conserva gli ultimi otto incontri e il valore della relazione raggiunto, senza ricostruire incontri passati.
 
 Club e contatti raccoglie anche le corrispondenze tra ruoli richiesti e assistiti. Evidenzia ritiri annunciati, prestiti, attese tra operazioni, finestre chiuse e trattative già aperte. Non garantisce budget o consensi: la verifica resta nella proposta. Le consultazioni sono gratuite e i diari sono inclusi nei salvataggi.
+
+## Preparazione delle scadenze
+Assistiti e Scouting permettono di filtrare svincolati o contratti sportivi in scadenza entro 12 o 26 settimane, insieme ai filtri esistenti. Azzera ricerca ripristina anche questo filtro.
+
+Il Calendario raccoglie mandati, contratti sportivi, rientri dai prestiti e ritiri in una vista ordinata con orizzonte di 12, 26 o 52 settimane e accesso alle schede. Il rientro dal prestito sostituisce in questa vista la scadenza del contratto della destinazione temporanea. Anche i profili nello Scouting diventano ora svincolati quando scade il contratto, al passaggio alla settimana successiva.
 
