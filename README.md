@@ -80,3 +80,8 @@ Ogni quattro settimane la scheda del giocatore registra qualità, minutaggio, fo
 Colloqui di gruppo con massimo tre assistiti: una azione, 500 euro per partecipante e +6 fiducia. L’interfaccia propone per primi gli assistiti con meno fiducia.
 
 La revisione dei mandati raccoglie le scadenze entro 12 settimane e consente i rinnovi singoli. Il Calendario conserva anche le condizioni dei nuovi accordi: giocatore, club, operazione, stipendio, durata e commissione totale dell’agenzia. I vecchi accordi mantengono lo storico generale senza ricostruire condizioni mancanti.
+
+## Identità e stampa
+Scegli tra Equilibrata, Giovani, Relazioni e Trattative. Il cambio costa 5.000 euro e una azione, con attesa di otto settimane tra due cambi. Giovani migliora i rapporti iniziali dei nuovi profili fino a 21 anni; Relazioni sostiene la fiducia settimanale; Trattative aggiunge cinque punti percentuali alla possibilità di accordo con i club, entro il limite del 95%.
+
+Ogni otto settimane puoi ricevere un’intervista simulata: scegli se parlare di carriere, affari o risultati, con effetti espliciti sulla reputazione. Le interviste non pubblicano comunicazioni reali.
