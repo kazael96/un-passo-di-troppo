@@ -70,3 +70,8 @@ Il riepilogo economico separa incassi, spese e saldo dei movimenti della stagion
 Da Club e contatti puoi incontrare gli assistiti di altre agenzie. L’incontro costa 1.200 euro e una azione: se il calciatore è interessato, compare nello Scouting e richiede poi la firma del mandato. In caso di rifiuto puoi ricontattarlo dopo quattro settimane. La firma rimuove il calciatore dalla simulazione degli assistiti rivali, evitando trasferimenti autonomi del tuo assistito.
 
 I tornei giovanili costano 2.500 euro e una azione; dopo due settimane producono tre profili di 17–20 anni. Il piano settimanale segnala anche i contratti sportivi prossimi alla scadenza.
+
+## Monitoraggio prestiti e rendimento
+La sezione Assistiti permette di monitorare i giocatori in prestito e richiederne il rientro anticipato: 1.500 euro e una azione, con possibilità di rifiuto dei club. Dopo un rifiuto serve attendere quattro settimane. Il rientro ripristina il contratto d’origine; se già scaduto, il calciatore torna svincolato. Non si possono avviare nuove operazioni mentre il giocatore è in prestito.
+
+Ogni quattro settimane la scheda del giocatore registra qualità, minutaggio, forma e fiducia. Conserva fino a 36 rilevazioni e mostra le sei più recenti.
