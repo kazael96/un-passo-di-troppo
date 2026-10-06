@@ -138,3 +138,7 @@ Club e contatti conserva gli ultimi 60 trasferimenti effettivi dei giocatori del
 ## Talenti seguiti
 Scouting offre un taccuino dei preferiti con qualità e valore stimato confrontati con la prima rilevazione, cambi di club e contratto residuo. Seguire un talento è gratuito e non rivela il potenziale nascosto. Smettere di seguirlo elimina la rilevazione; seguirlo di nuovo crea un nuovo riferimento. I vecchi preferiti partono dai dati disponibili al primo caricamento dell’aggiornamento. I riferimenti sono inclusi nei salvataggi.
 
+
+## Ricerca mirata dei talenti
+Scouting permette di combinare ruolo, età limite, qualità minima e bonus massimo sui profili già scoperti. Puoi ordinare per qualità o costo. I risultati mostrano la cassa dopo il bonus e i costi correnti dell’agenzia, con accesso alle schede e alla discussione del mandato. La ricerca è gratuita; capacità, cassa e azioni limitano l’apertura del mandato, che resta soggetto al consenso del giocatore. Sono mostrati al massimo 12 risultati.
+
