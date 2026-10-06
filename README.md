@@ -150,3 +150,7 @@ Le schede dei calciatori permettono di analizzare la concorrenza in ogni club: g
 ## Riepilogo prima della firma
 Ogni trattativa ha un riepilogo gratuito di stipendio, durata, minutaggio, bonus, clausola e commissioni immediate e differite. La verifica segnala consensi mancanti, budget insufficiente, offerta o mandato scaduti, ritiro annunciato e finestra chiusa. Alla fase finale questi ostacoli bloccano la firma prima di consumare una azione. La consultazione non firma il contratto.
 
+
+## Registro delle promesse
+Ufficio e Assistiti raccolgono gli impegni degli assistiti attuali, filtrabili per aperti, mantenuti e non mantenuti. Il registro mostra scadenze e fiducia e apre le schede individuali. Le promesse aperte entro due settimane entrano nelle priorità. La consultazione è gratuita e usa gli esiti già registrati dalla simulazione, senza ricostruire impegni di ex assistiti.
+
