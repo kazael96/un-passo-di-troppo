@@ -112,3 +112,9 @@ Ogni proposta ha una simulazione gratuita di stipendio, minutaggio e percentuale
 Cinque obiettivi offrono premi di gioco una sola volta per carriera: primo contratto (2.000 euro), accordi con tre club diversi nello storico (6.000 euro), tre assistiti contemporanei con fiducia almeno 80 (3.000 euro), tre assistiti contemporanei fino a 21 anni (4.000 euro), seconda stagione con carriera attiva (5.000 euro). Il progresso è visibile nell’Agenzia; l’Ufficio segnala i premi disponibili.
 
 I risultati raggiunti restano sbloccati anche dopo cambiamenti della scuderia. Riscattare non consuma azioni; i premi compaiono nel bilancio e sono registrati nel salvataggio. Una carriera terminata non può riscattare premi. Per le carriere precedenti vengono riconosciuti i risultati verificabili nello stato e nello storico disponibili, senza ricostruire eventi mancanti.
+
+## Diario contatti e opportunità
+Gli incontri con lo stesso club richiedono ora due settimane di attesa. Restano invariati il costo di 1.000 euro, una azione e il guadagno di 12 punti di relazione, fino a 100. Il diario conserva gli ultimi otto incontri e il valore della relazione raggiunto, senza ricostruire incontri passati.
+
+Club e contatti raccoglie anche le corrispondenze tra ruoli richiesti e assistiti. Evidenzia ritiri annunciati, prestiti, attese tra operazioni, finestre chiuse e trattative già aperte. Non garantisce budget o consensi: la verifica resta nella proposta. Le consultazioni sono gratuite e i diari sono inclusi nei salvataggi.
+
