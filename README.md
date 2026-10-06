@@ -51,3 +51,10 @@ Lo staff può ricevere attività da completare la settimana successiva: seguire 
 Gli incarichi attivi dei club mostrano gli assistiti compatibili e permettono una proposta diretta. Il rapporto di fine stagione riassume accordi, fiducia media e cassa, con valutazione A/B/C.
 
 La nuova carriera permette di scegliere Rilassata, Normale o Impegnativa: cambia la cassa iniziale (100.000, 65.000 o 40.000 euro), non le probabilità delle trattative.
+
+## Piani personali e sponsorizzazioni
+Ogni assistito può concordare un piano di carriera di 16 settimane: diventare titolare, migliorare la qualità o ottenere un contratto più lungo. L’obiettivo raggiunto aumenta fiducia e reputazione; quello mancato riduce la fiducia. Gli effetti si applicano una sola volta.
+
+Le sponsorizzazioni individuali richiedono fiducia e disponibilità. L’agenzia riceve 400 euro alla firma e 100 euro alla settimana per 8 o 12 settimane. Gli incassi si sospendono quando il giocatore è infortunato e terminano quando lascia l’agenzia. La previsione di cassa include gli accordi attivi dei giocatori disponibili.
+
+L’Ufficio offre un archivio delle ultime 200 comunicazioni, con ricerca, categorie e stato letto/non letto.
