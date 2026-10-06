@@ -44,3 +44,10 @@ I colloqui personali offrono risposte con effetti sulla fiducia: ascolto, promes
 I club pubblicano incarichi con ruolo, qualità minima, scadenza e premio. Accettare usa un’azione; un nuovo accordo compatibile completa l’incarico. I rinnovi non danno diritto al premio. Gli incarichi scaduti riducono una sola volta l’affidabilità.
 
 I dossier delle trattative raccolgono condizioni, stato e informazioni ottenute tramite contatti. Ogni settimana l’Ufficio presenta un riepilogo dei cambiamenti e della cassa.
+
+## Organizzazione e obiettivi
+Lo staff può ricevere attività da completare la settimana successiva: seguire il rapporto con un assistito o migliorare il dossier tecnico. Ogni collaboratore segue una sola attività alla volta. Le attività vengono cancellate se il collaboratore o il giocatore lascia l’agenzia.
+
+Gli incarichi attivi dei club mostrano gli assistiti compatibili e permettono una proposta diretta. Il rapporto di fine stagione riassume accordi, fiducia media e cassa, con valutazione A/B/C.
+
+La nuova carriera permette di scegliere Rilassata, Normale o Impegnativa: cambia la cassa iniziale (100.000, 65.000 o 40.000 euro), non le probabilità delle trattative.
