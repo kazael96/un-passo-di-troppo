@@ -206,3 +206,20 @@ body #modal .comparison-card button{margin:0;width:100%;white-space:normal}.comp
 body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;padding:10px 8px;white-space:normal;line-height:1.4;min-height:52px}
 .comparison-actions .button-wrap{max-width:100%;width:100%;font-size:11px}
 .result-money .agreement-fact{min-width:0}.result-money strong{overflow-wrap:anywhere}
+/* All research results keep the same structure, including blocked signings. */
+.simple-experience button.search-row{width:100%;max-width:none;grid-template-columns:52px minmax(0,1fr) auto;column-gap:16px;row-gap:12px;text-align:left;box-sizing:border-box}
+.simple-experience button.search-row:disabled{opacity:1;color:#eef5f4;background:#203543;cursor:default}
+.simple-experience button.search-row:disabled::before,.simple-experience button.search-row:disabled::after{content:none;display:none}
+.search-row .client-info,.search-row .client-rating{min-width:0}
+.search-row .client-rating{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.search-row .client-rating b{display:inline-block;white-space:nowrap;width:auto;max-width:none}
+.search-row .client-bottom{white-space:normal;line-height:1.5;overflow-wrap:anywhere}
+.search-row .search-blocked{color:#f0d9a0}
+@media(max-width:650px){
+ .simple-experience button.search-row{grid-template-columns:52px minmax(0,1fr);column-gap:14px;row-gap:10px;padding:14px}
+ .search-row>.player-portrait{grid-column:1;grid-row:1}
+ .search-row .client-info{grid-column:2;grid-row:1}
+ .search-row .client-rating{grid-column:2;grid-row:2;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-start;text-align:left;gap:8px 12px}
+ .search-row .client-rating small{font-size:12px;line-height:1.5}
+ .search-row .client-bottom{grid-column:1/-1;grid-row:3;font-size:12px}
+}
