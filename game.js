@@ -635,6 +635,60 @@ const accountRender=render;
 render=()=>{accountRender();if(!simpleMode)return;const c=$('content');if(tab==='office')c.append(btn(accountSession.user?'Il mio account':'Accedi / Registrati',()=>accountDialog(),'','launcher-account'));if(tab==='agency'){const panel=el('section',undefined,'account-settings');panel.append(el('h2','Account'),el('p',accountSession.user?(accountSession.user.email||'Accesso con Google'):'Accedi con email e password oppure con Google.'),btn(accountSession.user?'Gestisci account':'Accedi / Registrati',()=>accountDialog()));c.append(panel)}};
 const accountBoot=boot;boot=()=>{accountBoot();if(accountConfigured())loadAccount().catch(()=>{})};
 
+/* Requests connect club needs to the agency's available players. */
+let requestScope='matched';
+function requestProposalBlock(p,c){
+ if(state.offers.some(o=>o.pid===p.id&&o.cid===c.id))return 'Proposta già aperta';
+ if(p.mandate<=state.week)return 'Mandato scaduto';
+ if(p.retireAt)return 'Ritiro annunciato';
+ if(p.loan)return 'Calciatore in prestito';
+ if(p.cooldown>state.week)return 'Disponibile tra '+(p.cooldown-state.week)+' settimane';
+ if(p.club!==null&&!marketOpen())return 'Mercato chiuso: attendi la prossima apertura';
+ if(p.club!==null&&c.budget<Math.round(value(p)*.8))return 'Budget del club insufficiente';
+ return proposalBlock();
+}
+function requestMatches(c){return state.players.filter(p=>p.role===c.need&&p.club!==c.id).map(p=>({p,reason:requestProposalBlock(p,c)})).sort((a,b)=>Number(!!a.reason)-Number(!!b.reason)||b.p.skill-a.p.skill)}
+function requestProposal(p,c){
+ const reason=requestProposalBlock(p,c);if(reason){notice=reason;render();return}
+ const type=p.club===null?'Svincolato':'Trasferimento';
+ ask('Proponi '+p.name, p.name+' → '+c.name+'. Il club cerca un '+c.need.toLocaleLowerCase('it')+'. Aprire la proposta è gratuito e non consuma azioni. Club e calciatore dovranno accettare; la firma usa 1 azione.',()=>{
+  const current=state.players.find(q=>q.id===p.id),club=state.clubs.find(q=>q.id===c.id);
+  if(!current||!club){notice='Il calciatore o il club non è più disponibile.';render();return}
+  const blocked=requestProposalBlock(current,club);if(blocked){notice=blocked;render();return}
+  if(openProposal(current,club,type)){notice='Proposta inviata: valuta le condizioni in Accordi.';log('Proposta aperta con '+club.name+' per '+current.name+'.');goSection('offers')}
+ });$('confirm').textContent='Invia proposta';
+}
+function requestPlayerRow(match,c){
+ const {p,reason}=match,row=el('div',undefined,'request-player');
+ const who=el('div',undefined,'request-player-who'),info=el('div');info.append(el('strong',p.name),el('small','Qualità '+p.skill+'/100 · '+clubOf(p)));who.append(playerPortrait(p),info);row.append(who);
+ if(reason)row.append(el('p',reason,'request-reason'));
+ if(reason==='Proposta già aperta')row.append(btn('Apri accordi',()=>goSection('offers'),'','request-action'));
+ else{const action=el('button','Proponi '+p.name,'primary request-action');action.type='button';action.disabled=!!reason;action.onclick=()=>requestProposal(p,c);row.append(action)}
+ return row;
+}
+const requestsRender=render;
+render=()=>{
+ requestsRender();if(!simpleMode||tab!=='clublist')return;
+ const c=$('content');c.replaceChildren(btn('← Menu principale',()=>goSection('office'),'','launcher-back'),el('h2','Richieste'));
+ const ready=state.clubs.filter(club=>requestMatches(club).some(m=>!m.reason)).length;
+ const summary=el('div',undefined,'request-overview');summary.append(el('strong',ready?ready+(ready===1?' club cerca un tuo calciatore':' club cercano i tuoi calciatori'):'Nessuna proposta disponibile ora'),el('p','Scegli un club e proponi il calciatore. Aprire la proposta è gratuito.'));c.append(summary);
+ if(notice)c.append(el('p',notice,'notice'));
+ const controls=el('div',undefined,'client-filters request-filters'),label=el('label','Cerca club','field'),input=document.createElement('input');input.type='search';input.placeholder='Nome del club';input.value=clubQuery;input.setAttribute('aria-label','Cerca club');label.append(input);
+ controls.append(label,select('Mostra',[['matched','Compatibili'],['all','Tutti i club']],requestScope,v=>{requestScope=v;render()}),select('Ruolo richiesto',['Tutti',...ROLES],clubRole,v=>{clubRole=v;render()}));c.append(controls);
+ const list=el('div',undefined,'request-list');c.append(list);
+ function update(){
+  list.replaceChildren();const clubs=state.clubs.map(club=>({club,matches:requestMatches(club)})).filter(({club,matches})=>club.name.toLocaleLowerCase('it').includes(clubQuery.toLocaleLowerCase('it'))&&(clubRole==='Tutti'||club.need===clubRole)&&(requestScope==='all'||matches.length)).sort((a,b)=>Number(b.matches.some(m=>!m.reason))-Number(a.matches.some(m=>!m.reason))||b.club.relation-a.club.relation);
+  if(!clubs.length){const empty=el('section',undefined,'requests-empty');empty.append(el('h3',state.players.length?'Nessun club corrispondente':'Trova il tuo primo calciatore'),el('p',state.players.length?'Prova un altro filtro o mostra tutti i club.':'Ingaggia un talento in Ricerca: qui compariranno i club che cercano il suo ruolo.'));if(!state.players.length)empty.append(btn('Vai a Ricerca',()=>goSection('market'),'','primary'));else empty.append(btn('Mostra tutti i club',()=>{clubQuery='';clubRole='Tutti';requestScope='all';render()}));list.append(empty)}
+  for(const {club,matches}of clubs){const card=el('article',undefined,'request-card'),heading=el('div',undefined,'request-club-heading');heading.append(el('h3',club.name),el('small',club.country+' · prestigio '+club.prestige+'/100'));card.append(heading,el('p','Cerca '+club.need,'request-need'));
+   if(matches.length){card.append(requestPlayerRow(matches[0],club));if(matches.length>1){const others=el('details',undefined,'request-details');others.append(el('summary','Altri calciatori compatibili · '+(matches.length-1)));for(const match of matches.slice(1))others.append(requestPlayerRow(match,club));card.append(others)}}else card.append(el('p','Non hai calciatori in questo ruolo.','request-reason'));
+   const details=el('details',undefined,'request-details');details.append(el('summary','Informazioni sul club'),el('p','Budget '+money(club.budget)+' · rapporto '+club.relation+'/100'),el('p','La richiesta indica il ruolo cercato. L’accordo dipende dalle condizioni e dal consenso del club e del calciatore.'));card.append(details);list.append(card)
+  }
+ }
+ input.oninput=()=>{clubQuery=input.value;update()};update();
+ const league=el('details',undefined,'nav-section');league.append(el('summary','Classifica King League'));standings().forEach((club,i)=>{const row=el('div',undefined,'league-row');row.append(el('b',String(i+1)),el('span',club.name),el('strong',club.table.points+' pt'),el('small',club.table.played+' gare'));league.append(row)});c.append(league);
+};
+
+
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
  const browserHistory=window.history,dialog=$('modal');
