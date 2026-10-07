@@ -191,3 +191,7 @@ Le simulazioni di bilanciamento usano carriere automatizzate di 780 settimane in
 
 
 
+
+## Carriere e salvataggi multipli
+Cinque slot indipendenti in Impostazioni e salvataggi. La partita precedente viene conservata nello slot 1. Ogni slot salva automaticamente la carriera attiva e conserva la propria copia di recupero. Puoi caricare e rinominare una carriera, creare una nuova partita in uno slot libero o salvare una copia indipendente. Le sostituzioni richiedono conferma; un errore di spazio impedisce il cambio di slot. Importazione ed esportazione riguardano la carriera attiva. I dati restano nel browser e non si sincronizzano automaticamente tra dispositivi.
+
