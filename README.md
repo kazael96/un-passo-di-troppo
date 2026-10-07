@@ -208,3 +208,9 @@ Cinque slot indipendenti in Impostazioni e salvataggi. La partita precedente vie
 ## Accordi su smartphone
 Le proposte sono ordinate per scadenza e mostrano ritratto, calciatore, club, tipo di accordo e consensi. Commissione totale e quote immediate e differite sono separate dallo stipendio del calciatore. Durata e tempo di gioco sono visibili; bonus, clausole e condizioni secondarie restano nei dettagli apribili. I pulsanti di accettazione sono disabilitati quando mancano azioni, budget o altre condizioni, con motivo visibile. Le probabilità mostrate usano la stessa stima della conferma del gioco. Le notizie restano in un pannello separato.
 
+
+## Richieste per i tuoi calciatori
+
+La sezione Richieste mostra prima i club con una proposta disponibile per un assistito nel ruolo cercato. Ogni scheda presenta club, ruolo e calciatore compatibile, con invio diretto gratuito e passaggio ad Accordi. Il riepilogo distingue l’apertura gratuita dalla firma, che usa una azione. Mandati scaduti, prestiti, ritiri annunciati, attese, mercato chiuso, budget insufficiente e limiti alle proposte hanno motivi visibili. Le proposte già aperte si consultano senza duplicarle. Ricerca per nome, ruolo e vista di tutti i club restano disponibili; altri calciatori compatibili e dettagli del club sono richiudibili.
+
+Il tasto Indietro del browser segue le schermate e le sezioni della scheda del calciatore. Chiude le finestre senza confermare operazioni; dalla home mantiene il gioco aperto.
