@@ -180,10 +180,14 @@ Tema blu notte e verde smeraldo con dettagli oro, schede e indicatori ridisegnat
 
 
 ## Riequilibrio economico
-Rinnovi consentiti nelle ultime 26 settimane di contratto, almeno 12 settimane tra due rinnovi. Aumento salariale di rinnovo 5%; trasferimenti 5–15%, con limite legato alla qualità senza ridurre stipendi preesistenti. Commissioni senza costo di trasferimento calcolate su 52 settimane, non sull'intera durata; per operazioni con prezzo di trasferimento il ricavo dell'agenzia è il 75% della commissione lorda. Incasso 60% immediato e 40% differito. Gestione per calciatore 150 €/settimana; ampliamento 8.000 € e 900 €/settimana; bonus iniziali dei nuovi talenti ridotti del 25%. Cassa, vecchi bonus e rate già concluse restano salvati.
+
+Rinnovi nelle ultime 26 settimane di contratto e almeno 12 settimane tra due rinnovi. Stipendi nuovi limitati rispetto alla qualità, senza ridurre stipendi esistenti. Commissioni per accordo: base di 8 settimane di stipendio, 26 per i rinnovi, con tetto di 2.700 euro; 60% subito e 40% dopo quattro settimane. Gli onorari di gestione entrano ogni settimana: 600 euro al 10%, 530 fino a 22 anni, più 90 dopo un anno nello stesso club. Non si incassano per svincolati, contratti o mandati scaduti, ritiri annunciati. Le altre percentuali di mandato adeguano proporzionalmente gli onorari.
+
+Costi base 1.325 euro/settimana più 200 per calciatore. I tre livelli di ufficio costano complessivamente 700, 1.800 e 3.500 euro/settimana; dalla reputazione 70 si aggiungono 225 per livello. Ogni ampliamento costa 8.000 euro e conserva 16 settimane di spese; i livelli 1 e 3 aggiungono una azione settimanale. Servizi: costi iniziali dimezzati e 10 euro/settimana ciascuno. Gli ingaggi conservano 8 settimane di spese.
+
+Aprire una proposta è gratuito, con massimo tre offerte contemporanee; confermare un accordo usa una azione. Incontri: 450 euro, una azione, +22 fiducia. La crescita naturale è più graduale. Cassa, stipendi e rate già concluse restano salvati; i bonus dei mandati precedenti vengono ridotti una volta al 40% per adeguarli ai nuovi prezzi. Il riferimento per la continuità dei vecchi assistiti parte dall’aggiornamento.
+
+Le simulazioni di bilanciamento usano carriere automatizzate di 780 settimane in modalità semplice, con 65.000 euro iniziali. L’obiettivo è circa due terzi di carriere complete per ciascuna strategia attiva, senza garantire una percentuale di vittorie individuale.
 
 
-### Espansione sostenibile
-Ogni livello di ufficio aggiunge tre posti; i livelli 1 e 3 aggiungono una azione settimanale (massimo due extra). Gli ingaggi lasciano obbligatoriamente una riserva di otto settimane dei costi successivi all’ingaggio; se manca, il motivo compare nella Ricerca. Nessuna nuova commissione ricorrente o modifica agli incassi già salvati.
 
-Costi di struttura: 900 €/settimana per livello di ufficio; la sede iniziale resta a 1.200 €/settimana.
