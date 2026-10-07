@@ -223,3 +223,16 @@ body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;paddin
  .search-row .client-rating small{font-size:12px;line-height:1.5}
  .search-row .client-bottom{grid-column:1/-1;grid-row:3;font-size:12px}
 }
+/* Requests: one clear action and readable player/club information. */
+.request-overview,.requests-empty{padding:16px;border:1px solid #466575;border-radius:16px;background:#192e39;margin:16px 0}
+.request-overview strong{color:#99efcf;font-size:17px}.request-overview p{margin:8px 0 0;font-size:14px}
+.request-list{display:grid;gap:16px}.request-card{padding:16px;background:#1d3440;border:1px solid #587481;border-radius:16px;min-width:0}
+.request-club-heading h3{margin:0 0 6px;font-size:20px}.request-club-heading small{color:#b8c9d1}.request-need{font-weight:700;color:#99efcf;margin:16px 0}
+.request-player{border-top:1px solid #415b68;padding-top:14px;display:grid;gap:12px}.request-player-who{display:flex;align-items:center;gap:14px;min-width:0}.request-player-who>.player-portrait{width:56px;height:70px;flex:0 0 56px}.request-player-who>div{min-width:0}.request-player-who strong,.request-player-who small{display:block;overflow-wrap:anywhere}.request-player-who strong{font-size:17px}.request-player-who small{margin-top:7px;font-size:13px;color:#c1cfd5}.request-reason{color:#f0d9a0;font-size:14px;line-height:1.5;margin:0}
+.simple-experience button.request-action{width:100%;margin:0;min-height:48px;white-space:normal;overflow-wrap:anywhere}.request-action:disabled{opacity:1;background:#2b414c;color:#b4c4cd;border-color:#516674;box-shadow:none;cursor:default}.request-action:disabled:before{display:none}
+.request-details{border-top:1px solid #415b68;margin-top:16px;padding-top:14px}.request-details summary{cursor:pointer;font-weight:600;font-size:14px;padding:8px 0;color:#d2e5ed}.request-details p{font-size:14px;line-height:1.6}.request-details .request-player{margin-top:12px}
+@media(max-width:650px){.request-card{padding:14px}.request-player-who{gap:14px}.request-club-heading h3{font-size:19px}}
+.simple-experience .request-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start;margin:20px 0}
+.simple-experience .request-filters .field{margin:0;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.request-filters .field:first-child{grid-column:1/-1}
+.simple-experience .request-filters :is(input,select){margin:0;width:100%;box-sizing:border-box;height:48px;min-height:48px;font-size:16px!important}
