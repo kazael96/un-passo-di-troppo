@@ -103,3 +103,21 @@ body.simple-experience{color-scheme:dark;--ink:#eef5f4;--muted:#b3c2c9;--line:#3
 
 /* Start directly with the game status, without the title banner. */
 body>header,body.simple-experience>header{display:none}
+
+/* A clear weekly cash review with separate figures and explicit actions. */
+body #modal.week-warning{width:min(480px,calc(100vw - 28px));box-sizing:border-box;padding:22px;max-height:90dvh}
+body #modal.week-warning h2{font-size:24px;line-height:1.25;margin:0 0 16px;padding:0;border:0}
+.week-review{display:grid;gap:16px}
+.week-review p{margin:0;line-height:1.5}
+.week-explanation{font-size:16px}
+.week-figures{padding:4px 14px;background:#0c1720;border:1px solid #415562;border-radius:12px}
+.week-figure{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:12px 0;font-size:14px;line-height:1.4}
+.week-figure+.week-figure{border-top:1px solid #33434e}
+.week-figure strong{white-space:nowrap;font-size:18px}
+.week-figure:last-child strong{color:#92efc6}
+.week-note{font-size:13px;color:#b3c2c9}
+.week-deadlines{padding:12px 14px;border-left:3px solid #f7db70;background:#1d2931;border-radius:6px;font-size:14px}
+.week-deadlines p{margin-top:6px}
+body #modal.week-warning .week-finances{width:100%;margin:0;min-height:48px;font-size:15px}
+body #modal.week-warning>.actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:18px}
+body #modal.week-warning>.actions button{width:100%;margin:0;min-height:50px;font-size:15px}
