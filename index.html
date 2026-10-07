@@ -228,6 +228,19 @@ body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;paddin
  .search-row .client-rating small{font-size:12px;line-height:1.5}
  .search-row .client-bottom{grid-column:1/-1;grid-row:3;font-size:12px}
 }
+/* Requests: one clear action and readable player/club information. */
+.request-overview,.requests-empty{padding:16px;border:1px solid #466575;border-radius:16px;background:#192e39;margin:16px 0}
+.request-overview strong{color:#99efcf;font-size:17px}.request-overview p{margin:8px 0 0;font-size:14px}
+.request-list{display:grid;gap:16px}.request-card{padding:16px;background:#1d3440;border:1px solid #587481;border-radius:16px;min-width:0}
+.request-club-heading h3{margin:0 0 6px;font-size:20px}.request-club-heading small{color:#b8c9d1}.request-need{font-weight:700;color:#99efcf;margin:16px 0}
+.request-player{border-top:1px solid #415b68;padding-top:14px;display:grid;gap:12px}.request-player-who{display:flex;align-items:center;gap:14px;min-width:0}.request-player-who>.player-portrait{width:56px;height:70px;flex:0 0 56px}.request-player-who>div{min-width:0}.request-player-who strong,.request-player-who small{display:block;overflow-wrap:anywhere}.request-player-who strong{font-size:17px}.request-player-who small{margin-top:7px;font-size:13px;color:#c1cfd5}.request-reason{color:#f0d9a0;font-size:14px;line-height:1.5;margin:0}
+.simple-experience button.request-action{width:100%;margin:0;min-height:48px;white-space:normal;overflow-wrap:anywhere}.request-action:disabled{opacity:1;background:#2b414c;color:#b4c4cd;border-color:#516674;box-shadow:none;cursor:default}.request-action:disabled:before{display:none}
+.request-details{border-top:1px solid #415b68;margin-top:16px;padding-top:14px}.request-details summary{cursor:pointer;font-weight:600;font-size:14px;padding:8px 0;color:#d2e5ed}.request-details p{font-size:14px;line-height:1.6}.request-details .request-player{margin-top:12px}
+@media(max-width:650px){.request-card{padding:14px}.request-player-who{gap:14px}.request-club-heading h3{font-size:19px}}
+.simple-experience .request-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start;margin:20px 0}
+.simple-experience .request-filters .field{margin:0;min-width:0;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.request-filters .field:first-child{grid-column:1/-1}
+.simple-experience .request-filters :is(input,select){margin:0;width:100%;box-sizing:border-box;height:48px;min-height:48px;font-size:16px!important}
 </style></head><body><header><div class="logo">KING<span> AGENT</span></div><span id="saveState" role="status">Salvataggio automatico</span></header><main><div class="hero"><div><div class="eyebrow">IL TUO UFFICIO. IL LORO FUTURO.</div><h1 id="agency">King Agent</h1><div class="muted" id="calendar"></div></div><button class="primary" id="advance">Avanza di una settimana →</button></div><div class="metrics" id="metrics"></div><div class="notice" role="status" aria-live="polite" id="message"></div><nav class="tabs" id="tabs" aria-label="Sezioni dell’agenzia"></nav><div class="grid"><section id="content" aria-label="Contenuto della sezione"></section><aside><section class="panel"><h2>Dal tuo ufficio</h2><ol class="news" id="news"></ol></section><section class="panel" style="margin-top:16px"><h2>Come si costruisce una carriera</h2><p id="quickStats" class="rules"></p><p class="rules">Ingaggia talenti, cura i rapporti e chiudi accordi. Le consultazioni sono gratuite; le proposte possono essere rifiutate.</p><p class="rules">Giocatori e club inventati. La simulazione usa regole di gioco semplificate.</p></section></aside></div><footer>King Agent · Carriera su più stagioni · Salvataggio locale · Esporta la partita dalle impostazioni</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="modalBody" class="modal-body"></div><div class="actions"><button id="confirm" class="primary">Conferma</button><button id="cancel">Annulla</button></div></dialog><input id="importFile" type="file" accept="application/json,.json" aria-label="Importa un salvataggio"><script>'use strict';
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n),rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,cap=(n,a,b)=>Math.max(a,Math.min(b,n));
 const ROLES=['Portiere','Difensore','Centrocampista','Attaccante'],REGIONS=['Italia','Spagna','Francia','Argentina'],GOALS=['Minutaggio','Stipendio','Trofei','Vicinanza a casa'],NAMES=['Luca','Diego','Matteo','Nicolò','Samir','Alex','Tommaso','Elia','Gabriel','Andrea','Marco','Youssef'],SURNAMES=['Marini','Costa','Serra','Riva','Mancini','Ferri','Leone','Conti','Romano','Moretti','Vitale','Ricci'];
@@ -864,6 +877,60 @@ function accountDialog(mode='login'){
 const accountRender=render;
 render=()=>{accountRender();if(!simpleMode)return;const c=$('content');if(tab==='office')c.append(btn(accountSession.user?'Il mio account':'Accedi / Registrati',()=>accountDialog(),'','launcher-account'));if(tab==='agency'){const panel=el('section',undefined,'account-settings');panel.append(el('h2','Account'),el('p',accountSession.user?(accountSession.user.email||'Accesso con Google'):'Accedi con email e password oppure con Google.'),btn(accountSession.user?'Gestisci account':'Accedi / Registrati',()=>accountDialog()));c.append(panel)}};
 const accountBoot=boot;boot=()=>{accountBoot();if(accountConfigured())loadAccount().catch(()=>{})};
+
+/* Requests connect club needs to the agency's available players. */
+let requestScope='matched';
+function requestProposalBlock(p,c){
+ if(state.offers.some(o=>o.pid===p.id&&o.cid===c.id))return 'Proposta già aperta';
+ if(p.mandate<=state.week)return 'Mandato scaduto';
+ if(p.retireAt)return 'Ritiro annunciato';
+ if(p.loan)return 'Calciatore in prestito';
+ if(p.cooldown>state.week)return 'Disponibile tra '+(p.cooldown-state.week)+' settimane';
+ if(p.club!==null&&!marketOpen())return 'Mercato chiuso: attendi la prossima apertura';
+ if(p.club!==null&&c.budget<Math.round(value(p)*.8))return 'Budget del club insufficiente';
+ return proposalBlock();
+}
+function requestMatches(c){return state.players.filter(p=>p.role===c.need&&p.club!==c.id).map(p=>({p,reason:requestProposalBlock(p,c)})).sort((a,b)=>Number(!!a.reason)-Number(!!b.reason)||b.p.skill-a.p.skill)}
+function requestProposal(p,c){
+ const reason=requestProposalBlock(p,c);if(reason){notice=reason;render();return}
+ const type=p.club===null?'Svincolato':'Trasferimento';
+ ask('Proponi '+p.name, p.name+' → '+c.name+'. Il club cerca un '+c.need.toLocaleLowerCase('it')+'. Aprire la proposta è gratuito e non consuma azioni. Club e calciatore dovranno accettare; la firma usa 1 azione.',()=>{
+  const current=state.players.find(q=>q.id===p.id),club=state.clubs.find(q=>q.id===c.id);
+  if(!current||!club){notice='Il calciatore o il club non è più disponibile.';render();return}
+  const blocked=requestProposalBlock(current,club);if(blocked){notice=blocked;render();return}
+  if(openProposal(current,club,type)){notice='Proposta inviata: valuta le condizioni in Accordi.';log('Proposta aperta con '+club.name+' per '+current.name+'.');goSection('offers')}
+ });$('confirm').textContent='Invia proposta';
+}
+function requestPlayerRow(match,c){
+ const {p,reason}=match,row=el('div',undefined,'request-player');
+ const who=el('div',undefined,'request-player-who'),info=el('div');info.append(el('strong',p.name),el('small','Qualità '+p.skill+'/100 · '+clubOf(p)));who.append(playerPortrait(p),info);row.append(who);
+ if(reason)row.append(el('p',reason,'request-reason'));
+ if(reason==='Proposta già aperta')row.append(btn('Apri accordi',()=>goSection('offers'),'','request-action'));
+ else{const action=el('button','Proponi '+p.name,'primary request-action');action.type='button';action.disabled=!!reason;action.onclick=()=>requestProposal(p,c);row.append(action)}
+ return row;
+}
+const requestsRender=render;
+render=()=>{
+ requestsRender();if(!simpleMode||tab!=='clublist')return;
+ const c=$('content');c.replaceChildren(btn('← Menu principale',()=>goSection('office'),'','launcher-back'),el('h2','Richieste'));
+ const ready=state.clubs.filter(club=>requestMatches(club).some(m=>!m.reason)).length;
+ const summary=el('div',undefined,'request-overview');summary.append(el('strong',ready?ready+(ready===1?' club cerca un tuo calciatore':' club cercano i tuoi calciatori'):'Nessuna proposta disponibile ora'),el('p','Scegli un club e proponi il calciatore. Aprire la proposta è gratuito.'));c.append(summary);
+ if(notice)c.append(el('p',notice,'notice'));
+ const controls=el('div',undefined,'client-filters request-filters'),label=el('label','Cerca club','field'),input=document.createElement('input');input.type='search';input.placeholder='Nome del club';input.value=clubQuery;input.setAttribute('aria-label','Cerca club');label.append(input);
+ controls.append(label,select('Mostra',[['matched','Compatibili'],['all','Tutti i club']],requestScope,v=>{requestScope=v;render()}),select('Ruolo richiesto',['Tutti',...ROLES],clubRole,v=>{clubRole=v;render()}));c.append(controls);
+ const list=el('div',undefined,'request-list');c.append(list);
+ function update(){
+  list.replaceChildren();const clubs=state.clubs.map(club=>({club,matches:requestMatches(club)})).filter(({club,matches})=>club.name.toLocaleLowerCase('it').includes(clubQuery.toLocaleLowerCase('it'))&&(clubRole==='Tutti'||club.need===clubRole)&&(requestScope==='all'||matches.length)).sort((a,b)=>Number(b.matches.some(m=>!m.reason))-Number(a.matches.some(m=>!m.reason))||b.club.relation-a.club.relation);
+  if(!clubs.length){const empty=el('section',undefined,'requests-empty');empty.append(el('h3',state.players.length?'Nessun club corrispondente':'Trova il tuo primo calciatore'),el('p',state.players.length?'Prova un altro filtro o mostra tutti i club.':'Ingaggia un talento in Ricerca: qui compariranno i club che cercano il suo ruolo.'));if(!state.players.length)empty.append(btn('Vai a Ricerca',()=>goSection('market'),'','primary'));else empty.append(btn('Mostra tutti i club',()=>{clubQuery='';clubRole='Tutti';requestScope='all';render()}));list.append(empty)}
+  for(const {club,matches}of clubs){const card=el('article',undefined,'request-card'),heading=el('div',undefined,'request-club-heading');heading.append(el('h3',club.name),el('small',club.country+' · prestigio '+club.prestige+'/100'));card.append(heading,el('p','Cerca '+club.need,'request-need'));
+   if(matches.length){card.append(requestPlayerRow(matches[0],club));if(matches.length>1){const others=el('details',undefined,'request-details');others.append(el('summary','Altri calciatori compatibili · '+(matches.length-1)));for(const match of matches.slice(1))others.append(requestPlayerRow(match,club));card.append(others)}}else card.append(el('p','Non hai calciatori in questo ruolo.','request-reason'));
+   const details=el('details',undefined,'request-details');details.append(el('summary','Informazioni sul club'),el('p','Budget '+money(club.budget)+' · rapporto '+club.relation+'/100'),el('p','La richiesta indica il ruolo cercato. L’accordo dipende dalle condizioni e dal consenso del club e del calciatore.'));card.append(details);list.append(card)
+  }
+ }
+ input.oninput=()=>{clubQuery=input.value;update()};update();
+ const league=el('details',undefined,'nav-section');league.append(el('summary','Classifica King League'));standings().forEach((club,i)=>{const row=el('div',undefined,'league-row');row.append(el('b',String(i+1)),el('span',club.name),el('strong',club.table.points+' pt'),el('small',club.table.played+' gare'));league.append(row)});c.append(league);
+};
+
 
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
