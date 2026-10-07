@@ -21,7 +21,7 @@ Il calendario ha 52 settimane per stagione. Le finestre di mercato sono nelle se
 Sette sezioni, filtri persistenti durante la sessione, costi e tempo prima delle azioni, motivi visibili per pulsanti disabilitati, riepiloghi prima dei contratti, avvisi sulle scadenze, layout responsive, etichette accessibili e focus visibile.
 
 ## Regole semplificate
-Cinque azioni settimanali, più una per livello di ufficio, la segreteria e gli assistenti. Il consenso di club e giocatori usa probabilità influenzate da condizioni e priorità. Preparazione e osservazione non garantiscono risultati. I mandati scadono; fiducia inferiore a 25 causa l’uscita dall’agenzia. Cassa esaurita termina la carriera. Tutti i dati sportivi sono inventati; non è una simulazione di norme reali.
+Cinque azioni settimanali, più una ai livelli 1 e 3 di ufficio, la segreteria e gli assistenti. Il consenso di club e giocatori usa probabilità influenzate da condizioni e priorità. Preparazione e osservazione non garantiscono risultati. I mandati scadono; fiducia inferiore a 25 causa l’uscita dall’agenzia. Cassa esaurita termina la carriera. Tutti i dati sportivi sono inventati; non è una simulazione di norme reali.
 
 Le prestazioni individuali sono simulate come presenze, gol e assist. I risultati della King League sono una simulazione semplificata separata. I prestiti durano una stagione; i mandati sono esclusivi.
 
@@ -180,8 +180,10 @@ Tema blu notte e verde smeraldo con dettagli oro, schede e indicatori ridisegnat
 
 
 ## Riequilibrio economico
-Rinnovi consentiti nelle ultime 26 settimane di contratto, almeno 12 settimane tra due rinnovi. Aumento salariale di rinnovo 5%; trasferimenti 5–15%, con limite legato alla qualità senza ridurre stipendi preesistenti. Commissioni senza costo di trasferimento calcolate su 52 settimane, non sull'intera durata; per operazioni con prezzo di trasferimento il ricavo dell'agenzia è il 75% della commissione lorda. Incasso 60% immediato e 40% differito. Gestione per calciatore 150 €/settimana; ampliamento 8.000 € e 300 €/settimana; bonus iniziali dei nuovi talenti ridotti del 25%. Cassa, vecchi bonus e rate già concluse restano salvati.
+Rinnovi consentiti nelle ultime 26 settimane di contratto, almeno 12 settimane tra due rinnovi. Aumento salariale di rinnovo 5%; trasferimenti 5–15%, con limite legato alla qualità senza ridurre stipendi preesistenti. Commissioni senza costo di trasferimento calcolate su 52 settimane, non sull'intera durata; per operazioni con prezzo di trasferimento il ricavo dell'agenzia è il 75% della commissione lorda. Incasso 60% immediato e 40% differito. Gestione per calciatore 150 €/settimana; ampliamento 8.000 € e 900 €/settimana; bonus iniziali dei nuovi talenti ridotti del 25%. Cassa, vecchi bonus e rate già concluse restano salvati.
 
 
 ### Espansione sostenibile
-Ogni livello di ufficio aggiunge una azione settimanale oltre ai tre posti. Gli ingaggi lasciano obbligatoriamente una riserva di otto settimane dei costi successivi all’ingaggio; se manca, il motivo compare nella Ricerca. Nessuna nuova commissione ricorrente o modifica agli incassi già salvati.
+Ogni livello di ufficio aggiunge tre posti; i livelli 1 e 3 aggiungono una azione settimanale (massimo due extra). Gli ingaggi lasciano obbligatoriamente una riserva di otto settimane dei costi successivi all’ingaggio; se manca, il motivo compare nella Ricerca. Nessuna nuova commissione ricorrente o modifica agli incassi già salvati.
+
+Costi di struttura: 900 €/settimana per livello di ufficio; la sede iniziale resta a 1.200 €/settimana.
