@@ -3,7 +3,9 @@
 
 .grid{grid-template-columns:minmax(0,1fr) 300px}.filters{display:flex;flex-wrap:wrap;align-items:end;gap:10px;margin-bottom:20px}.field{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#b8c8bf}select{background:#111d17;color:#eef4ed;border:1px solid #516149;border-radius:7px;padding:10px;max-width:100%;font:inherit}.button-wrap{display:inline-flex;flex-direction:column;gap:4px;max-width:230px}.button-wrap small{font-size:11px}.card h3{font-size:17px}.top{flex-wrap:wrap}.pill{height:fit-content}.data{gap:12px;flex-wrap:wrap}dialog{width:min(600px,94vw);max-height:85vh;overflow:auto}.modal-body{line-height:1.7}.modal-body .field{margin:12px 0}.tabs{position:sticky;top:0;z-index:2;background:#101819;padding:12px 0}.actions{align-items:flex-start}.panel h2{margin-top:0}#content>h2{margin-top:25px}input[type=file]{display:none}select:focus-visible,input:focus-visible{outline:3px solid #daed81}button:disabled{opacity:.65}.empty{padding:20px}.news{overflow-wrap:anywhere}#saveState{font-size:12px}.hero button{flex-shrink:0}@media(max-width:850px){.grid{grid-template-columns:1fr}.tabs{position:static}.cards{grid-template-columns:1fr}.hero{flex-wrap:wrap}header{gap:10px}.data{font-size:13px}.filters .field{flex:1;min-width:120px}}
 .table-scroll{max-width:100%;overflow:auto}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #38483e}th{color:#d9ec81}td{vertical-align:top}@media(max-width:650px){table thead{display:none}table tr{display:block;border:1px solid #3c4d40;border-radius:9px;margin-bottom:12px;padding:8px}table td{display:flex;justify-content:space-between;gap:15px;border:0}table td:before{content:attr(data-label);color:#aabcae;min-width:90px}}
-.nav-section,.nav-tools{border:1px solid #38483e;border-radius:12px;margin:12px 0;padding:14px;background:#111c18}.nav-section summary,.nav-tools summary{cursor:pointer;font-weight:700;color:#e5efbb;padding:6px;font-size:16px}.nav-section[open]>summary,.nav-tools[open]>summary{margin-bottom:14px}.nav-tools button{margin:6px}.section-help{color:#b8c8bf;margin:4px 0 18px}.tabs{flex-wrap:nowrap;overflow-x:auto;gap:8px;scrollbar-width:thin}.tabs button{white-space:nowrap;flex-shrink:0}.nav-section:focus-within,.nav-tools:focus-within{border-color:#d9ec81}@media(max-width:850px){.grid>aside{margin-top:20px}.tabs{position:sticky;top:0}.nav-section,.nav-tools{padding:10px}.hero h1{font-size:28px}}:root{color-scheme:dark;--ink:#eaf2f8;--muted:#9eafbf;--line:#2b3d4a;--accent:#8dedbd;--gold:#f3cc78}
+.nav-section,.nav-tools{border:1px solid #38483e;border-radius:12px;margin:12px 0;padding:14px;background:#111c18}.nav-section summary,.nav-tools summary{cursor:pointer;font-weight:700;color:#e5efbb;padding:6px;font-size:16px}.nav-section[open]>summary,.nav-tools[open]>summary{margin-bottom:14px}.nav-tools button{margin:6px}.section-help{color:#b8c8bf;margin:4px 0 18px}.tabs{flex-wrap:nowrap;overflow-x:auto;gap:8px;scrollbar-width:thin}.tabs button{white-space:nowrap;flex-shrink:0}.nav-section:focus-within,.nav-tools:focus-within{border-color:#d9ec81}@media(max-width:850px){.grid>aside{margin-top:20px}.tabs{position:sticky;top:0}.nav-section,.nav-tools{padding:10px}.hero h1{font-size:28px}}
+
+:root{color-scheme:dark;--ink:#eaf2f8;--muted:#9eafbf;--line:#2b3d4a;--accent:#8dedbd;--gold:#f3cc78}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(ellipse at 95% 0,#143b35 0,transparent 40%),#0b121b;color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55}
 header{max-width:1240px;margin:auto;padding:22px 28px;border-bottom:1px solid var(--line);background:transparent}
@@ -128,6 +130,7 @@ body #modal.week-warning>.actions{display:grid;grid-template-columns:1fr;gap:10p
 body #modal.week-warning>.actions button{width:100%;margin:0;min-height:50px;font-size:15px}
 
 /* Shared layout rules for every section and dialog. */
+.account-panel{display:grid;gap:16px}.account-panel p{margin:0}.account-form{display:grid;gap:16px}.account-form .field{display:grid;gap:8px;color:#c7d6de;font-size:14px}.account-form input{background:#0c1720;color:#eef5f4;border:1px solid #69899f;border-radius:10px;padding:12px}.account-form .primary{margin-top:4px}.account-feedback{font-size:14px;line-height:1.5}.account-feedback:empty{display:none}.account-error{color:#ffbcb5}.account-success{color:#92efc6}.account-note{font-size:13px;color:#bacbd1;line-height:1.5}.account-divider{text-align:center;color:#bacbd1;font-size:13px}.account-email{overflow-wrap:anywhere;font-weight:700}.account-status{color:#f7db70;font-weight:700}.simple-experience .account-panel button{width:100%;margin:0;min-height:48px}.simple-experience .account-google{background:#f8fafc;color:#172331;border-color:#f8fafc}.simple-experience :is(.account-secondary,.account-show){background:transparent;box-shadow:none;border-color:#697d88;color:#c7d6de}.simple-experience .account-show{font-size:13px;min-height:44px}.account-settings{border-top:1px solid #415562;padding-top:20px;margin-top:28px}.simple-experience .launcher-account{display:block;margin:16px auto 0;font-size:14px;min-height:48px;padding:10px 18px}
 body #modal{box-sizing:border-box;width:min(560px,calc(100vw - 28px));max-height:calc(100dvh - 28px);padding:22px;overflow:auto;scrollbar-gutter:stable;overscroll-behavior:contain}
 body #modal h2{font-size:24px;line-height:1.3;overflow-wrap:anywhere;margin-top:0}
 body #modal .modal-body{min-width:0;overflow-wrap:anywhere;line-height:1.6}
@@ -163,7 +166,12 @@ body #modal .button-wrap{max-width:100%;min-width:0}
  .simple-experience .finance-row>b{white-space:normal;max-width:100%}
  .simple-experience .dossier-panel .finance-row>b{max-width:100%}
 }
-</style></head><body><header><div class="logo">KING<span> AGENT</span></div><span id="saveState" role="status">Salvataggio automatico</span></header><main><div class="hero"><div><div class="eyebrow">IL TUO UFFICIO. IL LORO FUTURO.</div><h1 id="agency">King Agent</h1><div class="muted" id="calendar"></div></div><button class="primary" id="advance">Avanza di una settimana →</button></div><div class="metrics" id="metrics"></div><div class="notice" role="status" aria-live="polite" id="message"></div><nav class="tabs" id="tabs" aria-label="Sezioni dell’agenzia"></nav><div class="grid"><section id="content" aria-label="Contenuto della sezione"></section><aside><section class="panel"><h2>Dal tuo ufficio</h2><ol class="news" id="news"></ol></section><section class="panel" style="margin-top:16px"><h2>Come si costruisce una carriera</h2><p id="quickStats" class="rules"></p><p class="rules">Ingaggia talenti, cura i rapporti e chiudi accordi. Le consultazioni sono gratuite; le proposte possono essere rifiutate.</p><p class="rules">Giocatori e club inventati. La simulazione usa regole di gioco semplificate.</p></section></aside></div><footer>King Agent · Carriera su più stagioni · Salvataggio locale · Esporta la partita dalle impostazioni</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="modalBody" class="modal-body"></div><div class="actions"><button id="confirm" class="primary">Conferma</button><button id="cancel">Annulla</button></div></dialog><input id="importFile" type="file" accept="application/json,.json" aria-label="Importa un salvataggio"><script>'use strict';
+/* Compact account forms override the general dialog spacing. */
+body #modal .account-panel{gap:12px}
+body #modal .account-form{gap:12px}
+body #modal .account-form .field{display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:0;font-size:14px}
+body #modal .account-form input{margin:0;width:100%;min-height:48px}
+body #modal .account-panel button{margin:0;min-height:48px}</style></head><body><header><div class="logo">KING<span> AGENT</span></div><span id="saveState" role="status">Salvataggio automatico</span></header><main><div class="hero"><div><div class="eyebrow">IL TUO UFFICIO. IL LORO FUTURO.</div><h1 id="agency">King Agent</h1><div class="muted" id="calendar"></div></div><button class="primary" id="advance">Avanza di una settimana →</button></div><div class="metrics" id="metrics"></div><div class="notice" role="status" aria-live="polite" id="message"></div><nav class="tabs" id="tabs" aria-label="Sezioni dell’agenzia"></nav><div class="grid"><section id="content" aria-label="Contenuto della sezione"></section><aside><section class="panel"><h2>Dal tuo ufficio</h2><ol class="news" id="news"></ol></section><section class="panel" style="margin-top:16px"><h2>Come si costruisce una carriera</h2><p id="quickStats" class="rules"></p><p class="rules">Ingaggia talenti, cura i rapporti e chiudi accordi. Le consultazioni sono gratuite; le proposte possono essere rifiutate.</p><p class="rules">Giocatori e club inventati. La simulazione usa regole di gioco semplificate.</p></section></aside></div><footer>King Agent · Carriera su più stagioni · Salvataggio locale · Esporta la partita dalle impostazioni</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="modalBody" class="modal-body"></div><div class="actions"><button id="confirm" class="primary">Conferma</button><button id="cancel">Annulla</button></div></dialog><input id="importFile" type="file" accept="application/json,.json" aria-label="Importa un salvataggio"><script>'use strict';
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n),rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,cap=(n,a,b)=>Math.max(a,Math.min(b,n));
 const ROLES=['Portiere','Difensore','Centrocampista','Attaccante'],REGIONS=['Italia','Spagna','Francia','Argentina'],GOALS=['Minutaggio','Stipendio','Trofei','Vicinanza a casa'],NAMES=['Luca','Diego','Matteo','Nicolò','Samir','Alex','Tommaso','Elia','Gabriel','Andrea','Marco','Youssef'],SURNAMES=['Marini','Costa','Serra','Riva','Mancini','Ferri','Leone','Conti','Romano','Moretti','Vitale','Ricci'];
 const KEY='king-agent-v2';let state,tab='office',filters={role:'Tutti',region:'Tutti',age:'Tutte',sort:'skill',watch:false},notice='',modalAction=null;
@@ -691,14 +699,94 @@ function agreementPresentation(o){const p=offerPlayer(o),club=state.clubs.find(c
 function agreementFact(label,value){const item=el('div',undefined,'agreement-fact');item.append(el('small',label),el('strong',value));return item}
 const agreementsRender=render;render=()=>{agreementsRender();if(!simpleMode||tab!=='offers')return;const c=$('content');c.replaceChildren(btn('← Menu principale',()=>goSection('office'),'','launcher-back'));const heading=el('div',undefined,'agreements-heading');heading.append(el('h2','Accordi'),el('span',state.offers.length+' da valutare','agreement-count'));c.append(heading);if(notice)c.append(el('p',notice,'notice'));if(!state.offers.length){const empty=el('section',undefined,'agreements-empty');empty.append(el('span','⇄','agreements-empty-icon'),el('h3','Nessuna proposta in attesa'),el('p','Apri un calciatore e scegli Mercato per proporlo a un club. Qui troverai gli accordi da valutare.'),btn('Vai ai calciatori',()=>goSection('roster'),'','primary'));c.append(empty)}else{c.append(el('p','Concludere usa 1 azione. Rifiutare una proposta è gratuito.','rules'));const list=el('div',undefined,'agreements-list');for(const o of [...state.offers].sort((a,b)=>a.expires-b.expires||a.id-b.id)){const view=agreementPresentation(o);if(!view)continue;const {p,club,analysis:a}=view,card=el('article',undefined,'agreement-card');const top=el('div',undefined,'agreement-top'),who=el('div',undefined,'agreement-who');who.append(el('h3',p.name),el('p',club.name),el('small',o.type+' · '+club.country));top.append(playerPortrait(p),who);card.append(top);const status=el('div',undefined,'agreement-status');status.append(el('span',view.deadline,'agreement-deadline'+(view.urgent?' is-urgent':'')),el('span',view.ready?'Pronta da firmare':'Accordo stimato '+view.chance+'%','agreement-consent'));card.append(status);const earnings=el('section',undefined,'agreement-earnings');earnings.append(el('small','COMMISSIONE DELL’AGENZIA'),el('strong',money(a.total)));const payments=el('div',undefined,'agreement-payments');payments.append(agreementFact('Subito',money(a.now)),agreementFact('Tra 4 settimane',money(a.later)));earnings.append(payments);card.append(earnings);const terms=el('div',undefined,'agreement-terms');terms.append(agreementFact('Stipendio / settimana',money(o.salary)),agreementFact('Durata',o.years+(o.years===1?' anno':' anni')),agreementFact('Tempo di gioco',o.minutes+'%'));card.append(terms);const details=el('details',undefined,'agreement-details');details.append(el('summary','Dettagli del contratto'));const facts=el('div',undefined,'agreement-detail-facts');facts.append(agreementFact('Club attuale',clubOf(p)),agreementFact('Valore operazione',money(o.amount)),agreementFact('Bonus al calciatore',money(o.bonus||0)),agreementFact('Commissione mandato',o.rate+'%'),agreementFact('Clausola di uscita',o.release?money(o.release):'Nessuna'),agreementFact('Priorità del calciatore',p.goal));details.append(facts,el('p',view.ready?'Club e calciatore hanno già dato il consenso.':'La stima considera club e calciatore. Una proposta può essere rifiutata.','rules'),btn('Vedi calciatore',()=>clientSheet(p)));card.append(details);const actions=el('div',undefined,'agreement-actions'),accept=btn(view.ready?'Firma accordo · 1 azione':'Accetta proposta · 1 azione',()=>quickDeal(o),view.reason,'primary');actions.append(accept,btn('Rifiuta proposta',()=>reject(o),'','agreement-reject'));card.append(actions);list.append(card)}c.append(list)}const news=el('details',undefined,'agreement-news');news.append(el('summary','Ultime notizie dell’ufficio'));for(const item of state.log.slice(0,8))news.append(el('p','Sett. '+item.week+' · '+item.text));if(!state.log.length)news.append(el('p','Nessuna notizia da mostrare.'));c.append(news)};
 
+/* Real authentication is enabled only after configuring a Firebase web app. */
+const ACCOUNT_FIREBASE_CONFIG = {"apiKey":"AIzaSyAfp9P4tN3RUznNThztIaUezo5sqLWyyHo","authDomain":"king-agent-c4f1a.firebaseapp.com","projectId":"king-agent-c4f1a","appId":"1:199493082787:web:21abf50a47723ab93d2916"};
+const accountSession={user:null,sdk:null,auth:null,pending:null,error:'',busy:false};
+function accountConfigured(){const c=ACCOUNT_FIREBASE_CONFIG;return !!(c&&['apiKey','authDomain','projectId','appId'].every(k=>typeof c[k]==='string'&&c[k].trim()))}
+function accountError(error){const messages={
+ 'auth/invalid-credential':'Email o password non corrette.',
+ 'auth/wrong-password':'Email o password non corrette.',
+ 'auth/user-not-found':'Email o password non corrette.',
+ 'auth/invalid-email':'Inserisci un indirizzo email valido.',
+ 'auth/email-already-in-use':'Questa email è già registrata. Accedi oppure recupera la password.',
+ 'auth/weak-password':'La password non rispetta i requisiti di sicurezza.',
+ 'auth/password-does-not-meet-requirements':'La password non rispetta i requisiti di sicurezza.',
+ 'auth/too-many-requests':'Troppi tentativi. Aspetta qualche minuto e riprova.',
+ 'auth/network-request-failed':'Connessione assente. Controlla internet e riprova.',
+ 'auth/popup-closed-by-user':'Accesso con Google annullato.',
+ 'auth/cancelled-popup-request':'È già aperta una finestra di accesso con Google.',
+ 'auth/popup-blocked':'Il browser ha bloccato Google. Consenti le finestre popup per questo sito e riprova.',
+ 'auth/account-exists-with-different-credential':'Questa email usa un altro metodo di accesso. Accedi con quel metodo.',
+ 'auth/unauthorized-domain':'L’accesso non è ancora attivo per questo indirizzo del sito.',
+ 'auth/operation-not-allowed':'Questo metodo di accesso non è ancora attivo.',
+ 'auth/user-disabled':'L’account è stato disabilitato.',
+ 'auth/web-storage-unsupported':'Il browser non consente di mantenere la sessione. Controlla le impostazioni del browser.'
+};return messages[error?.code]||'Accesso non disponibile in questo momento. Riprova più tardi.'}
+async function loadAccount(){
+ if(!accountConfigured())throw new Error('not-configured');
+ if(accountSession.auth)return accountSession;
+ if(accountSession.pending)return accountSession.pending;
+ accountSession.pending=(async()=>{
+  const [appSdk,sdk]=await Promise.all([import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js'),import('https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js')]);
+  const app=appSdk.getApps().find(a=>a.name==='king-agent-account')||appSdk.initializeApp(ACCOUNT_FIREBASE_CONFIG,'king-agent-account'),auth=sdk.getAuth(app);
+  auth.languageCode='it';await sdk.setPersistence(auth,sdk.browserLocalPersistence);
+  accountSession.sdk=sdk;accountSession.auth=auth;
+  sdk.onAuthStateChanged(auth,user=>{accountSession.user=user;render()},error=>{accountSession.error=accountError(error)});
+  await auth.authStateReady();accountSession.user=auth.currentUser;
+  return accountSession;
+ })();
+ try{return await accountSession.pending}catch(error){accountSession.error=accountError(error);accountSession.pending=null;accountSession.auth=null;throw error}
+}
+function accountDialog(mode='login'){
+ const body=el('div',undefined,'account-panel');
+ ask('Il tuo account',body,()=>{});$('confirm').textContent='Chiudi';$('cancel').hidden=true;
+ if(accountSession.user){
+  body.append(el('p',accountSession.user.email||'Account Google','account-email'),el('p','Accesso effettuato.','account-success'),el('p','Le carriere sono ancora salvate su questo browser. L’accesso non le sincronizza tra dispositivi.','account-note'));
+  if(accountSession.error)body.append(el('p',accountSession.error,'account-feedback'));
+  if(!accountSession.user.emailVerified){const status=el('p','Verifica l’email per confermare il tuo indirizzo.','account-note');body.append(status,btn('Invia email di verifica',async()=>{if(accountSession.busy)return;accountSession.busy=true;try{await accountSession.sdk.sendEmailVerification(accountSession.user);status.textContent='Email inviata: controlla anche la cartella spam.'}catch(error){status.textContent=accountError(error)}finally{accountSession.busy=false}}))}
+  body.append(btn('Esci dall’account',()=>ask('Esci dall’account','Le carriere salvate restano su questo browser. Vuoi uscire?',async()=>{try{await accountSession.sdk.signOut(accountSession.auth);accountSession.user=null;render();accountDialog()}catch(error){notice=accountError(error);render()}}),'','account-secondary'));return
+ }
+ if(!accountConfigured()){
+  body.append(el('p','Accesso in preparazione','account-status'),el('p','Stiamo attivando l’accesso con email e con Google. Per ora puoi continuare a giocare con i salvataggi di questo browser.'));
+  body.append(btn('Continua a giocare',()=>{$('modal').close();modalAction=null},'','primary'));return
+ }
+ const heading=mode==='register'?'Crea il tuo account':mode==='reset'?'Recupera la password':'Accedi alla tua agenzia';
+ $('modalTitle').textContent=heading;
+ const status=el('p',accountSession.error,'account-feedback');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+ const form=el('form',undefined,'account-form'),emailWrap=el('label','Email','field'),email=el('input');email.type='email';email.name='email';email.required=true;email.autocomplete='email';email.inputMode='email';email.placeholder='nome@esempio.it';emailWrap.append(email);form.append(emailWrap);
+ let password;
+ if(mode!=='reset'){
+  const passwordWrap=el('label','Password','field');password=el('input');password.type='password';password.name='password';password.required=true;password.autocomplete=mode==='register'?'new-password':'current-password';passwordWrap.append(password);form.append(passwordWrap);
+  const show=btn('Mostra password',()=>{const visible=password.type==='password';password.type=visible?'text':'password';show.textContent=visible?'Nascondi password':'Mostra password';show.setAttribute('aria-pressed',String(visible))},'','account-show');show.type='button';show.setAttribute('aria-pressed','false');form.append(show);
+  if(mode==='register'){password.minLength=8;form.append(el('p','Usa una password di almeno 8 caratteri.','account-note'))}
+ }
+ const submit=el('button',mode==='register'?'Crea account':mode==='reset'?'Invia link di recupero':'Accedi','primary');submit.type='submit';form.append(submit);body.append(form,status);
+ const google=btn('Continua con Google',async()=>{await run(async()=>{const provider=new accountSession.sdk.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});await accountSession.sdk.signInWithPopup(accountSession.auth,provider);accountSession.user=accountSession.auth.currentUser;password&&(password.value='');accountDialog();render()})},'','account-google');google.type='button';
+ if(mode!=='reset')body.append(el('p','oppure','account-divider'),google);
+ body.append(btn(mode==='register'||mode==='reset'?'Ho già un account': 'Crea un account',()=>accountDialog(mode==='login'?'register':'login'),'','account-secondary'));
+ if(mode==='login')body.append(btn('Password dimenticata?',()=>accountDialog('reset'),'','account-secondary'));
+ body.append(el('p','Le carriere restano su questo browser. La sincronizzazione dei salvataggi non è ancora attiva.','account-note'));
+ async function run(operation){
+  if(accountSession.busy)return;accountSession.busy=true;status.textContent='Attendi…';body.querySelectorAll('button').forEach(b=>b.disabled=true);
+  try{await operation()}catch(error){status.textContent=accountError(error);status.className='account-feedback account-error'}finally{accountSession.busy=false;if(body.isConnected)body.querySelectorAll('button').forEach(b=>b.disabled=false)}
+ }
+ form.onsubmit=event=>{event.preventDefault();if(!form.reportValidity())return;run(async()=>{
+  const sdk=accountSession.sdk,auth=accountSession.auth,address=email.value.trim();
+  if(mode==='reset'){await sdk.sendPasswordResetEmail(auth,address);status.textContent='Se questa email è associata a un account, riceverai un link per scegliere una nuova password.';status.className='account-feedback account-success';return}
+  if(mode==='register'){
+   const policy=await sdk.validatePassword(auth,password.value);
+   if(!policy.isValid){const hints=[];if(policy.meetsMinPasswordLength===false)hints.push('almeno '+policy.passwordPolicy.customStrengthOptions.minPasswordLength+' caratteri');if(policy.containsLowercaseLetter===false)hints.push('una lettera minuscola');if(policy.containsUppercaseLetter===false)hints.push('una lettera maiuscola');if(policy.containsNumericCharacter===false)hints.push('un numero');if(policy.containsNonAlphanumericCharacter===false)hints.push('un simbolo');status.textContent='Usa '+(hints.join(', ')||'una password conforme ai requisiti del servizio')+'.';return}
+   const result=await sdk.createUserWithEmailAndPassword(auth,address,password.value);accountSession.user=result.user;password.value='';
+   try{await sdk.sendEmailVerification(result.user)}catch(error){accountSession.error='Account creato. L’email di verifica non è stata inviata: puoi richiederla dal tuo account.'}
+  }else{await sdk.signInWithEmailAndPassword(auth,address,password.value);accountSession.user=auth.currentUser;password.value=''}
+  accountDialog();render();
+ })};
+ submit.disabled=true;google.disabled=true;
+ loadAccount().then(()=>{if(!body.isConnected)return;if(accountSession.user){accountDialog();return}status.textContent='';submit.disabled=false;google.disabled=false},()=>{if(!body.isConnected)return;status.textContent=accountSession.error;body.append(btn('Riprova connessione',()=>accountDialog(mode)))})
+}
+const accountRender=render;
+render=()=>{accountRender();if(!simpleMode)return;const c=$('content');if(tab==='office')c.append(btn(accountSession.user?'Il mio account':'Accedi / Registrati',()=>accountDialog(),'','launcher-account'));if(tab==='agency'){const panel=el('section',undefined,'account-settings');panel.append(el('h2','Account'),el('p',accountSession.user?(accountSession.user.email||'Accesso con Google'):'Accedi con email e password oppure con Google.'),btn(accountSession.user?'Gestisci account':'Accedi / Registrati',()=>accountDialog()));c.append(panel)}};
+const accountBoot=boot;boot=()=>{accountBoot();if(accountConfigured())loadAccount().catch(()=>{})};
+
 if(typeof document!=='undefined')boot();
-
-
-
-
-
-
-
-
-
 </script></body></html>

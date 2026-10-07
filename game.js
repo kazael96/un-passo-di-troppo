@@ -526,13 +526,93 @@ function agreementPresentation(o){const p=offerPlayer(o),club=state.clubs.find(c
 function agreementFact(label,value){const item=el('div',undefined,'agreement-fact');item.append(el('small',label),el('strong',value));return item}
 const agreementsRender=render;render=()=>{agreementsRender();if(!simpleMode||tab!=='offers')return;const c=$('content');c.replaceChildren(btn('← Menu principale',()=>goSection('office'),'','launcher-back'));const heading=el('div',undefined,'agreements-heading');heading.append(el('h2','Accordi'),el('span',state.offers.length+' da valutare','agreement-count'));c.append(heading);if(notice)c.append(el('p',notice,'notice'));if(!state.offers.length){const empty=el('section',undefined,'agreements-empty');empty.append(el('span','⇄','agreements-empty-icon'),el('h3','Nessuna proposta in attesa'),el('p','Apri un calciatore e scegli Mercato per proporlo a un club. Qui troverai gli accordi da valutare.'),btn('Vai ai calciatori',()=>goSection('roster'),'','primary'));c.append(empty)}else{c.append(el('p','Concludere usa 1 azione. Rifiutare una proposta è gratuito.','rules'));const list=el('div',undefined,'agreements-list');for(const o of [...state.offers].sort((a,b)=>a.expires-b.expires||a.id-b.id)){const view=agreementPresentation(o);if(!view)continue;const {p,club,analysis:a}=view,card=el('article',undefined,'agreement-card');const top=el('div',undefined,'agreement-top'),who=el('div',undefined,'agreement-who');who.append(el('h3',p.name),el('p',club.name),el('small',o.type+' · '+club.country));top.append(playerPortrait(p),who);card.append(top);const status=el('div',undefined,'agreement-status');status.append(el('span',view.deadline,'agreement-deadline'+(view.urgent?' is-urgent':'')),el('span',view.ready?'Pronta da firmare':'Accordo stimato '+view.chance+'%','agreement-consent'));card.append(status);const earnings=el('section',undefined,'agreement-earnings');earnings.append(el('small','COMMISSIONE DELL’AGENZIA'),el('strong',money(a.total)));const payments=el('div',undefined,'agreement-payments');payments.append(agreementFact('Subito',money(a.now)),agreementFact('Tra 4 settimane',money(a.later)));earnings.append(payments);card.append(earnings);const terms=el('div',undefined,'agreement-terms');terms.append(agreementFact('Stipendio / settimana',money(o.salary)),agreementFact('Durata',o.years+(o.years===1?' anno':' anni')),agreementFact('Tempo di gioco',o.minutes+'%'));card.append(terms);const details=el('details',undefined,'agreement-details');details.append(el('summary','Dettagli del contratto'));const facts=el('div',undefined,'agreement-detail-facts');facts.append(agreementFact('Club attuale',clubOf(p)),agreementFact('Valore operazione',money(o.amount)),agreementFact('Bonus al calciatore',money(o.bonus||0)),agreementFact('Commissione mandato',o.rate+'%'),agreementFact('Clausola di uscita',o.release?money(o.release):'Nessuna'),agreementFact('Priorità del calciatore',p.goal));details.append(facts,el('p',view.ready?'Club e calciatore hanno già dato il consenso.':'La stima considera club e calciatore. Una proposta può essere rifiutata.','rules'),btn('Vedi calciatore',()=>clientSheet(p)));card.append(details);const actions=el('div',undefined,'agreement-actions'),accept=btn(view.ready?'Firma accordo · 1 azione':'Accetta proposta · 1 azione',()=>quickDeal(o),view.reason,'primary');actions.append(accept,btn('Rifiuta proposta',()=>reject(o),'','agreement-reject'));card.append(actions);list.append(card)}c.append(list)}const news=el('details',undefined,'agreement-news');news.append(el('summary','Ultime notizie dell’ufficio'));for(const item of state.log.slice(0,8))news.append(el('p','Sett. '+item.week+' · '+item.text));if(!state.log.length)news.append(el('p','Nessuna notizia da mostrare.'));c.append(news)};
 
+/* Real authentication is enabled only after configuring a Firebase web app. */
+const ACCOUNT_FIREBASE_CONFIG = {"apiKey":"AIzaSyAfp9P4tN3RUznNThztIaUezo5sqLWyyHo","authDomain":"king-agent-c4f1a.firebaseapp.com","projectId":"king-agent-c4f1a","appId":"1:199493082787:web:21abf50a47723ab93d2916"};
+const accountSession={user:null,sdk:null,auth:null,pending:null,error:'',busy:false};
+function accountConfigured(){const c=ACCOUNT_FIREBASE_CONFIG;return !!(c&&['apiKey','authDomain','projectId','appId'].every(k=>typeof c[k]==='string'&&c[k].trim()))}
+function accountError(error){const messages={
+ 'auth/invalid-credential':'Email o password non corrette.',
+ 'auth/wrong-password':'Email o password non corrette.',
+ 'auth/user-not-found':'Email o password non corrette.',
+ 'auth/invalid-email':'Inserisci un indirizzo email valido.',
+ 'auth/email-already-in-use':'Questa email è già registrata. Accedi oppure recupera la password.',
+ 'auth/weak-password':'La password non rispetta i requisiti di sicurezza.',
+ 'auth/password-does-not-meet-requirements':'La password non rispetta i requisiti di sicurezza.',
+ 'auth/too-many-requests':'Troppi tentativi. Aspetta qualche minuto e riprova.',
+ 'auth/network-request-failed':'Connessione assente. Controlla internet e riprova.',
+ 'auth/popup-closed-by-user':'Accesso con Google annullato.',
+ 'auth/cancelled-popup-request':'È già aperta una finestra di accesso con Google.',
+ 'auth/popup-blocked':'Il browser ha bloccato Google. Consenti le finestre popup per questo sito e riprova.',
+ 'auth/account-exists-with-different-credential':'Questa email usa un altro metodo di accesso. Accedi con quel metodo.',
+ 'auth/unauthorized-domain':'L’accesso non è ancora attivo per questo indirizzo del sito.',
+ 'auth/operation-not-allowed':'Questo metodo di accesso non è ancora attivo.',
+ 'auth/user-disabled':'L’account è stato disabilitato.',
+ 'auth/web-storage-unsupported':'Il browser non consente di mantenere la sessione. Controlla le impostazioni del browser.'
+};return messages[error?.code]||'Accesso non disponibile in questo momento. Riprova più tardi.'}
+async function loadAccount(){
+ if(!accountConfigured())throw new Error('not-configured');
+ if(accountSession.auth)return accountSession;
+ if(accountSession.pending)return accountSession.pending;
+ accountSession.pending=(async()=>{
+  const [appSdk,sdk]=await Promise.all([import('https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js'),import('https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js')]);
+  const app=appSdk.getApps().find(a=>a.name==='king-agent-account')||appSdk.initializeApp(ACCOUNT_FIREBASE_CONFIG,'king-agent-account'),auth=sdk.getAuth(app);
+  auth.languageCode='it';await sdk.setPersistence(auth,sdk.browserLocalPersistence);
+  accountSession.sdk=sdk;accountSession.auth=auth;
+  sdk.onAuthStateChanged(auth,user=>{accountSession.user=user;render()},error=>{accountSession.error=accountError(error)});
+  await auth.authStateReady();accountSession.user=auth.currentUser;
+  return accountSession;
+ })();
+ try{return await accountSession.pending}catch(error){accountSession.error=accountError(error);accountSession.pending=null;accountSession.auth=null;throw error}
+}
+function accountDialog(mode='login'){
+ const body=el('div',undefined,'account-panel');
+ ask('Il tuo account',body,()=>{});$('confirm').textContent='Chiudi';$('cancel').hidden=true;
+ if(accountSession.user){
+  body.append(el('p',accountSession.user.email||'Account Google','account-email'),el('p','Accesso effettuato.','account-success'),el('p','Le carriere sono ancora salvate su questo browser. L’accesso non le sincronizza tra dispositivi.','account-note'));
+  if(accountSession.error)body.append(el('p',accountSession.error,'account-feedback'));
+  if(!accountSession.user.emailVerified){const status=el('p','Verifica l’email per confermare il tuo indirizzo.','account-note');body.append(status,btn('Invia email di verifica',async()=>{if(accountSession.busy)return;accountSession.busy=true;try{await accountSession.sdk.sendEmailVerification(accountSession.user);status.textContent='Email inviata: controlla anche la cartella spam.'}catch(error){status.textContent=accountError(error)}finally{accountSession.busy=false}}))}
+  body.append(btn('Esci dall’account',()=>ask('Esci dall’account','Le carriere salvate restano su questo browser. Vuoi uscire?',async()=>{try{await accountSession.sdk.signOut(accountSession.auth);accountSession.user=null;render();accountDialog()}catch(error){notice=accountError(error);render()}}),'','account-secondary'));return
+ }
+ if(!accountConfigured()){
+  body.append(el('p','Accesso in preparazione','account-status'),el('p','Stiamo attivando l’accesso con email e con Google. Per ora puoi continuare a giocare con i salvataggi di questo browser.'));
+  body.append(btn('Continua a giocare',()=>{$('modal').close();modalAction=null},'','primary'));return
+ }
+ const heading=mode==='register'?'Crea il tuo account':mode==='reset'?'Recupera la password':'Accedi alla tua agenzia';
+ $('modalTitle').textContent=heading;
+ const status=el('p',accountSession.error,'account-feedback');status.setAttribute('role','status');status.setAttribute('aria-live','polite');
+ const form=el('form',undefined,'account-form'),emailWrap=el('label','Email','field'),email=el('input');email.type='email';email.name='email';email.required=true;email.autocomplete='email';email.inputMode='email';email.placeholder='nome@esempio.it';emailWrap.append(email);form.append(emailWrap);
+ let password;
+ if(mode!=='reset'){
+  const passwordWrap=el('label','Password','field');password=el('input');password.type='password';password.name='password';password.required=true;password.autocomplete=mode==='register'?'new-password':'current-password';passwordWrap.append(password);form.append(passwordWrap);
+  const show=btn('Mostra password',()=>{const visible=password.type==='password';password.type=visible?'text':'password';show.textContent=visible?'Nascondi password':'Mostra password';show.setAttribute('aria-pressed',String(visible))},'','account-show');show.type='button';show.setAttribute('aria-pressed','false');form.append(show);
+  if(mode==='register'){password.minLength=8;form.append(el('p','Usa una password di almeno 8 caratteri.','account-note'))}
+ }
+ const submit=el('button',mode==='register'?'Crea account':mode==='reset'?'Invia link di recupero':'Accedi','primary');submit.type='submit';form.append(submit);body.append(form,status);
+ const google=btn('Continua con Google',async()=>{await run(async()=>{const provider=new accountSession.sdk.GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});await accountSession.sdk.signInWithPopup(accountSession.auth,provider);accountSession.user=accountSession.auth.currentUser;password&&(password.value='');accountDialog();render()})},'','account-google');google.type='button';
+ if(mode!=='reset')body.append(el('p','oppure','account-divider'),google);
+ body.append(btn(mode==='register'||mode==='reset'?'Ho già un account': 'Crea un account',()=>accountDialog(mode==='login'?'register':'login'),'','account-secondary'));
+ if(mode==='login')body.append(btn('Password dimenticata?',()=>accountDialog('reset'),'','account-secondary'));
+ body.append(el('p','Le carriere restano su questo browser. La sincronizzazione dei salvataggi non è ancora attiva.','account-note'));
+ async function run(operation){
+  if(accountSession.busy)return;accountSession.busy=true;status.textContent='Attendi…';body.querySelectorAll('button').forEach(b=>b.disabled=true);
+  try{await operation()}catch(error){status.textContent=accountError(error);status.className='account-feedback account-error'}finally{accountSession.busy=false;if(body.isConnected)body.querySelectorAll('button').forEach(b=>b.disabled=false)}
+ }
+ form.onsubmit=event=>{event.preventDefault();if(!form.reportValidity())return;run(async()=>{
+  const sdk=accountSession.sdk,auth=accountSession.auth,address=email.value.trim();
+  if(mode==='reset'){await sdk.sendPasswordResetEmail(auth,address);status.textContent='Se questa email è associata a un account, riceverai un link per scegliere una nuova password.';status.className='account-feedback account-success';return}
+  if(mode==='register'){
+   const policy=await sdk.validatePassword(auth,password.value);
+   if(!policy.isValid){const hints=[];if(policy.meetsMinPasswordLength===false)hints.push('almeno '+policy.passwordPolicy.customStrengthOptions.minPasswordLength+' caratteri');if(policy.containsLowercaseLetter===false)hints.push('una lettera minuscola');if(policy.containsUppercaseLetter===false)hints.push('una lettera maiuscola');if(policy.containsNumericCharacter===false)hints.push('un numero');if(policy.containsNonAlphanumericCharacter===false)hints.push('un simbolo');status.textContent='Usa '+(hints.join(', ')||'una password conforme ai requisiti del servizio')+'.';return}
+   const result=await sdk.createUserWithEmailAndPassword(auth,address,password.value);accountSession.user=result.user;password.value='';
+   try{await sdk.sendEmailVerification(result.user)}catch(error){accountSession.error='Account creato. L’email di verifica non è stata inviata: puoi richiederla dal tuo account.'}
+  }else{await sdk.signInWithEmailAndPassword(auth,address,password.value);accountSession.user=auth.currentUser;password.value=''}
+  accountDialog();render();
+ })};
+ submit.disabled=true;google.disabled=true;
+ loadAccount().then(()=>{if(!body.isConnected)return;if(accountSession.user){accountDialog();return}status.textContent='';submit.disabled=false;google.disabled=false},()=>{if(!body.isConnected)return;status.textContent=accountSession.error;body.append(btn('Riprova connessione',()=>accountDialog(mode)))})
+}
+const accountRender=render;
+render=()=>{accountRender();if(!simpleMode)return;const c=$('content');if(tab==='office')c.append(btn(accountSession.user?'Il mio account':'Accedi / Registrati',()=>accountDialog(),'','launcher-account'));if(tab==='agency'){const panel=el('section',undefined,'account-settings');panel.append(el('h2','Account'),el('p',accountSession.user?(accountSession.user.email||'Accesso con Google'):'Accedi con email e password oppure con Google.'),btn(accountSession.user?'Gestisci account':'Accedi / Registrati',()=>accountDialog()));c.append(panel)}};
+const accountBoot=boot;boot=()=>{accountBoot();if(accountConfigured())loadAccount().catch(()=>{})};
+
 if(typeof document!=='undefined')boot();
-
-
-
-
-
-
-
-
-

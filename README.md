@@ -1,6 +1,8 @@
 # King Agent
 
-Gestionale offline di un’agenzia di calciatori in italiano. Apri index.html nel browser: include grafica e codice, senza dipendenze. game.js è la copia del sorgente JavaScript per lo sviluppo.
+Gestionale di un’agenzia di calciatori in italiano. La partita e i salvataggi funzionano localmente; l’accesso facoltativo con email/password o Google richiede internet e Firebase Authentication. index.html include grafica e codice. game.js è la copia del sorgente JavaScript per lo sviluppo.
+
+Registrazione, verifica email, recupero password e uscita sono disponibili da «Accedi / Registrati». Le carriere restano nel browser: l’account non sincronizza ancora le partite tra dispositivi. Dettagli in AUTHENTICATION.md.
 
 ## Carriera
 Il calendario ha 52 settimane per stagione. Le finestre di mercato sono nelle settimane 1–10 e 27–30. Svincolati e rinnovi restano disponibili tutto l’anno. La carriera continua su più stagioni, con obiettivi crescenti e storico dei risultati.
