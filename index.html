@@ -865,5 +865,57 @@ const accountRender=render;
 render=()=>{accountRender();if(!simpleMode)return;const c=$('content');if(tab==='office')c.append(btn(accountSession.user?'Il mio account':'Accedi / Registrati',()=>accountDialog(),'','launcher-account'));if(tab==='agency'){const panel=el('section',undefined,'account-settings');panel.append(el('h2','Account'),el('p',accountSession.user?(accountSession.user.email||'Accesso con Google'):'Accedi con email e password oppure con Google.'),btn(accountSession.user?'Gestisci account':'Accedi / Registrati',()=>accountDialog()));c.append(panel)}};
 const accountBoot=boot;boot=()=>{accountBoot();if(accountConfigured())loadAccount().catch(()=>{})};
 
+/* Browser back follows game screens and dismisses dialogs without confirming. */
+function installGameNavigation(){
+ const browserHistory=window.history,dialog=$('modal');
+ const owner='king-agent-navigation-v1';
+ let restoring=false,closing=false,ready=false;
+ const route=()=>({tab,player:tab==='player'?selectedClient:null,section:tab==='player'?clientSection:null,slot:careerSlots.active});
+ const same=(a,b)=>a&&b&&a.tab===b.tab&&a.player===b.player&&a.section===b.section&&a.slot===b.slot;
+ const entry=(r,kind='screen')=>({owner,kind,route:r});
+ const push=(r,kind='screen')=>browserHistory.pushState(entry(r,kind),'');
+ const originalRender=render,originalAsk=ask,originalClose=dialog.close.bind(dialog);
+ function sync(){
+  if(!ready||restoring||closing)return;
+  const r=route(),current=browserHistory.state;
+  if(!current||current.owner!==owner||!same(current.route,r))push(r);
+ }
+ render=()=>{originalRender();sync()};
+ ask=(...args)=>{originalAsk(...args);if(ready&&!restoring&&!closing){sync();if(browserHistory.state?.kind!=='dialog')push(route(),'dialog')}};
+ dialog.close=(...args)=>{
+  const wasOpen=dialog.open;originalClose(...args);
+  if(wasOpen&&ready&&!restoring&&!closing&&browserHistory.state?.owner===owner&&browserHistory.state.kind==='dialog'){
+   closing=true;browserHistory.back();
+  }
+ };
+ dialog.addEventListener('cancel',e=>{e.preventDefault();modalAction=null;dialog.close()});
+ window.addEventListener('popstate',e=>{
+  const next=e.state;
+  if(closing){
+   closing=false;
+   // A confirmation may navigate or open another dialog before popstate arrives.
+   const desired=route();
+   if(next?.owner!==owner||!same(next.route,desired))push(desired);
+   if(dialog.open)push(desired,'dialog');
+   return;
+  }
+  restoring=true;
+  try{
+   if(dialog.open){originalClose();modalAction=null}
+   const r=next?.owner===owner&&next.route?.slot===careerSlots.active?next.route:{tab:'office'};
+   tab=r.tab;selectedClient=r.player??null;clientSection=r.section||'market';
+   render();$('content').scrollIntoView({behavior:'auto',block:'start'});
+  }finally{restoring=false}
+  // A home entry beneath the game keeps Android Back inside the app.
+  if(next?.owner!==owner||next.kind==='base')push(route());
+  else if(next.kind==='dialog'||!same(next.route,route()))browserHistory.replaceState(entry(route()),'');
+ });
+ const initial=route();
+ if(browserHistory.state?.owner===owner)browserHistory.replaceState(entry(initial),'');
+ else{browserHistory.replaceState(entry(initial,'base'),'');push(initial)}
+ ready=true;
+}
+const navigationBoot=boot;boot=()=>{navigationBoot();if(typeof window!=='undefined')installGameNavigation()};
+
 if(typeof document!=='undefined')boot();
 </script></body></html>
