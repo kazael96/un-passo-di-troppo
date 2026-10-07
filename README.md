@@ -178,3 +178,6 @@ Le sezioni lunghe di Ufficio, Agenzia, Club e Calendario sono organizzate in pan
 ## Stile grafico
 Tema blu notte e verde smeraldo con dettagli oro, schede e indicatori ridisegnati, pannelli compatti e layout adattivo. Le animazioni rispettano la preferenza di movimento ridotto. Lo stile è incorporato nella pagina standalone ed è disponibile anche in style.css.
 
+
+## Riequilibrio economico
+Rinnovi consentiti nelle ultime 26 settimane di contratto, almeno 12 settimane tra due rinnovi. Aumento salariale di rinnovo 5%; trasferimenti 5–15%, con limite legato alla qualità senza ridurre stipendi preesistenti. Commissioni senza costo di trasferimento calcolate su 52 settimane, non sull'intera durata; per operazioni con prezzo di trasferimento il ricavo dell'agenzia è il 75% della commissione lorda. Incasso 60% immediato e 40% differito. Gestione per calciatore 150 €/settimana; ampliamento 8.000 € e 300 €/settimana; bonus iniziali dei nuovi talenti ridotti del 25%. Cassa, vecchi bonus e rate già concluse restano salvati.
