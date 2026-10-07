@@ -4,6 +4,13 @@ Gestionale di un’agenzia di calciatori in italiano. La partita e i salvataggi 
 
 Registrazione, verifica email, recupero password e uscita sono disponibili da «Accedi / Registrati». Le carriere restano nel browser: l’account non sincronizza ancora le partite tra dispositivi. Dettagli in AUTHENTICATION.md.
 
+## Esperienza guidata
+La home mostra un solo traguardo alla volta, progresso e premio. Usa i premi esistenti, riscattabili una sola volta. I primi passi accompagnano la ricerca del primo calciatore, la proposta e il primo accordo; i suggerimenti si possono nascondere nelle impostazioni.
+
+Ogni avanzamento mostra incassi e costi effettivi, saldo, cassa, nuove offerte e cambiamenti di qualità o salute. L’ultimo riepilogo resta nel salvataggio e si può riaprire dalla home. Include anche gli onorari pagati prima del cambio di settimana, ed esclude le operazioni precedenti al pulsante Continua.
+
+La scheda del calciatore esprime in parole semplici il desiderio già usato dalla simulazione e la sua personalità. Da Accordi puoi confrontare due offerte per lo stesso calciatore: guadagno dell’agenzia, gradimento, probabilità effettiva, stipendio e tempo di gioco. Scegliere apre la conferma normale; confrontare non usa azioni e non modifica le offerte.
+
 ## Carriera
 Il calendario ha 52 settimane per stagione. Le finestre di mercato sono nelle settimane 1–10 e 27–30. Svincolati e rinnovi restano disponibili tutto l’anno. La carriera continua su più stagioni, con obiettivi crescenti e storico dei risultati.
 
