@@ -440,6 +440,8 @@ const extraUpgradesRender=render;render=()=>{extraUpgradesRender();if(!simpleMod
 AGENCY_UPGRADES.push({id:'secretary',name:'Segreteria',cost:9000,weekly:200,benefit:'+1 azione disponibile ogni settimana.'});
 const fiveActionsMax=maxActions;maxActions=()=>fiveActionsMax()+2+(hasAgencyUpgrade('secretary')?1:0);
 const fiveActionsEnsure=ensureWorld;ensureWorld=s=>{fiveActionsEnsure(s);if(s.actionBudgetVersion!==2){s.actions+=2;s.actionBudgetVersion=2}return s};
+const homeVisualRender=render;
+render=()=>{homeVisualRender();if(!simpleMode||tab!=='office')return;const icons=[['M8 20v-2a4 4 0 0 1 8 0v2 M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8','La tua squadra'],['M21 21l-5-5 M10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14','Trova talenti'],['M4 7h16v14H4z M8 7V3h8v4 M4 12h16','Accordi e notizie'],['M4 4h16v16H4z M8 9h8 M8 13h5 M8 17h3','Opportunità dei club'],['M12 3l3 6 6 1-4 5 1 6-6-3-6 3 1-6-4-5 6-1z','Fai crescere l’agenzia'],['M3 6h18v14H3z M3 10h18 M16 15h2','Entrate e spese']];$('content').querySelectorAll('.launcher-tile').forEach((b,i)=>{const label=b.textContent,[path,description]=icons[i];b.setAttribute('aria-label',label);const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');const shape=document.createElementNS('http://www.w3.org/2000/svg','path');shape.setAttribute('d',path);svg.append(shape);b.replaceChildren(svg,el('strong',label),el('small',description))})};
 if(typeof document!=='undefined')boot();
 
 
