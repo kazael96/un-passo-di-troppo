@@ -9,6 +9,8 @@
 
 
 
+
+
 :root{color-scheme:dark;--ink:#eaf2f8;--muted:#9eafbf;--line:#2b3d4a;--accent:#8dedbd;--gold:#f3cc78}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(ellipse at 95% 0,#143b35 0,transparent 40%),#0b121b;color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55}
@@ -343,6 +345,44 @@ body.art-agency{--ink:#f5ead7;--muted:#c5b6ac;--accent:#edbb81;--gold:#edbb81;--
 .art-agency #modal>.actions{background:transparent!important}
 .art-agency .request-details>summary,.art-agency .search-filters>summary{border-color:#80646b;color:#ead6c1;background:#2c2631}
 .art-agency .search-blocked{color:#eac195}
+
+
+/* Complete viewport screens and explicit page controls. */
+body.screen-fit{height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+.screen-fit .launcher-status{width:100%;flex:none;padding:10px 16px!important;margin:0 auto!important;gap:3px}
+.screen-fit .launcher-status>span{font-size:18px}.screen-fit .launcher-status>strong{font-size:24px}.screen-fit .launcher-status>small{font-size:12px}
+.screen-fit main{width:100%;flex:1;min-height:0;overflow:hidden;padding:10px 14px calc(12px + env(safe-area-inset-bottom))!important;display:flex;flex-direction:column}
+.screen-fit main>.grid{height:100%;min-height:0;display:flex;flex-direction:column}
+.screen-fit #content{height:100%;min-height:0!important;display:flex;flex-direction:column;overflow:hidden;padding:12px!important;gap:10px}
+.screen-fit.launcher-home #content{padding:0!important;gap:10px}
+.screen-fit .home-tools{display:flex;gap:8px;flex:none}.screen-fit .home-tools button{flex:1;min-width:0;min-height:44px;font-size:12px;padding:7px 10px;margin:0}
+.screen-fit .launcher-inbox{flex:none;min-height:44px!important;margin:0!important}
+.screen-fit.launcher-home .launcher-tiles{flex:1;min-height:0;margin:0!important;grid-template-rows:repeat(3,minmax(0,1fr));gap:10px}
+.screen-fit.art-agency.launcher-home .launcher-tile{min-height:0!important;padding:8px 12px!important;display:flex;flex-direction:column;justify-content:center;gap:2px!important;border-radius:8px 20px 8px 8px}
+.screen-fit .launcher-tile .agency-illustration{height:clamp(40px,8dvh,90px);width:100px;flex:none;margin:0}
+.screen-fit .launcher-tile strong{font-size:clamp(16px,2.5dvh,21px)}.screen-fit .launcher-tile small{font-size:11px}
+.screen-fit .home-footer{flex:none;display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:12px;padding-bottom:4px}
+.screen-fit .home-footer .launcher-continue{min-height:48px!important;font-size:15px!important;margin:0!important}
+.screen-fit .home-footer .launcher-settings{height:48px!important;min-height:48px!important;width:48px;margin:0!important;font-size:23px;padding:0;border:1px solid #91736e}
+.screen-fit .screen-heading{flex:none;display:flex;align-items:center;gap:12px}.screen-fit .screen-heading .launcher-back{margin:0;min-height:44px;font-size:12px;padding:8px 10px}.screen-fit .screen-heading h2{margin:0;font-size:22px;line-height:1.15}
+.screen-fit .screen-viewport{flex:1;min-height:0;overflow:hidden;display:flow-root;padding:2px 2px 6px}
+.screen-fit .screen-viewport>*{max-width:100%;margin-top:0}.screen-fit .screen-viewport>*+*{margin-top:12px}
+.screen-fit .screen-pager{flex:none;display:grid;grid-template-columns:48px 1fr 48px;gap:12px;align-items:center;border-top:1px solid #725561;padding-top:8px;color:#e5ccb4;text-align:center;font-size:13px}
+.screen-fit .screen-pager[hidden]{display:none}.screen-fit .screen-pager button{min-height:44px;padding:6px;font-size:20px}
+.screen-fit .screen-detail{width:100%;text-align:left;min-height:48px}
+.screen-fit #modal{height:auto;max-height:calc(100dvh - 24px);width:min(560px,calc(100vw - 24px));overflow:hidden;padding:18px!important}
+.screen-fit #modal[open]{display:flex;flex-direction:column}
+.screen-fit #modal #modalBody{display:flex;flex-direction:column;min-height:0;height:calc(100dvh - 235px);max-height:640px;gap:8px}
+.screen-fit #modal h2{flex:none;margin:0 0 12px;font-size:22px;padding-bottom:10px}
+.screen-fit #modal>.actions{flex:none;margin-top:12px;padding-top:12px}
+.screen-fit #modal #confirm[hidden]{display:none}
+.screen-fit #modal>.actions:has(#confirm[hidden]){grid-template-columns:1fr}
+.screen-fit #modal .screen-viewport .signing-summary{gap:12px}
+.screen-fit .screen-viewport :is(.agreement-card,.request-card,.upgrade-card,.save-slot){margin-bottom:0}
+@media(max-height:680px){.screen-fit .launcher-tile small{display:none}.screen-fit .launcher-tile .agency-illustration{height:40px;width:68px}.screen-fit .launcher-status>small{font-size:11px}.screen-fit .home-tools button{min-height:40px}.screen-fit .launcher-tile strong{font-size:16px}}
+
+.screen-fit #modal .account-form{gap:8px}.screen-fit #modal .account-form .field{gap:3px;font-size:12px}.screen-fit #modal .account-form input{min-height:44px;padding:8px}.screen-fit #modal .account-form button{min-height:44px;padding:8px}
+.screen-fit .screen-pager button:disabled:before{content:none}
 </style></head><body><header><div class="logo">KING<span> AGENT</span></div><span id="saveState" role="status">Salvataggio automatico</span></header><main><div class="hero"><div><div class="eyebrow">IL TUO UFFICIO. IL LORO FUTURO.</div><h1 id="agency">King Agent</h1><div class="muted" id="calendar"></div></div><button class="primary" id="advance">Avanza di una settimana →</button></div><div class="metrics" id="metrics"></div><div class="notice" role="status" aria-live="polite" id="message"></div><nav class="tabs" id="tabs" aria-label="Sezioni dell’agenzia"></nav><div class="grid"><section id="content" aria-label="Contenuto della sezione"></section><aside><section class="panel"><h2>Dal tuo ufficio</h2><ol class="news" id="news"></ol></section><section class="panel" style="margin-top:16px"><h2>Come si costruisce una carriera</h2><p id="quickStats" class="rules"></p><p class="rules">Ingaggia talenti, cura i rapporti e chiudi accordi. Le consultazioni sono gratuite; le proposte possono essere rifiutate.</p><p class="rules">Giocatori e club inventati. La simulazione usa regole di gioco semplificate.</p></section></aside></div><footer>King Agent · Carriera su più stagioni · Salvataggio locale · Esporta la partita dalle impostazioni</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="modalBody" class="modal-body"></div><div class="actions"><button id="confirm" class="primary">Conferma</button><button id="cancel">Annulla</button></div></dialog><input id="importFile" type="file" accept="application/json,.json" aria-label="Importa un salvataggio"><script>'use strict';
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n),rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,cap=(n,a,b)=>Math.max(a,Math.min(b,n));
 const ROLES=['Portiere','Difensore','Centrocampista','Attaccante'],REGIONS=['Italia','Spagna','Francia','Argentina'],GOALS=['Minutaggio','Stipendio','Trofei','Vicinanza a casa'],NAMES=['Luca','Diego','Matteo','Nicolò','Samir','Alex','Tommaso','Elia','Gabriel','Andrea','Marco','Youssef'],SURNAMES=['Marini','Costa','Serra','Riva','Mancini','Ferri','Leone','Conti','Romano','Moretti','Vitale','Ricci'];
@@ -1114,6 +1154,38 @@ render=()=>{
   tile.prepend(art);
  });
 };
+
+/* Fit every mobile screen with explicit pages instead of vertical scrolling. */
+const screenPages=new Map();let screenLayout=null,modalLayout=null;
+function openScreenDetail(title,nodes){const box=el('div');box.append(...nodes);ask(title,box,()=>{});$('confirm').textContent='Chiudi';$('cancel').hidden=true}
+function screenUnits(nodes){const units=[];for(const node of nodes){if(node.nodeType!==1)continue;
+ if(node.tagName==='DETAILS'){const summary=node.querySelector('summary'),children=[...node.children].filter(e=>e!==summary);units.push(btn(summary?.textContent||'Dettagli',()=>openScreenDetail(summary?.textContent||'Dettagli',children),'','screen-detail'));continue}
+ if(node.matches('.client-list,.agreements-list,.request-list,.upgrade-services,.club-directory,.save-slots,.result-updates')){units.push(...screenUnits([...node.children]));continue}
+ units.push(node)
+ }return units}
+function makeScreenPager(host,nodes,key){const viewport=el('div',undefined,'screen-viewport'),nav=el('nav',undefined,'screen-pager');nav.setAttribute('aria-label','Pagine della schermata');const prev=btn('←',()=>show(current-1),'','screen-prev'),label=el('span'),next=btn('→',()=>show(current+1),'','screen-next');prev.setAttribute('aria-label','Pagina precedente');next.setAttribute('aria-label','Pagina successiva');label.setAttribute('aria-live','polite');nav.append(prev,label,next);host.append(viewport,nav);
+ let units=screenUnits(nodes),pages=[],current=screenPages.get(key)||0;
+ function fits(){return viewport.scrollHeight<=viewport.clientHeight+1}
+ function divide(node){if(node.tagName==='TABLE'){const rows=[...node.querySelectorAll('tbody>tr')];if(rows.length>1)return rows.map(row=>{const table=node.cloneNode(false);if(node.tHead)table.append(node.tHead.cloneNode(true));const body=document.createElement('tbody');body.append(row);table.append(body);return table})}if(node.matches('button,input,select,textarea,form,svg,table,.player-identity,.client-filters,.dossier-tabs,.signing-profile,.signing-costs,.signing-terms'))return null;const children=[...node.children];if(children.length>1){return children.map(child=>{const wrap=node.cloneNode(false);wrap.removeAttribute('id');const heading=node.matches('.agreement-card,.request-card,.upgrade-card,.save-slot')?node.querySelector('h3'):null;if(heading&&!child.contains(heading)&&child!==heading)wrap.append(heading.cloneNode(true));wrap.append(child);return wrap})}if(node.tagName==='P'&&node.textContent.length>160){const words=node.textContent.split(/\s+/),middle=Math.ceil(words.length/2);return [words.slice(0,middle),words.slice(middle)].map(part=>{const p=node.cloneNode(false);p.textContent=part.join(' ');return p})}if(children.length===1)return divide(children[0]);return null}
+ function build(){nav.hidden=false;viewport.replaceChildren();pages=[];let page=[];const pending=units.slice();let guard=0;while(pending.length&&guard++<1000){const item=pending.shift();viewport.append(item);if(fits()){page.push(item);continue}item.remove();if(page.length){pages.push(page);page=[];viewport.replaceChildren();pending.unshift(item);continue}const split=divide(item);if(split){pending.unshift(...screenUnits(split));continue}viewport.append(item);page.push(item)}if(page.length)pages.push(page);if(!pages.length)pages=[[]];units=pages.flat();current=Math.min(current,pages.length-1);show(current)}
+ function show(index){current=Math.max(0,Math.min(index,pages.length-1));screenPages.set(key,current);viewport.replaceChildren(...pages[current]);label.textContent=(current+1)+' / '+pages.length;prev.disabled=current===0;next.disabled=current===pages.length-1;nav.hidden=pages.length<2;viewport.dataset.page=String(current+1);if(host.id==='modalBody')$('confirm').disabled=pages.length>1&&current<pages.length-1}
+ build();return {build,viewport,nav}
+}
+const screenRender=render;
+render=()=>{screenRender();if(!simpleMode)return;document.body.classList.add('screen-fit');const content=$('content');
+ if(tab==='office'){
+  const homeTools=el('div',undefined,'home-tools');const goal=content.querySelector('.focus-goal');if(goal){goal.remove();homeTools.append(btn('Obiettivo · '+(goal.querySelector('h2')?.textContent||'La tua carriera'),()=>openScreenDetail('Obiettivo attuale',[goal]),'','home-goal'))}
+  for(const selector of ['.week-decision','.notice','.recap-open']){const node=content.querySelector(selector);if(!node)continue;node.remove();homeTools.append(node.matches('button')?node:btn(selector==='.week-decision'?'Decisione da prendere':'Notizie',()=>openScreenDetail('La tua settimana',[node]),'','home-note'))}
+  if(homeTools.children.length)content.prepend(homeTools);
+  content.querySelector('.launcher-account')?.remove();
+  const footer=el('div',undefined,'home-footer');footer.append(content.querySelector('.launcher-continue'),content.querySelector('.launcher-settings'));content.append(footer);content.querySelector('.launcher-settings').textContent='⚙';content.querySelector('.launcher-settings').setAttribute('aria-label','Impostazioni, account e salvataggi');screenLayout=null;
+ }else{
+  const heading=el('div',undefined,'screen-heading'),back=content.querySelector('.launcher-back'),title=[...content.children].find(e=>e.tagName==='H2');if(back)heading.append(back);if(title)heading.append(title);const nodes=[...content.children];content.replaceChildren(heading);screenLayout=makeScreenPager(content,nodes,'screen:'+careerSlots.active+':'+tab+':'+selectedClient+':'+clientSection);
+ }
+};
+const screenAsk=ask;
+ask=(...args)=>{screenAsk(...args);$('confirm').hidden=false;$('confirm').disabled=false;modalLayout=null;if(!simpleMode)return;const body=$('modalBody');screenPages.delete('dialog:'+args[0]);modalLayout=makeScreenPager(body,[...body.children],'dialog:'+args[0]);};
+window.addEventListener('resize',()=>{if(!simpleMode)return;if(tab!=='office')screenLayout?.build();if($('modal').open)modalLayout?.build()});
 
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
