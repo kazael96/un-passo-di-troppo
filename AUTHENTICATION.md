@@ -23,7 +23,7 @@ Il progetto attuale è già configurato. I passaggi seguenti servono per una nuo
 - Le password vengono inviate a Firebase Authentication; il gioco non le registra in localStorage, nei salvataggi o nei log.
 - Google usa `signInWithPopup`, evitando un redirect tra GitHub Pages e il dominio Firebase. Il browser deve consentire il popup.
 - La sessione viene mantenuta dall’SDK Firebase.
-- Le carriere esistenti restano locali. Questa fase non aggiunge sincronizzazione cloud né separazione dei salvataggi per account. Non usare il login come promessa di recupero della partita su un altro dispositivo.
+- Le carriere esistenti restano locali finché non si attiva il cloud nelle impostazioni. Il login da solo non trasferisce una partita: la prima connessione permette di scegliere l’archivio da continuare.
 - Senza configurazione il modulo non raccoglie credenziali e spiega che l’accesso non è ancora attivo.
 
 ## Verifiche
