@@ -5,6 +5,8 @@
 .table-scroll{max-width:100%;overflow:auto}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #38483e}th{color:#d9ec81}td{vertical-align:top}@media(max-width:650px){table thead{display:none}table tr{display:block;border:1px solid #3c4d40;border-radius:9px;margin-bottom:12px;padding:8px}table td{display:flex;justify-content:space-between;gap:15px;border:0}table td:before{content:attr(data-label);color:#aabcae;min-width:90px}}
 .nav-section,.nav-tools{border:1px solid #38483e;border-radius:12px;margin:12px 0;padding:14px;background:#111c18}.nav-section summary,.nav-tools summary{cursor:pointer;font-weight:700;color:#e5efbb;padding:6px;font-size:16px}.nav-section[open]>summary,.nav-tools[open]>summary{margin-bottom:14px}.nav-tools button{margin:6px}.section-help{color:#b8c8bf;margin:4px 0 18px}.tabs{flex-wrap:nowrap;overflow-x:auto;gap:8px;scrollbar-width:thin}.tabs button{white-space:nowrap;flex-shrink:0}.nav-section:focus-within,.nav-tools:focus-within{border-color:#d9ec81}@media(max-width:850px){.grid>aside{margin-top:20px}.tabs{position:sticky;top:0}.nav-section,.nav-tools{padding:10px}.hero h1{font-size:28px}}
 
+
+
 :root{color-scheme:dark;--ink:#eaf2f8;--muted:#9eafbf;--line:#2b3d4a;--accent:#8dedbd;--gold:#f3cc78}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(ellipse at 95% 0,#143b35 0,transparent 40%),#0b121b;color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55}
@@ -243,6 +245,25 @@ body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;paddin
 .simple-experience .request-filters :is(input,select){margin:0;width:100%;box-sizing:border-box;height:48px;min-height:48px;font-size:16px!important}
 /* Clear mobile decisions, essential deal figures and compact search. */
 .deal-key-facts{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0}.deal-key-facts .agreement-fact{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:12px;background:#10232d;border-radius:10px}.deal-key-facts strong{color:#91efca;font-size:19px;white-space:nowrap}.deal-key-facts small{font-size:13px;line-height:1.4}.week-decision,.cloud-panel{padding:20px;border:1px solid #54727f;background:#172d38;border-radius:20px;margin-bottom:20px}.week-decision>small{color:#91efca;letter-spacing:.06em}.week-decision h3{margin:14px 0}.decision-actions{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}.cloud-panel{display:flex;flex-direction:column;gap:12px}.cloud-panel p,.cloud-panel h3{margin:0}.cloud-panel button{width:100%}.cloud-panel small{display:block;overflow-wrap:anywhere}.search-filters{padding:16px;border:1px solid #54727f;border-radius:14px;margin:16px 0}.search-filters summary{cursor:pointer;font-weight:700;min-height:28px}.search-filters .client-filters{margin-top:18px}.search-more{width:100%;margin-top:16px}.agreement-card>.rules{display:block;margin-top:15px;line-height:1.5}@media(min-width:700px){.decision-actions{grid-template-columns:1fr 1fr}}
+
+/* Recruitment dialog: clear costs and terms on mobile. */
+#modal .signing-summary{display:grid;gap:16px;line-height:1.45;text-align:left}
+#modal .signing-profile{display:grid;grid-template-columns:60px minmax(0,1fr);gap:16px;align-items:center}
+#modal .signing-profile .player-portrait{width:60px;height:74px;margin:0}
+#modal .signing-profile h3{font-size:21px;line-height:1.2;margin:0 0 7px;overflow-wrap:anywhere}
+#modal .signing-profile p{font-size:14px;line-height:1.4;margin:0 0 4px}
+#modal .signing-profile small{font-size:13px;color:#b9cbd6;display:block;overflow-wrap:anywhere}
+#modal .signing-costs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#modal .signing-costs .agreement-fact{padding:12px;border:1px solid #3c5d69;border-radius:12px;background:#192f3b;gap:6px}
+#modal .signing-costs small{font-size:12px;line-height:1.4;color:#bdced8}
+#modal .signing-costs strong{font-size:21px;line-height:1.2;color:#94efca}
+#modal .signing-balance{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:14px}
+#modal .signing-balance strong{white-space:nowrap;font-size:16px}
+#modal .signing-terms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:16px;row-gap:12px;border-top:1px solid #36505f;padding-top:16px;margin:0;font-size:14px}
+#modal .signing-terms dt{color:#bdced8;line-height:1.4}
+#modal .signing-terms dd{margin:0;text-align:right;line-height:1.4;font-weight:600;overflow-wrap:anywhere}
+#modal .signing-note{margin:0;padding:12px 14px;border-left:3px solid #d5bc77;border-radius:8px;background:#25333a;color:#e3dbbd;font-size:13px;line-height:1.5}
+@media(max-width:350px){#modal .signing-profile{grid-template-columns:50px minmax(0,1fr);gap:12px}#modal .signing-profile .player-portrait{width:50px;height:62px}#modal .signing-profile h3{font-size:19px}#modal .signing-costs strong{font-size:18px}#modal .signing-terms{font-size:13px;column-gap:12px}}
 </style></head><body><header><div class="logo">KING<span> AGENT</span></div><span id="saveState" role="status">Salvataggio automatico</span></header><main><div class="hero"><div><div class="eyebrow">IL TUO UFFICIO. IL LORO FUTURO.</div><h1 id="agency">King Agent</h1><div class="muted" id="calendar"></div></div><button class="primary" id="advance">Avanza di una settimana →</button></div><div class="metrics" id="metrics"></div><div class="notice" role="status" aria-live="polite" id="message"></div><nav class="tabs" id="tabs" aria-label="Sezioni dell’agenzia"></nav><div class="grid"><section id="content" aria-label="Contenuto della sezione"></section><aside><section class="panel"><h2>Dal tuo ufficio</h2><ol class="news" id="news"></ol></section><section class="panel" style="margin-top:16px"><h2>Come si costruisce una carriera</h2><p id="quickStats" class="rules"></p><p class="rules">Ingaggia talenti, cura i rapporti e chiudi accordi. Le consultazioni sono gratuite; le proposte possono essere rifiutate.</p><p class="rules">Giocatori e club inventati. La simulazione usa regole di gioco semplificate.</p></section></aside></div><footer>King Agent · Carriera su più stagioni · Salvataggio locale · Esporta la partita dalle impostazioni</footer></main><dialog id="modal" aria-labelledby="modalTitle"><h2 id="modalTitle"></h2><div id="modalBody" class="modal-body"></div><div class="actions"><button id="confirm" class="primary">Conferma</button><button id="cancel">Annulla</button></div></dialog><input id="importFile" type="file" accept="application/json,.json" aria-label="Importa un salvataggio"><script>'use strict';
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n),rnd=(a,b)=>Math.floor(Math.random()*(b-a+1))+a,cap=(n,a,b)=>Math.max(a,Math.min(b,n));
 const ROLES=['Portiere','Difensore','Centrocampista','Attaccante'],REGIONS=['Italia','Spagna','Francia','Argentina'],GOALS=['Minutaggio','Stipendio','Trofei','Vicinanza a casa'],NAMES=['Luca','Diego','Matteo','Nicolò','Samir','Alex','Tommaso','Elia','Gabriel','Andrea','Marco','Youssef'],SURNAMES=['Marini','Costa','Serra','Riva','Mancini','Ferri','Leone','Conti','Romano','Moretti','Vitale','Ricci'];
@@ -936,6 +957,25 @@ render=()=>{
 
 /* Compact search, readable agreements and occasional two-choice decisions. */
 let searchLimit=4,searchFiltersOpen=false;
+
+const readableSignDialog=signDialog;
+signDialog=p=>{
+ if(!simpleMode)return readableSignDialog(p);
+ const reason=talentSearchBlock(p);
+ if(reason||!state.market.some(q=>q.id===p.id)){notice=reason||'Questo talento non è più disponibile.';render();return}
+ const body=el('div',undefined,'signing-summary'),profile=el('div',undefined,'signing-profile'),identity=el('div');
+ identity.append(el('h3',p.name),el('p',p.role+' · '+p.age+' anni'),el('small',clubOf(p)+' · qualità '+p.skill+'/100'));
+ profile.append(playerPortrait(p),identity);
+ const costs=el('div',undefined,'signing-costs');
+ costs.append(agreementFact('Bonus alla firma',money(p.fee)),agreementFact('Tempo richiesto','1 azione'));
+ const balance=el('div',undefined,'signing-balance');balance.append(el('span','Cassa dopo il bonus'),el('strong',money(state.cash-p.fee)));
+ const terms=el('dl',undefined,'signing-terms');
+ for(const [label,value]of [['Durata','1 anno · 52 settimane'],['Commissione agenzia','10%'],['Promesse aggiuntive','Nessuna']])terms.append(el('dt',label),el('dd',value));
+ body.append(profile,costs,balance,terms,el('p','Il calciatore può rifiutare. In quel caso recuperi il bonus, ma consumi comunque l’azione.','signing-note'));
+ ask('Nuovo mandato',body,()=>sign(p,10,52,'Nessuna'));
+ $('confirm').textContent='Proponi mandato';$('cancel').textContent='Annulla';
+};
+
 function recommendedTalents(){return state.market.filter(p=>(talentCountry==='Tutti'||p.country===talentCountry)&&(filters.role==='Tutti'||p.role===filters.role)).sort((a,b)=>Number(!!talentSearchBlock(a))-Number(!!talentSearchBlock(b))||(talentOrder==='fee'?a.fee-b.fee:b.skill-a.skill)||a.id-b.id)}
 const mobileEnsure=ensureWorld;
 ensureWorld=s=>{mobileEnsure(s);if(s.weekDecision===undefined)s.weekDecision=null;return s};
