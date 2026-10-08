@@ -356,8 +356,6 @@ body.screen-fit{height:100dvh;overflow:hidden;display:flex;flex-direction:column
 .screen-fit .screen-heading{flex:none;display:flex;align-items:center;gap:12px}.screen-fit .screen-heading .launcher-back{margin:0;min-height:44px;font-size:12px;padding:8px 10px}.screen-fit .screen-heading h2{margin:0;font-size:22px;line-height:1.15}
 .screen-fit .screen-viewport{flex:1;min-height:0;overflow:hidden;display:flow-root;padding:2px 2px 6px}
 .screen-fit .screen-viewport>*{max-width:100%;margin-top:0}.screen-fit .screen-viewport>*+*{margin-top:12px}
-.screen-fit .screen-pager{flex:none;display:grid;grid-template-columns:48px 1fr 48px;gap:12px;align-items:center;border-top:1px solid #725561;padding-top:8px;color:#e5ccb4;text-align:center;font-size:13px}
-.screen-fit .screen-pager[hidden]{display:none}.screen-fit .screen-pager button{min-height:44px;padding:6px;font-size:20px}
 .screen-fit .screen-detail{width:100%;text-align:left;min-height:48px}
 .screen-fit #modal{height:auto;max-height:calc(100dvh - 24px);width:min(560px,calc(100vw - 24px));overflow:hidden;padding:18px!important}
 .screen-fit #modal[open]{display:flex;flex-direction:column}
@@ -371,7 +369,6 @@ body.screen-fit{height:100dvh;overflow:hidden;display:flex;flex-direction:column
 @media(max-height:680px){.screen-fit .launcher-tile small{display:none}.screen-fit .launcher-tile .agency-illustration{height:40px;width:68px}.screen-fit .launcher-status>small{font-size:11px}.screen-fit .home-tools button{min-height:40px}.screen-fit .launcher-tile strong{font-size:16px}}
 
 .screen-fit #modal .account-form{gap:8px}.screen-fit #modal .account-form .field{gap:3px;font-size:12px}.screen-fit #modal .account-form input{min-height:44px;padding:8px}.screen-fit #modal .account-form button{min-height:44px;padding:8px}
-.screen-fit .screen-pager button:disabled:before{content:none}
 
 .screen-fit .screen-heading{flex-wrap:wrap}.screen-fit .screen-heading .dossier-tabs{width:100%;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.screen-fit .screen-heading .dossier-tabs button{min-height:44px;padding:8px 5px;font-size:12px}
 
@@ -406,16 +403,11 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .screen-fit .screen-heading h2{flex:1;min-width:0;font-size:21px}
 .screen-fit .screen-filter{flex:1;min-height:44px;margin:0;padding:8px 12px;font-size:13px}
 .screen-fit .screen-help{width:44px;min-height:44px;padding:6px;margin:0}
-.screen-fit .screen-pager select{width:100%;min-width:0;min-height:44px;margin:0;padding:8px;font-size:12px;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px}
 .screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card){padding:14px!important;gap:8px}
 .screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card) :is(h3,p){margin:0 0 8px;line-height:1.4}
 .screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card) .screen-detail{min-height:44px;font-size:12px;padding:8px;margin:8px 0 0}
 .screen-fit .screen-viewport .button-wrap{max-width:100%;width:100%}
 .screen-fit .screen-viewport .upgrade-card .button-wrap small{line-height:1.35}
-.screen-fit #modalBody.dialog-more-pages .screen-next{border-color:#e1b47e;background:#b98050;color:#251d25}
-.screen-fit #modal:has(#modalBody.dialog-more-pages) #confirm{display:none}
-.screen-fit #modal:has(#modalBody.dialog-more-pages)>.actions{grid-template-columns:1fr}
-.screen-fit #modal .screen-pager select{font-size:12px}
 @media(min-width:600px){.screen-fit .screen-filter{flex:none}}
 .screen-fit .screen-help{order:0}
 .screen-fit .screen-filter{order:5}
@@ -444,3 +436,15 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 /* Keep mobile keyboard editing accessible without moving or replacing fields. */
 .screen-fit #modal .screen-viewport:focus-within{overflow-y:auto;overscroll-behavior:contain}
 .screen-fit #modal input,.screen-fit #modal textarea{font-size:16px}
+
+/* One screen, no generic page switcher. Only long lists scroll inside their frame. */
+.screen-fit .screen-viewport{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#967764 transparent;padding:2px 4px 10px}
+.screen-fit .screen-viewport>h3{font-size:18px;line-height:1.25;margin:4px 0 10px}
+.screen-fit .screen-viewport>p{font-size:14px;line-height:1.45;margin:8px 0}
+.screen-fit .screen-viewport .dossier-meter{margin:10px 0;padding:8px 0;font-size:14px}
+.screen-fit .screen-viewport>.screen-detail{min-height:44px;font-size:14px;margin:8px 0 0;padding:10px 12px}
+.screen-fit #modal #modalBody{height:auto;max-height:calc(100dvh - 225px);flex:1;min-height:0}
+.screen-fit #modal .screen-viewport{min-height:0;max-height:calc(100dvh - 225px);overflow-y:auto}
+.screen-fit #modal .talk-number{margin:8px 0!important;gap:5px}
+.screen-fit #modal .talk-fields{gap:8px}
+.screen-fit #modal .talk-dialog{gap:10px}
