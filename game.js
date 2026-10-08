@@ -748,6 +748,28 @@ const cloudRender=render;
 render=()=>{cloudRender();cloudAccountCheck();if(tab==='office'&&cloud.uid){const hint=el('p',cloud.status,'cloud-status-text');hint.setAttribute('role','status');$('content').append(hint)}cloudPaint();if(tab==='agency'){$('content').prepend(cloudPanel());const rules=$('content').querySelector('.save-slots .rules');if(rules)rules.textContent='5 slot indipendenti. Salvataggio automatico su questo dispositivo; attiva il cloud per sincronizzarli con il tuo account.'}};
 if(typeof window!=='undefined')window.addEventListener('online',()=>{if(accountSession.user?.uid===cloud.uid){if(cloud.ready)cloudPush();else cloudConnect()}});
 
+/* King Agent original art direction: illustrated agency dossiers. */
+const agencyDrawings=[
+'<path d="M36 30 83 24 90 86 39 94Z" fill="#d6bd91"/><path d="M31 27 77 23 83 81 35 89Z" fill="#f0dfbd"/><path d="M39 36h24m-23 5h20M45 59c0-16 21-18 22-3m-23 14c-3-16 27-19 27-3"/><circle cx="55" cy="50" r="8" fill="#ae7350"/><path d="m39 77 28-3m-12 12 28-4"/>',
+'<circle cx="58" cy="52" r="26" fill="#ded7b9"/><circle cx="58" cy="52" r="20" fill="#343a35"/><path d="m42 48 10-10 14 5 8 14-9 11-15-4-8-16Z" stroke="#b0b89a"/><path d="m78 71 18 20" stroke="#b87954" stroke-width="12"/><path d="m41 28 10-5m-12 57-12 7"/>',
+'<path d="M29 43h64v42H29Z" fill="#b77d55"/><path d="M48 43v-9h25v9M28 52h67M54 51v13h12V51"/><path d="m76 21 15 4-4 22-14-4Z" fill="#f0dfbd"/><path d="m77 27 10 2m-11 4 8 2"/><path d="m37 74 12 0"/>',
+'<path d="M26 36h70v48H26Z" fill="#f0dfbd"/><path d="m27 38 34 26 33-26M27 82l24-23m44 23L71 59"/><circle cx="85" cy="76" r="15" fill="#b87854"/><path d="m79 76 5 5 9-10" stroke="#fff0d1"/><path d="m39 24 29-3m-31 9 16-2"/>',
+'<path d="M35 46h48v42H35Z" fill="#ddc9a0"/><path d="M39 49h39M42 58h30m-28 9h26m-28 9h27"/><path d="m50 36-8-15 6-5 11 17m6 1 6-21 8 3-7 20" fill="#b67954"/><path d="M33 42h53v10H33Z" fill="#8d9577"/><path d="m86 61 12-13 6 6-12 14-6 1Z" fill="#dcb583"/>',
+'<path d="M32 28h56v61H32Z" fill="#caa67c"/><path d="M39 26h47v58H39Z" fill="#f0dfbd"/><path d="M45 41h34m-33 10h11m8 0h13M46 62h12m7 0h13M46 72h10m9 0h13"/><circle cx="85" cy="81" r="13" fill="#b77852"/><path d="M85 73v16m-4-13c12-7 13 8-1 9" stroke="#f0dfbd"/>'
+];
+const artisticRender=render;
+render=()=>{
+ artisticRender();document.body.classList.add('art-agency');
+ if(!simpleMode||tab!=='office')return;
+ document.querySelectorAll('.launcher-tile').forEach((tile,i)=>{
+  const previous=tile.querySelector('svg');if(previous)previous.remove();
+  const art=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  art.setAttribute('viewBox','0 0 120 110');art.setAttribute('aria-hidden','true');art.classList.add('agency-illustration');
+  art.innerHTML='<ellipse cx="61" cy="94" rx="38" ry="5" fill="#140f17" opacity=".35"/><g stroke="#342a2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">'+agencyDrawings[i]+'</g>';
+  tile.prepend(art);tile.dataset.department=String(i+1).padStart(2,'0');
+ });
+};
+
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
  const browserHistory=window.history,dialog=$('modal');
