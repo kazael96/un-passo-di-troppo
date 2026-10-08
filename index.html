@@ -409,7 +409,6 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 /* Clear screen navigation and compact, complete cards. */
 .screen-fit .screen-heading{gap:8px;align-items:center}
 .screen-fit .screen-heading h2{flex:1;min-width:0;font-size:21px}
-.screen-fit .screen-section-menu{width:100%;min-height:44px;padding:8px 12px;margin:0;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px;font-size:14px}
 .screen-fit .screen-filter{flex:1;min-height:44px;margin:0;padding:8px 12px;font-size:13px}
 .screen-fit .screen-help{width:44px;min-height:44px;padding:6px;margin:0}
 .screen-fit .screen-pager select{width:100%;min-width:0;min-height:44px;margin:0;padding:8px;font-size:12px;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px}
@@ -422,8 +421,7 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .screen-fit #modal:has(#modalBody.dialog-more-pages) #confirm{display:none}
 .screen-fit #modal:has(#modalBody.dialog-more-pages)>.actions{grid-template-columns:1fr}
 .screen-fit #modal .screen-pager select{font-size:12px}
-@media(min-width:600px){.screen-fit .screen-section-menu{width:180px}.screen-fit .screen-filter{flex:none}}
-.screen-fit .screen-section-menu{order:4}
+@media(min-width:600px){.screen-fit .screen-filter{flex:none}}
 .screen-fit .screen-help{order:0}
 .screen-fit .screen-filter{order:5}
 .screen-fit .screen-heading .dossier-tabs{order:6}
@@ -1293,7 +1291,6 @@ render=()=>{screenRender();if(!simpleMode)return;document.body.classList.add('sc
   const footer=el('div',undefined,'home-footer');footer.append(content.querySelector('.launcher-continue'),content.querySelector('.launcher-settings'));content.append(footer);content.querySelector('.launcher-settings').textContent='⚙';content.querySelector('.launcher-settings').setAttribute('aria-label','Impostazioni, account e salvataggi');screenLayout=null;
  }else{
   const heading=el('div',undefined,'screen-heading'),back=content.querySelector('.launcher-back'),title=content.querySelector(':scope > h2,:scope > .agreements-heading h2')||(tab==='agency'?el('h2','Impostazioni'):null);if(back){if(tab!=='player')back.textContent='← Home';heading.append(back)}if(title)heading.append(title);content.querySelector('.agreements-heading')?.remove();
-  const menu=document.createElement('select');menu.className='screen-section-menu';menu.setAttribute('aria-label','Apri una sezione');for(const [id,name]of [['','Vai a…'],['roster','Calciatori'],['market','Ricerca'],['offers','Accordi e ufficio'],['clublist','Richieste'],['upgrades','Miglioramenti'],['balance','Finanze'],['agency','Impostazioni']]){const option=document.createElement('option');option.value=id;option.textContent=name;menu.append(option)}menu.onchange=()=>{if(menu.value)goSection(menu.value)};heading.append(menu);
   const identity=content.querySelector('.player-identity');if(identity){const name=identity.querySelector('h2,h3,strong')?.textContent||'Calciatore';identity.remove();const wish=content.querySelector('.player-wish');if(wish)identity.append(wish);if(!title)heading.append(el('h2',name));const profile=btn('Info',()=>openScreenDetail('Profilo del calciatore',[identity]),'','screen-help');heading.append(profile)}
   const dossierTabs=content.querySelector('.dossier-tabs');if(dossierTabs)heading.append(dossierTabs);
   // Filters belong to the list, rather than an arbitrary first page.
