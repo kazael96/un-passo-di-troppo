@@ -691,6 +691,25 @@ render=()=>{
 
 /* Compact search, readable agreements and occasional two-choice decisions. */
 let searchLimit=4,searchFiltersOpen=false;
+
+const readableSignDialog=signDialog;
+signDialog=p=>{
+ if(!simpleMode)return readableSignDialog(p);
+ const reason=talentSearchBlock(p);
+ if(reason||!state.market.some(q=>q.id===p.id)){notice=reason||'Questo talento non è più disponibile.';render();return}
+ const body=el('div',undefined,'signing-summary'),profile=el('div',undefined,'signing-profile'),identity=el('div');
+ identity.append(el('h3',p.name),el('p',p.role+' · '+p.age+' anni'),el('small',clubOf(p)+' · qualità '+p.skill+'/100'));
+ profile.append(playerPortrait(p),identity);
+ const costs=el('div',undefined,'signing-costs');
+ costs.append(agreementFact('Bonus alla firma',money(p.fee)),agreementFact('Tempo richiesto','1 azione'));
+ const balance=el('div',undefined,'signing-balance');balance.append(el('span','Cassa dopo il bonus'),el('strong',money(state.cash-p.fee)));
+ const terms=el('dl',undefined,'signing-terms');
+ for(const [label,value]of [['Durata','1 anno · 52 settimane'],['Commissione agenzia','10%'],['Promesse aggiuntive','Nessuna']])terms.append(el('dt',label),el('dd',value));
+ body.append(profile,costs,balance,terms,el('p','Il calciatore può rifiutare. In quel caso recuperi il bonus, ma consumi comunque l’azione.','signing-note'));
+ ask('Nuovo mandato',body,()=>sign(p,10,52,'Nessuna'));
+ $('confirm').textContent='Proponi mandato';$('cancel').textContent='Annulla';
+};
+
 function recommendedTalents(){return state.market.filter(p=>(talentCountry==='Tutti'||p.country===talentCountry)&&(filters.role==='Tutti'||p.role===filters.role)).sort((a,b)=>Number(!!talentSearchBlock(a))-Number(!!talentSearchBlock(b))||(talentOrder==='fee'?a.fee-b.fee:b.skill-a.skill)||a.id-b.id)}
 const mobileEnsure=ensureWorld;
 ensureWorld=s=>{mobileEnsure(s);if(s.weekDecision===undefined)s.weekDecision=null;return s};
