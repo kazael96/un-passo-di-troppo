@@ -795,7 +795,7 @@ render=()=>{screenRender();if(!simpleMode)return;document.body.classList.add('sc
   content.querySelector('.launcher-account')?.remove();
   const footer=el('div',undefined,'home-footer');footer.append(content.querySelector('.launcher-continue'),content.querySelector('.launcher-settings'));content.append(footer);content.querySelector('.launcher-settings').textContent='⚙';content.querySelector('.launcher-settings').setAttribute('aria-label','Impostazioni, account e salvataggi');screenLayout=null;
  }else{
-  const heading=el('div',undefined,'screen-heading'),back=content.querySelector('.launcher-back'),title=[...content.children].find(e=>e.tagName==='H2');if(back)heading.append(back);if(title)heading.append(title);const nodes=[...content.children];content.replaceChildren(heading);screenLayout=makeScreenPager(content,nodes,'screen:'+careerSlots.active+':'+tab+':'+selectedClient+':'+clientSection);
+  const heading=el('div',undefined,'screen-heading'),back=content.querySelector('.launcher-back'),title=[...content.children].find(e=>e.tagName==='H2');if(back)heading.append(back);if(title)heading.append(title);const dossierTabs=content.querySelector('.dossier-tabs');if(dossierTabs)heading.append(dossierTabs);const nodes=[...content.children];content.replaceChildren(heading);screenLayout=makeScreenPager(content,nodes,'screen:'+careerSlots.active+':'+tab+':'+selectedClient+':'+clientSection);
  }
 };
 const screenAsk=ask;
