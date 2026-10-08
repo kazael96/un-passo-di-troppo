@@ -404,7 +404,6 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 /* Clear screen navigation and compact, complete cards. */
 .screen-fit .screen-heading{gap:8px;align-items:center}
 .screen-fit .screen-heading h2{flex:1;min-width:0;font-size:21px}
-.screen-fit .screen-section-menu{width:100%;min-height:44px;padding:8px 12px;margin:0;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px;font-size:14px}
 .screen-fit .screen-filter{flex:1;min-height:44px;margin:0;padding:8px 12px;font-size:13px}
 .screen-fit .screen-help{width:44px;min-height:44px;padding:6px;margin:0}
 .screen-fit .screen-pager select{width:100%;min-width:0;min-height:44px;margin:0;padding:8px;font-size:12px;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px}
@@ -417,8 +416,7 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .screen-fit #modal:has(#modalBody.dialog-more-pages) #confirm{display:none}
 .screen-fit #modal:has(#modalBody.dialog-more-pages)>.actions{grid-template-columns:1fr}
 .screen-fit #modal .screen-pager select{font-size:12px}
-@media(min-width:600px){.screen-fit .screen-section-menu{width:180px}.screen-fit .screen-filter{flex:none}}
-.screen-fit .screen-section-menu{order:4}
+@media(min-width:600px){.screen-fit .screen-filter{flex:none}}
 .screen-fit .screen-help{order:0}
 .screen-fit .screen-filter{order:5}
 .screen-fit .screen-heading .dossier-tabs{order:6}
