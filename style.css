@@ -372,3 +372,5 @@ body.screen-fit{height:100dvh;overflow:hidden;display:flex;flex-direction:column
 
 .screen-fit #modal .account-form{gap:8px}.screen-fit #modal .account-form .field{gap:3px;font-size:12px}.screen-fit #modal .account-form input{min-height:44px;padding:8px}.screen-fit #modal .account-form button{min-height:44px;padding:8px}
 .screen-fit .screen-pager button:disabled:before{content:none}
+
+.screen-fit .screen-heading{flex-wrap:wrap}.screen-fit .screen-heading .dossier-tabs{width:100%;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.screen-fit .screen-heading .dossier-tabs button{min-height:44px;padding:8px 5px;font-size:12px}
