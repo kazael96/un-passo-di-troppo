@@ -856,7 +856,12 @@ render=()=>{screenRender();if(!simpleMode)return;document.body.classList.add('sc
 };
 const screenAsk=ask;
 ask=(...args)=>{screenAsk(...args);$('confirm').hidden=false;$('confirm').disabled=false;modalLayout=null;if(!simpleMode)return;const body=$('modalBody');screenPages.delete('dialog:'+args[0]);modalLayout=makeScreenPager(body,[...body.children],'dialog:'+args[0]);};
-window.addEventListener('resize',()=>{if(!simpleMode)return;if(tab!=='office')screenLayout?.build();if($('modal').open)modalLayout?.build()});
+// A phone keyboard changes the viewport. Never detach the field being edited.
+let screenResizePending=false,screenResizeTimer;
+function screenEditing(){return document.activeElement?.matches('input,textarea,[contenteditable="true"]')}
+function resizeGameScreens(){if(!simpleMode)return;if(screenEditing()){screenResizePending=true;return}screenResizePending=false;if(tab!=='office')screenLayout?.build();if($('modal').open)modalLayout?.build()}
+window.addEventListener('resize',resizeGameScreens);
+document.addEventListener('focusout',()=>{clearTimeout(screenResizeTimer);screenResizeTimer=setTimeout(()=>{if(screenResizePending&&!screenEditing())resizeGameScreens()},150)});
 
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
