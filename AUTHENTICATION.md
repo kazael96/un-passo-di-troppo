@@ -13,7 +13,7 @@ Il progetto attuale è già configurato. I passaggi seguenti servono per una nuo
 3. In Authentication → Metodo di accesso, abilitare Email/Password e Google. Per Google impostare il nome pubblico King Agent e l’email di assistenza del proprietario.
 4. Nei domini autorizzati aggiungere `kazael96.github.io`. Per le verifiche locali aggiungere `127.0.0.1` e `localhost`.
 5. Configurare una password minima di 8 caratteri nella policy del progetto. L’interfaccia legge e verifica la policy tramite l’SDK.
-6. Eseguire `node work/build-account.cjs`, poi `node work/build-king.cjs` dalla radice del workspace.
+6. Eseguire `node work/build-account.cjs`, `node work/build-navigation.cjs`, `node work/build-requests.cjs`, `node work/build-mobile.cjs`, poi `node work/build-king.cjs` dalla radice del workspace.
 7. Pubblicare `index.html`, `style.css` e `game.js` su GitHub Pages.
 8. Verificare sul sito pubblico creazione di un account di prova, verifica email, uscita, accesso email, recupero password, accesso Google, ritorno dopo ricaricamento e annullamento del popup. Usare un indirizzo di prova controllato dal proprietario, non credenziali inventate di persone reali.
 
@@ -33,3 +33,8 @@ Il progetto attuale è già configurato. I passaggi seguenti servono per una nuo
 Verificati anche il caricamento reale dell’SDK e la risposta di Firebase a un tentativo con credenziali di prova non valide. Creazione, verifica email e accesso riuscito con Google richiedono una prova con un account controllato dall’utente.
 
 Documentazione: https://firebase.google.com/docs/auth/web/password-auth · https://firebase.google.com/docs/auth/web/google-signin · https://firebase.google.com/docs/auth/web/manage-users
+## Carriere nel cloud
+
+Firestore Standard è configurato nel database (default), europe-west8, progetto king-agent-c4f1a, piano Spark. Le regole pubblicate consentono lettura e scrittura solo in careers/{uid} al relativo utente autenticato; eliminazione e altri percorsi non sono autorizzati. Sono verificati schema, dimensione, timestamp server e incremento della revisione.
+
+La sincronizzazione è facoltativa e si attiva nelle impostazioni dopo l’accesso. Non avviene alcuna sovrascrittura automatica di archivi differenti alla prima connessione. Ogni conflitto richiede una scelta e conserva una copia precedente nel browser. I test automatici simulano transazioni, conflitti e cambio account; la prova completa tra due dispositivi reali richiede accesso allo stesso account su entrambi.
