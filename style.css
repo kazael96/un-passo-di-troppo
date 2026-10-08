@@ -257,3 +257,80 @@ body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;paddin
 #modal .signing-terms dd{margin:0;text-align:right;line-height:1.4;font-weight:600;overflow-wrap:anywhere}
 #modal .signing-note{margin:0;padding:12px 14px;border-left:3px solid #d5bc77;border-radius:8px;background:#25333a;color:#e3dbbd;font-size:13px;line-height:1.5}
 @media(max-width:350px){#modal .signing-profile{grid-template-columns:50px minmax(0,1fr);gap:12px}#modal .signing-profile .player-portrait{width:50px;height:62px}#modal .signing-profile h3{font-size:19px}#modal .signing-costs strong{font-size:18px}#modal .signing-terms{font-size:13px;column-gap:12px}}
+
+
+/* Original identity: ink, parchment and copper. */
+body.art-agency{--ink:#f5ead7;--muted:#c5b6ac;--accent:#edbb81;--gold:#edbb81;--line:#53444d;background:radial-gradient(ellipse at 0 0,#49303870,transparent 55%),radial-gradient(ellipse at 100% 70%,#3e332760,transparent 60%),#18151e;color:var(--ink);font-family:"Segoe UI",Arial,sans-serif}
+.art-agency h2,.art-agency h3{font-family:Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.5px;color:#f5ead7}
+.art-agency main{position:relative;max-width:1050px}
+.art-agency #content{background:#211c27;border-color:#55444e;border-radius:10px;box-shadow:0 14px 44px #09070e45}
+.art-agency.launcher-home #content{background:transparent;box-shadow:none;border:0}
+.art-agency .launcher-status{background:transparent;border-bottom:1px solid #645050;padding-bottom:20px;margin-bottom:20px;color:#f3e4cb}
+.art-agency .launcher-status>span{font-family:Georgia,serif;font-size:21px}
+.art-agency .launcher-status>strong{font-family:Georgia,serif;color:#edbb81;font-size:29px;font-variant-numeric:tabular-nums}
+.art-agency .launcher-status>small{color:#cdbcb1}
+.art-agency :is(.card,.panel,.offer,.upgrade-card,.save-slot,.agreement-card,.request-card,.request-overview,.requests-empty,.player-wish,.comparison-card,.comparison-matrix,.nav-section,.nav-tools){background:#2b2530;border-color:#68535a;border-radius:10px;box-shadow:none}
+.art-agency :is(p,small,.role,.rules,.field,.section-help){color:#cfc0b5}
+.art-agency :is(.client-info strong,.client-info>span,.agreement-who p,.identity-name p){color:#f5ead7}
+.art-agency :is(.client-info strong,.agreement-who h3,.identity-name h2){font-family:Georgia,serif}
+.art-agency button{background:#49353b;border:1px solid #a27967;border-radius:7px;color:#ffeed7;box-shadow:0 3px 0 #130f19;font-weight:650}
+.art-agency button:hover:not(:disabled){background:#604048;border-color:#e7b685;transform:translateY(-1px)}
+.art-agency button:focus-visible,.art-agency summary:focus-visible{outline:3px solid #f6cf94;outline-offset:4px}
+.art-agency button:disabled{cursor:not-allowed;box-shadow:none}
+.art-agency button.primary,.art-agency #confirm,.art-agency .launcher-continue{background:linear-gradient(135deg,#f0c996,#db9f6e);color:#2e211f;border:1px solid #f6d6ad;box-shadow:0 4px 0 #825742}
+.art-agency :is(input,select,textarea){background:#1d1923!important;color:#f5ead7!important;border-color:#91736e!important;border-radius:6px}
+.art-agency :is(.client-filters,.filters){background:transparent;border-color:#594850}
+.art-agency .launcher-back{background:transparent;border-color:#8b6f68;box-shadow:none}
+.art-agency .launcher-tiles{gap:14px;margin:18px 0 26px}
+.art-agency.simple-experience.launcher-home .launcher-tile{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-rows:96px auto auto;align-content:start;justify-items:start;gap:5px;min-height:180px;padding:13px 17px 18px;background:linear-gradient(145deg,#3b2c35,#28232f);border:1px solid #826452;border-radius:9px 25px 9px 9px;box-shadow:0 5px 0 #0e0b13}
+.art-agency .launcher-tile:nth-child(2n){background:linear-gradient(145deg,#313530,#26252e)}
+.art-agency .launcher-tile:before{content:attr(data-department);position:absolute;right:15px;top:13px;color:#bd9677;font-family:Georgia,serif;font-size:13px;letter-spacing:2px}
+.art-agency .launcher-tile:after{content:'↗';position:absolute;right:14px;bottom:14px;font-size:18px;color:#e6b685}
+.art-agency .launcher-tile .agency-illustration{width:110px;height:96px;stroke:none;fill:none;margin-left:-7px}
+.art-agency .launcher-tile strong{font-family:Georgia,serif;font-size:21px;color:#f6e6ca;letter-spacing:-.4px;padding-right:15px}
+.art-agency .launcher-tile small{color:#cdbab0;font-size:12px;line-height:1.4;padding-right:12px}
+.art-agency.simple-experience.launcher-home .launcher-tile:hover{background:#4b3540;border-color:#e7b685}
+.art-agency .launcher-inbox{background:#2f252e;border-color:#9a7761;color:#f4ddba;border-radius:7px;box-shadow:none}
+.art-agency .launcher-settings,.art-agency .launcher-account{background:transparent;color:#d4bcaa;border-color:#7c635d;box-shadow:none}
+.art-agency.simple-experience .focus-goal{position:relative;overflow:hidden;background:linear-gradient(115deg,#413038,#2b2632);border:1px solid #9c765b;border-radius:8px;padding:20px 22px;box-shadow:inset 4px 0 #dbab77}
+.art-agency.simple-experience .focus-goal>small{color:#e7b782;letter-spacing:1.8px;font-size:10px}
+.art-agency.simple-experience .focus-goal h2{font-size:26px;margin-top:10px}
+.art-agency .focus-goal progress{height:5px;accent-color:#edbb81;background:#5b4547}
+.art-agency progress::-webkit-progress-bar{background:#57444b}
+.art-agency progress::-webkit-progress-value{background:#edbb81}
+.art-agency .simple-experience progress,.art-agency progress{accent-color:#edbb81}
+.art-agency.simple-experience button.client-row{position:relative;background:linear-gradient(110deg,#3a2c32,#28242e);border:1px solid #826452;border-left:4px solid #c79768;border-radius:7px;box-shadow:0 4px 0 #110d17;padding:17px}
+.art-agency.simple-experience button.search-row:disabled{background:#29242d;color:#e6d8c7;border-color:#62545b;border-left-color:#76646a}
+.art-agency .player-portrait{border:1px solid #c7996b;border-radius:4px;background:#44343c;box-shadow:0 2px 7px #08050b50}
+.art-agency .client-row .client-bottom{border-color:#67505a;color:#eed0a7}
+.art-agency :is(.client-rating b,.identity-rating){background:#e4bb86;color:#32251f;border-radius:5px}
+.art-agency .identity-rating strong,.art-agency .identity-rating small{color:#32251f}
+.art-agency.simple-experience .player-identity{background:linear-gradient(130deg,#44313b,#292430);border-color:#987258;border-radius:8px;border-top:4px solid #d6a474}
+.art-agency :is(.identity-facts,.dossier-tabs,.finance-row,.growth-row,.career-deal,.agreement-details,.request-player,.agreement-news){border-color:#5e4953}
+.art-agency .dossier-tabs button{background:transparent;box-shadow:none;border-color:#84666a;color:#e6cdbd}
+.art-agency .dossier-tabs button.active{background:#e4bb86;border-color:#f6d7a9;color:#302320}
+.art-agency :is(.dossier-summary,.finance-summary,.finance-metric,.growth-metric,.career-metric,.metric,.week-figures,.result-money .agreement-fact,.wish-status,.request-details,.signing-costs .agreement-fact){background:#302833;border-color:#6b535c;border-radius:7px}
+.art-agency :is(.agreement-earnings,.notice,.inline-guide,.week-deadlines){background:#383037;border-color:#937258;color:#f0d8b6}
+.art-agency :is(.agreement-earnings>strong,.upgrade-costs strong,.request-need,.request-overview strong,.result-money strong,.comparison-row strong,.metric b,.finance-summary strong){color:#eec38c}
+.art-agency .agreement-status span{border-color:#8b7363;background:#312932;color:#e7c49c}
+.art-agency .upgrade-steps span{background:#53434c}.art-agency .upgrade-steps .done{background:#e7b782}
+.art-agency :is(.agreements-empty,.request-overview,.requests-empty){background:#29232e;border-color:#8b7363}
+.art-agency :is(.agreement-who small,.identity-meta,.identity-facts small,.client-rating small,.career-deal small,.upgrade-overview small,.agreement-fact small,.request-club-heading small){color:#cdbeb3}
+.art-agency #modal{background:linear-gradient(145deg,#342832,#221c29);border:1px solid #ad8062;border-radius:10px;box-shadow:0 28px 90px #07050dbb,inset 0 3px #d9a877}
+.art-agency #modal::backdrop{background:#100c16cc;backdrop-filter:blur(6px)}
+.art-agency #modal h2{font-family:Georgia,serif;color:#f4dfbf;border-bottom-color:#735360}
+.art-agency #modal>.actions{border-color:#6a4c59}
+.art-agency #modal #cancel{background:transparent;border-color:#a17a6c;color:#e4d2c4;box-shadow:none}
+.art-agency #modal :is(.signing-costs .agreement-fact,.week-figures,.result-money .agreement-fact){background:#332932;border-color:#806052}
+.art-agency #modal .signing-costs strong{color:#eec38c}
+.art-agency #modal :is(.signing-profile small,.signing-costs small,.signing-terms dt){color:#d4c1b4}
+.art-agency #modal .signing-terms{border-color:#71545e}
+.art-agency #modal .signing-note{background:#423238;color:#f2dcc1;border-left-color:#e5b17b}
+.art-agency .account-google{background:#f5ead7;color:#2c2130;border-color:#f5ead7}
+@media(max-width:650px){.art-agency main{padding:12px 14px 26px}.art-agency .launcher-status{margin-bottom:16px;padding:16px 14px}.art-agency.simple-experience.launcher-home .launcher-tile{min-height:173px;padding:10px 14px 16px;grid-template-rows:86px auto auto}.art-agency .launcher-tile .agency-illustration{height:86px;width:98px}.art-agency .launcher-tile strong{font-size:20px}.art-agency .launcher-tile small{font-size:11px}.art-agency.simple-experience .focus-goal{padding:17px 18px}.art-agency.simple-experience .focus-goal h2{font-size:24px}.art-agency.simple-experience button.client-row{padding:14px}}
+@media(max-width:360px){.art-agency .launcher-tiles{gap:12px}.art-agency.simple-experience.launcher-home .launcher-tile{padding:10px 11px 15px}.art-agency .launcher-tile strong{font-size:18px}.art-agency .launcher-tile small{font-size:10px}.art-agency .launcher-status>strong{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.art-agency button{transition:none}.art-agency button:hover:not(:disabled){transform:none}}
+
+.art-agency #modal>.actions{background:transparent!important}
+.art-agency .request-details>summary,.art-agency .search-filters>summary{border-color:#80646b;color:#ead6c1;background:#2c2631}
+.art-agency .search-blocked{color:#eac195}
