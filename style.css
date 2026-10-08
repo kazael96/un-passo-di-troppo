@@ -238,3 +238,22 @@ body #modal .comparison-actions button{width:100%;margin:0;font-size:12px;paddin
 .simple-experience .request-filters :is(input,select){margin:0;width:100%;box-sizing:border-box;height:48px;min-height:48px;font-size:16px!important}
 /* Clear mobile decisions, essential deal figures and compact search. */
 .deal-key-facts{display:grid;grid-template-columns:1fr;gap:10px;margin:18px 0}.deal-key-facts .agreement-fact{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:12px;background:#10232d;border-radius:10px}.deal-key-facts strong{color:#91efca;font-size:19px;white-space:nowrap}.deal-key-facts small{font-size:13px;line-height:1.4}.week-decision,.cloud-panel{padding:20px;border:1px solid #54727f;background:#172d38;border-radius:20px;margin-bottom:20px}.week-decision>small{color:#91efca;letter-spacing:.06em}.week-decision h3{margin:14px 0}.decision-actions{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}.cloud-panel{display:flex;flex-direction:column;gap:12px}.cloud-panel p,.cloud-panel h3{margin:0}.cloud-panel button{width:100%}.cloud-panel small{display:block;overflow-wrap:anywhere}.search-filters{padding:16px;border:1px solid #54727f;border-radius:14px;margin:16px 0}.search-filters summary{cursor:pointer;font-weight:700;min-height:28px}.search-filters .client-filters{margin-top:18px}.search-more{width:100%;margin-top:16px}.agreement-card>.rules{display:block;margin-top:15px;line-height:1.5}@media(min-width:700px){.decision-actions{grid-template-columns:1fr 1fr}}
+
+/* Recruitment dialog: clear costs and terms on mobile. */
+#modal .signing-summary{display:grid;gap:16px;line-height:1.45;text-align:left}
+#modal .signing-profile{display:grid;grid-template-columns:60px minmax(0,1fr);gap:16px;align-items:center}
+#modal .signing-profile .player-portrait{width:60px;height:74px;margin:0}
+#modal .signing-profile h3{font-size:21px;line-height:1.2;margin:0 0 7px;overflow-wrap:anywhere}
+#modal .signing-profile p{font-size:14px;line-height:1.4;margin:0 0 4px}
+#modal .signing-profile small{font-size:13px;color:#b9cbd6;display:block;overflow-wrap:anywhere}
+#modal .signing-costs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#modal .signing-costs .agreement-fact{padding:12px;border:1px solid #3c5d69;border-radius:12px;background:#192f3b;gap:6px}
+#modal .signing-costs small{font-size:12px;line-height:1.4;color:#bdced8}
+#modal .signing-costs strong{font-size:21px;line-height:1.2;color:#94efca}
+#modal .signing-balance{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:14px}
+#modal .signing-balance strong{white-space:nowrap;font-size:16px}
+#modal .signing-terms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:16px;row-gap:12px;border-top:1px solid #36505f;padding-top:16px;margin:0;font-size:14px}
+#modal .signing-terms dt{color:#bdced8;line-height:1.4}
+#modal .signing-terms dd{margin:0;text-align:right;line-height:1.4;font-weight:600;overflow-wrap:anywhere}
+#modal .signing-note{margin:0;padding:12px 14px;border-left:3px solid #d5bc77;border-radius:8px;background:#25333a;color:#e3dbbd;font-size:13px;line-height:1.5}
+@media(max-width:350px){#modal .signing-profile{grid-template-columns:50px minmax(0,1fr);gap:12px}#modal .signing-profile .player-portrait{width:50px;height:62px}#modal .signing-profile h3{font-size:19px}#modal .signing-costs strong{font-size:18px}#modal .signing-terms{font-size:13px;column-gap:12px}}
