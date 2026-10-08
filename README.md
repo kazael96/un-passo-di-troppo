@@ -2,7 +2,7 @@
 
 Gestionale di un’agenzia di calciatori in italiano. La partita e i salvataggi funzionano localmente; l’accesso facoltativo con email/password o Google richiede internet e Firebase Authentication. index.html include grafica e codice. game.js è la copia del sorgente JavaScript per lo sviluppo.
 
-Registrazione, verifica email, recupero password e uscita sono disponibili da «Accedi / Registrati». Le carriere restano nel browser: l’account non sincronizza ancora le partite tra dispositivi. Dettagli in AUTHENTICATION.md.
+Registrazione, verifica email, recupero password e uscita sono disponibili da «Accedi / Registrati». Le carriere si possono sincronizzare con il cloud attivandolo nelle impostazioni dopo l’accesso. Dettagli in AUTHENTICATION.md.
 
 ## Esperienza guidata
 La home mostra un solo traguardo alla volta, progresso e premio. Usa i premi esistenti, riscattabili una sola volta. I primi passi accompagnano la ricerca del primo calciatore, la proposta e il primo accordo; i suggerimenti si possono nascondere nelle impostazioni.
@@ -202,7 +202,7 @@ Le simulazioni di bilanciamento usano carriere automatizzate di 780 settimane in
 
 
 ## Carriere e salvataggi multipli
-Cinque slot indipendenti in Impostazioni e salvataggi. La partita precedente viene conservata nello slot 1. Ogni slot salva automaticamente la carriera attiva e conserva la propria copia di recupero. Puoi caricare e rinominare una carriera, creare una nuova partita in uno slot libero o salvare una copia indipendente. Le sostituzioni richiedono conferma; un errore di spazio impedisce il cambio di slot. Importazione ed esportazione riguardano la carriera attiva. I dati restano nel browser e non si sincronizzano automaticamente tra dispositivi.
+Cinque slot indipendenti in Impostazioni e salvataggi. La partita precedente viene conservata nello slot 1. Ogni slot salva automaticamente la carriera attiva e conserva la propria copia di recupero. Puoi caricare e rinominare una carriera, creare una nuova partita in uno slot libero o salvare una copia indipendente. Le sostituzioni richiedono conferma; un errore di spazio impedisce il cambio di slot. Importazione ed esportazione riguardano la carriera attiva. I dati restano nel browser; il cloud facoltativo sincronizza gli slot con l’account.
 
 
 ## Accordi su smartphone
@@ -214,3 +214,14 @@ Le proposte sono ordinate per scadenza e mostrano ritratto, calciatore, club, ti
 La sezione Richieste mostra prima i club con una proposta disponibile per un assistito nel ruolo cercato. Ogni scheda presenta club, ruolo e calciatore compatibile, con invio diretto gratuito e passaggio ad Accordi. Il riepilogo distingue l’apertura gratuita dalla firma, che usa una azione. Mandati scaduti, prestiti, ritiri annunciati, attese, mercato chiuso, budget insufficiente e limiti alle proposte hanno motivi visibili. Le proposte già aperte si consultano senza duplicarle. Ricerca per nome, ruolo e vista di tutti i club restano disponibili; altri calciatori compatibili e dettagli del club sono richiudibili.
 
 Il tasto Indietro del browser segue le schermate e le sezioni della scheda del calciatore. Chiude le finestre senza confermare operazioni; dalla home mantiene il gioco aperto.
+## Ricerca, accordi e decisioni semplici
+
+Ricerca mostra quattro profili alla volta, prima quelli ingaggiabili. Paese, ruolo e ordinamento sono nel pannello Filtra e ordina. Gli accordi mettono in evidenza guadagno, stipendio settimanale e probabilità complessiva usata dalla firma semplice; quote di pagamento e termini secondari sono nei dettagli.
+
+Ogni quattro settimane può apparire una decisione sulla home: colloquio (+8 fiducia, un’azione) oppure contatto mirato con un club (un’azione, nessuna firma garantita). Rimandare è gratuito e senza penalità. Ogni decisione si risolve una sola volta e scade dopo due settimane.
+
+## Sincronizzazione facoltativa
+
+Dopo l’accesso, attiva il cloud in Impostazioni e salvataggi. Firestore conserva un archivio privato dei cinque slot, accessibile solo al proprietario autenticato. Le scritture usano una transazione e una revisione: se un altro dispositivo modifica l’archivio, il gioco chiede quale versione continuare e conserva una copia di quella sostituita. Il pulsante Controlla e sincronizza ora carica le novità dell’altro dispositivo. Non è una sessione multiplayer in tempo reale.
+
+Il gioco resta locale senza account. Le modifiche offline vengono conservate e inviate alla riconnessione; aspetta la conferma di sincronizzazione prima di cambiare dispositivo. Limite archivio cloud: 850 KB; le copie di recupero dei singoli slot restano locali. La copia conservata durante una scelta cloud si recupera dalle impostazioni. Regole di sicurezza in firestore.rules, database Standard europe-west8, piano Spark.
