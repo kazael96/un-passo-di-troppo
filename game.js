@@ -766,7 +766,7 @@ render=()=>{
   const art=document.createElementNS('http://www.w3.org/2000/svg','svg');
   art.setAttribute('viewBox','0 0 120 110');art.setAttribute('aria-hidden','true');art.classList.add('agency-illustration');
   art.innerHTML='<ellipse cx="61" cy="94" rx="38" ry="5" fill="#140f17" opacity=".35"/><g stroke="#342a2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">'+agencyDrawings[i]+'</g>';
-  tile.prepend(art);tile.dataset.department=String(i+1).padStart(2,'0');
+  tile.prepend(art);
  });
 };
 
