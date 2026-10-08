@@ -400,3 +400,45 @@ body.art-agency button:active:not(:disabled){box-shadow:none!important}
 
 /* Free numeric negotiation values: readable mobile ranges. */
 body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;font-size:10px!important;color:#c8afa1!important;line-height:1.3}body #modal .talk-fields input{min-height:44px;padding:8px;font-size:16px;border-radius:6px;margin:0}body #modal .talk-fields input[aria-invalid=true]{border-color:#f3a895!important;outline:1px solid #f3a895}.talk-fields .field{break-inside:avoid}
+
+/* Clear screen navigation and compact, complete cards. */
+.screen-fit .screen-heading{gap:8px;align-items:center}
+.screen-fit .screen-heading h2{flex:1;min-width:0;font-size:21px}
+.screen-fit .screen-section-menu{width:100%;min-height:44px;padding:8px 12px;margin:0;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px;font-size:14px}
+.screen-fit .screen-filter{flex:1;min-height:44px;margin:0;padding:8px 12px;font-size:13px}
+.screen-fit .screen-help{width:44px;min-height:44px;padding:6px;margin:0}
+.screen-fit .screen-pager select{width:100%;min-width:0;min-height:44px;margin:0;padding:8px;font-size:12px;background:#302630;color:#f4e3c4;border:1px solid #967764;border-radius:7px}
+.screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card){padding:14px!important;gap:8px}
+.screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card) :is(h3,p){margin:0 0 8px;line-height:1.4}
+.screen-fit .screen-viewport :is(.upgrade-card,.request-card,.agreement-card) .screen-detail{min-height:44px;font-size:12px;padding:8px;margin:8px 0 0}
+.screen-fit .screen-viewport .button-wrap{max-width:100%;width:100%}
+.screen-fit .screen-viewport .upgrade-card .button-wrap small{line-height:1.35}
+.screen-fit #modalBody.dialog-more-pages .screen-next{border-color:#e1b47e;background:#b98050;color:#251d25}
+.screen-fit #modal:has(#modalBody.dialog-more-pages) #confirm{display:none}
+.screen-fit #modal:has(#modalBody.dialog-more-pages)>.actions{grid-template-columns:1fr}
+.screen-fit #modal .screen-pager select{font-size:12px}
+@media(min-width:600px){.screen-fit .screen-section-menu{width:180px}.screen-fit .screen-filter{flex:none}}
+.screen-fit .screen-section-menu{order:4}
+.screen-fit .screen-help{order:0}
+.screen-fit .screen-filter{order:5}
+.screen-fit .screen-heading .dossier-tabs{order:6}
+.screen-fit .upgrade-overview{padding:8px 4px!important;min-height:0!important;margin:0!important}
+.screen-fit .screen-viewport .finance-row{padding:8px 0!important;min-height:38px;gap:12px;line-height:1.35}
+.screen-fit .screen-viewport .finance-row>*{min-width:0;overflow-wrap:anywhere}
+.screen-fit .screen-viewport .finance-row b{flex-shrink:0;text-align:right}
+.screen-fit .screen-viewport .growth-row{padding:8px 0!important;line-height:1.35}
+.screen-fit .screen-viewport .career-deal{padding:10px 0!important;margin:0!important}
+.screen-fit .screen-viewport .agreement-card .deal-key-facts{grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.screen-fit .screen-viewport .agreement-card .deal-key-facts .agreement-fact{flex-direction:column;align-items:flex-start;gap:4px;padding:8px;background:#211d28;border:1px solid #745a55;border-radius:6px}
+.screen-fit .screen-viewport .deal-key-facts strong{color:#efc68f;font-size:18px}
+.screen-fit .screen-viewport .deal-key-facts small{font-size:11px;color:#dac7b5}
+.screen-fit .screen-viewport .agreement-actions{grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 0}
+.screen-fit .screen-viewport .agreement-actions button{font-size:12px;min-height:48px;padding:8px;margin:0;line-height:1.35}
+.screen-fit .screen-viewport .agreement-card>.rules{margin:8px 0;font-size:12px;line-height:1.35}
+.screen-fit .screen-card-preview{padding:14px;border:1px solid #967764;border-radius:8px;background:#302630}
+.screen-fit .screen-card-preview h3{margin:0 0 10px;font-size:19px}
+.screen-fit .screen-card-preview>button{width:100%;min-height:44px;margin-top:12px}
+.screen-fit .screen-card-preview .deal-key-facts{grid-template-columns:1fr 1fr;margin:8px 0;gap:8px}
+.screen-fit .screen-card-preview .deal-key-facts .agreement-fact{flex-direction:column;align-items:flex-start;padding:8px;background:#211d28;border:1px solid #745a55;gap:4px}
+.screen-fit .screen-card-preview .deal-key-facts small{font-size:11px;color:#dac7b5}
+.screen-fit .screen-card-preview .screen-detail{margin:8px 0 0}
