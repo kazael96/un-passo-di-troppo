@@ -440,3 +440,7 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .screen-fit .screen-card-preview .deal-key-facts .agreement-fact{flex-direction:column;align-items:flex-start;padding:8px;background:#211d28;border:1px solid #745a55;gap:4px}
 .screen-fit .screen-card-preview .deal-key-facts small{font-size:11px;color:#dac7b5}
 .screen-fit .screen-card-preview .screen-detail{margin:8px 0 0}
+
+/* Keep mobile keyboard editing accessible without moving or replacing fields. */
+.screen-fit #modal .screen-viewport:focus-within{overflow-y:auto;overscroll-behavior:contain}
+.screen-fit #modal input,.screen-fit #modal textarea{font-size:16px}
