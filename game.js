@@ -770,6 +770,38 @@ render=()=>{
  });
 };
 
+/* Fit every mobile screen with explicit pages instead of vertical scrolling. */
+const screenPages=new Map();let screenLayout=null,modalLayout=null;
+function openScreenDetail(title,nodes){const box=el('div');box.append(...nodes);ask(title,box,()=>{});$('confirm').textContent='Chiudi';$('cancel').hidden=true}
+function screenUnits(nodes){const units=[];for(const node of nodes){if(node.nodeType!==1)continue;
+ if(node.tagName==='DETAILS'){const summary=node.querySelector('summary'),children=[...node.children].filter(e=>e!==summary);units.push(btn(summary?.textContent||'Dettagli',()=>openScreenDetail(summary?.textContent||'Dettagli',children),'','screen-detail'));continue}
+ if(node.matches('.client-list,.agreements-list,.request-list,.upgrade-services,.club-directory,.save-slots,.result-updates')){units.push(...screenUnits([...node.children]));continue}
+ units.push(node)
+ }return units}
+function makeScreenPager(host,nodes,key){const viewport=el('div',undefined,'screen-viewport'),nav=el('nav',undefined,'screen-pager');nav.setAttribute('aria-label','Pagine della schermata');const prev=btn('←',()=>show(current-1),'','screen-prev'),label=el('span'),next=btn('→',()=>show(current+1),'','screen-next');prev.setAttribute('aria-label','Pagina precedente');next.setAttribute('aria-label','Pagina successiva');label.setAttribute('aria-live','polite');nav.append(prev,label,next);host.append(viewport,nav);
+ let units=screenUnits(nodes),pages=[],current=screenPages.get(key)||0;
+ function fits(){return viewport.scrollHeight<=viewport.clientHeight+1}
+ function divide(node){if(node.tagName==='TABLE'){const rows=[...node.querySelectorAll('tbody>tr')];if(rows.length>1)return rows.map(row=>{const table=node.cloneNode(false);if(node.tHead)table.append(node.tHead.cloneNode(true));const body=document.createElement('tbody');body.append(row);table.append(body);return table})}if(node.matches('button,input,select,textarea,form,svg,table,.player-identity,.client-filters,.dossier-tabs,.signing-profile,.signing-costs,.signing-terms'))return null;const children=[...node.children];if(children.length>1){return children.map(child=>{const wrap=node.cloneNode(false);wrap.removeAttribute('id');const heading=node.matches('.agreement-card,.request-card,.upgrade-card,.save-slot')?node.querySelector('h3'):null;if(heading&&!child.contains(heading)&&child!==heading)wrap.append(heading.cloneNode(true));wrap.append(child);return wrap})}if(node.tagName==='P'&&node.textContent.length>160){const words=node.textContent.split(/\s+/),middle=Math.ceil(words.length/2);return [words.slice(0,middle),words.slice(middle)].map(part=>{const p=node.cloneNode(false);p.textContent=part.join(' ');return p})}if(children.length===1)return divide(children[0]);return null}
+ function build(){nav.hidden=false;viewport.replaceChildren();pages=[];let page=[];const pending=units.slice();let guard=0;while(pending.length&&guard++<1000){const item=pending.shift();viewport.append(item);if(fits()){page.push(item);continue}item.remove();if(page.length){pages.push(page);page=[];viewport.replaceChildren();pending.unshift(item);continue}const split=divide(item);if(split){pending.unshift(...screenUnits(split));continue}viewport.append(item);page.push(item)}if(page.length)pages.push(page);if(!pages.length)pages=[[]];units=pages.flat();current=Math.min(current,pages.length-1);show(current)}
+ function show(index){current=Math.max(0,Math.min(index,pages.length-1));screenPages.set(key,current);viewport.replaceChildren(...pages[current]);label.textContent=(current+1)+' / '+pages.length;prev.disabled=current===0;next.disabled=current===pages.length-1;nav.hidden=pages.length<2;viewport.dataset.page=String(current+1);if(host.id==='modalBody')$('confirm').disabled=pages.length>1&&current<pages.length-1}
+ build();return {build,viewport,nav}
+}
+const screenRender=render;
+render=()=>{screenRender();if(!simpleMode)return;document.body.classList.add('screen-fit');const content=$('content');
+ if(tab==='office'){
+  const homeTools=el('div',undefined,'home-tools');const goal=content.querySelector('.focus-goal');if(goal){goal.remove();homeTools.append(btn('Obiettivo · '+(goal.querySelector('h2')?.textContent||'La tua carriera'),()=>openScreenDetail('Obiettivo attuale',[goal]),'','home-goal'))}
+  for(const selector of ['.week-decision','.notice','.recap-open']){const node=content.querySelector(selector);if(!node)continue;node.remove();homeTools.append(node.matches('button')?node:btn(selector==='.week-decision'?'Decisione da prendere':'Notizie',()=>openScreenDetail('La tua settimana',[node]),'','home-note'))}
+  if(homeTools.children.length)content.prepend(homeTools);
+  content.querySelector('.launcher-account')?.remove();
+  const footer=el('div',undefined,'home-footer');footer.append(content.querySelector('.launcher-continue'),content.querySelector('.launcher-settings'));content.append(footer);content.querySelector('.launcher-settings').textContent='⚙';content.querySelector('.launcher-settings').setAttribute('aria-label','Impostazioni, account e salvataggi');screenLayout=null;
+ }else{
+  const heading=el('div',undefined,'screen-heading'),back=content.querySelector('.launcher-back'),title=[...content.children].find(e=>e.tagName==='H2');if(back)heading.append(back);if(title)heading.append(title);const nodes=[...content.children];content.replaceChildren(heading);screenLayout=makeScreenPager(content,nodes,'screen:'+careerSlots.active+':'+tab+':'+selectedClient+':'+clientSection);
+ }
+};
+const screenAsk=ask;
+ask=(...args)=>{screenAsk(...args);$('confirm').hidden=false;$('confirm').disabled=false;modalLayout=null;if(!simpleMode)return;const body=$('modalBody');screenPages.delete('dialog:'+args[0]);modalLayout=makeScreenPager(body,[...body.children],'dialog:'+args[0]);};
+window.addEventListener('resize',()=>{if(!simpleMode)return;if(tab!=='office')screenLayout?.build();if($('modal').open)modalLayout?.build()});
+
 /* Browser back follows game screens and dismisses dialogs without confirming. */
 function installGameNavigation(){
  const browserHistory=window.history,dialog=$('modal');
