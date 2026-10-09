@@ -470,3 +470,7 @@ body #modal .talk-fields .talk-step:disabled{opacity:.4;box-shadow:none}
 body #modal .talk-fields .talk-step:focus-visible{outline:2px solid #edbb81;outline-offset:2px}
 
 body #modal .talk-fields .talk-step:disabled::before{content:none;display:none}
+
+body.screen-fit #modal .talk-fields .talk-number{margin:0!important;gap:4px!important}
+body #modal .talk-number>span{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:2px 8px;line-height:1.4}
+body #modal .talk-number>span>span{font-size:12px}
