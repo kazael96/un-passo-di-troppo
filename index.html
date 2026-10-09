@@ -1481,7 +1481,7 @@ if(KING_EDITION.demo){
  const editionRender=render;render=()=>{editionRender();document.body.classList.add('king-demo');if(tab==='office'){
   const banner=el('div',undefined,'edition-banner');banner.append(el('strong',demoFinished()?'Demo completata':'Demo · una stagione'),btn(demoFinished()?'Gioco completo · 0,99 €':'Informazioni',demoFinished()?openKingStore:()=>ask('Demo di King Agent','Prova una stagione completa. I salvataggi della demo sono separati da quelli del gioco completo. Alla fine puoi esportare la carriera e importarla nella versione completa.',()=>{})));
   $('content').prepend(banner);
- }if(demoFinished()){$('advance').textContent='Demo completata · gioco completo';$('advance').onclick=demoEndDialog;$('advance').disabled=false}};
+ }if(demoFinished()){for(const next of [$('advance'),document.querySelector('.launcher-continue')].filter(Boolean)){next.textContent='Demo completata · gioco completo';next.onclick=demoEndDialog;next.disabled=false}}};
 }
 
 if(typeof document!=='undefined')boot();
