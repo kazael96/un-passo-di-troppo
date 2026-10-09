@@ -448,3 +448,15 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .screen-fit #modal .talk-number{margin:8px 0!important;gap:5px}
 .screen-fit #modal .talk-fields{gap:8px}
 .screen-fit #modal .talk-dialog{gap:10px}
+/* Clear agency feedback, in the established illustrated dossier style. */
+.art-agency .request-insight{display:grid;gap:5px;margin:10px 0;padding:10px 0;border-top:1px solid var(--line)}
+.art-agency .request-insight strong{color:var(--gold);font-size:14px;overflow-wrap:anywhere}
+.art-agency .polish-personality{color:var(--gold);font-size:13px;display:block;line-height:1.5}
+.art-agency .polish-priority{display:block;line-height:1.5}
+.art-agency .polish-focus,.art-agency .polish-moment{border:1px solid var(--line);background:#322632;padding:14px;border-radius:12px;margin:12px 0}
+.art-agency .polish-focus>small,.art-agency .polish-moment>small{color:var(--gold);letter-spacing:1px;font-size:11px}
+.art-agency .polish-focus button{width:100%;margin-top:8px}.art-agency .polish-focus p{margin:8px 0}
+.art-agency .polish-moment h3{margin:8px 0;font-size:21px}.art-agency .polish-moment p{margin:8px 0}
+.art-agency .polish-update{padding:10px 0;margin:0;border-bottom:1px solid var(--line);font-size:14px}
+@media(max-width:650px){.art-agency .polish-recap .result-money{grid-template-columns:1fr 1fr;gap:10px}.art-agency .polish-recap .result-money strong{font-size:19px}.art-agency .request-insight{font-size:13px}}
+.screen-fit .screen-heading h2{flex:1 1 auto;min-width:min-content}.screen-fit .screen-heading .screen-filter{flex-shrink:0}
