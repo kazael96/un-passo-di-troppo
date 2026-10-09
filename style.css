@@ -460,3 +460,13 @@ body #modal .talk-number>span{display:grid;gap:3px}.talk-range{display:block;fon
 .art-agency .polish-update{padding:10px 0;margin:0;border-bottom:1px solid var(--line);font-size:14px}
 @media(max-width:650px){.art-agency .polish-recap .result-money{grid-template-columns:1fr 1fr;gap:10px}.art-agency .polish-recap .result-money strong{font-size:19px}.art-agency .request-insight{font-size:13px}}
 .screen-fit .screen-heading h2{flex:1 1 auto;min-width:min-content}.screen-fit .screen-heading .screen-filter{flex-shrink:0}
+
+/* Thumb-friendly negotiation controls; direct entry remains available. */
+body #modal .talk-fields .talk-number{grid-template-columns:minmax(0,1fr)!important}
+body #modal .talk-fields .talk-stepper{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:10px;align-items:center;min-width:0}
+body #modal .talk-fields .talk-stepper input{width:100%;min-width:0;box-sizing:border-box;text-align:center}
+body #modal .talk-fields .talk-step{min-height:46px;width:48px;min-width:0;padding:0;font-size:24px;line-height:1;border-radius:8px;margin:0;touch-action:manipulation}
+body #modal .talk-fields .talk-step:disabled{opacity:.4;box-shadow:none}
+body #modal .talk-fields .talk-step:focus-visible{outline:2px solid #edbb81;outline-offset:2px}
+
+body #modal .talk-fields .talk-step:disabled::before{content:none;display:none}
